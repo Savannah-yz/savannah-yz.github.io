@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HippoCamp: Benchmarking Contextual Agents on Personal Computers</title>
+  <meta name="description" content="Project page for HippoCamp, a benchmark evaluating agents' ability to search, perceive, and reason over realistic, multimodal personal file systems.">
+  <link rel="icon" type="image/png" href="./assets/icons/hippo_logo.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" aria-label="HippoCamp project page">
+          <img src="./assets/icons/hippo_logo.png" alt="HippoCamp logo">
+          <span>HippoCamp</span>
+        </a>
+        <nav class="top-nav" aria-label="Section navigation">
+          <a href="#abstract">Abstract</a>
+          <a href="#overview">Overview</a>
+          <a href="#profiles">Profiles</a>
+          <a href="#tasks">Tasks</a>
+          <a href="#results">Results</a>
+          <a href="#analysis">Analysis</a>
+          <a href="#citation">Citation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero__inner">
+          <div class="eyebrow">Project Page • Preprint • Multimodal Agents</div>
+          <div class="hero__title">
+            <img class="hero__mark" src="./assets/icons/hippo_logo.png" alt="">
+            <div class="hero__title-text">
+              <h1>
+                <span>HippoCamp: Benchmarking Contextual</span>
+                <span>Agents on Personal Computers</span>
+              </h1>
+            </div>
+          </div>
+          <div class="hero__authors" aria-label="Authors">
+            <div>
+              <a href="https://savannah-yz.github.io/" target="_blank" rel="noreferrer">Zhe Yang</a>,
+              <a href="https://shulin16.github.io/" target="_blank" rel="noreferrer">Shulin Tian</a>,
+              <a href="https://kairuihu.github.io/" target="_blank" rel="noreferrer">Kairui Hu</a>,
+              <a href="https://scholar.google.com/citations?user=W9190BQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noreferrer">Shuai Liu</a>,
+              <a href="https://mossbee.github.io/" target="_blank" rel="noreferrer">Hoang-Nhat Nguyen</a>,
+              <a href="https://openreview.net/profile?id=~Yichi_Zhang38" target="_blank" rel="noreferrer">Yichi Zhang</a>,
+              <a href="https://gseancdat.github.io/" target="_blank" rel="noreferrer">Zujin Guo</a>
+            </div>
+            <div>
+              <a href="https://annieyu0401.github.io/" target="_blank" rel="noreferrer">Mengying Yu</a>,
+              <a href="https://www.linkedin.com/in/%E5%AD%90%E6%A5%A0-%E5%BC%A0-a669123b9?trk=contact-info" target="_blank" rel="noreferrer">Zinan Zhang</a>,
+              <a href="https://jingkangyang.com/" target="_blank" rel="noreferrer">Jingkang Yang</a>,
+              <a href="https://www.mmlab-ntu.com/person/ccloy/" target="_blank" rel="noreferrer">Chen Change Loy</a>,
+              <a href="https://liuziwei7.github.io/" target="_blank" rel="noreferrer">Ziwei Liu</a>
+            </div>
+          </div>
+          <p class="hero__affiliation">Nanyang Technological University, Singapore</p>
+          <p class="hero__summary">
+            HippoCamp evaluates agents' ability to search, perceive, and reason over realistic, multimodal personal file systems.
+            The benchmark contains <strong>42.4 GB</strong> across <strong>over 2K heterogeneous files</strong>,
+            <strong>581 user-need-driven, evidence-grounded queries</strong>, and <strong>46.1K fine-grained annotations</strong>.
+          </p>
+          <div class="hero__actions">
+            <button class="hero-pill hero-pill--dark hero-pill--placeholder" type="button" title="Paper link to be added">
+              <span class="hero-pill__icon hero-pill__icon--emoji" aria-hidden="true">📄</span>
+              <span>Paper</span>
+            </button>
+            <button class="hero-pill hero-pill--dark hero-pill--placeholder" type="button" title="Video link to be added">
+              <span class="hero-pill__icon hero-pill__icon--emoji" aria-hidden="true">▶️</span>
+              <span>Video</span>
+            </button>
+            <button class="hero-pill hero-pill--dark hero-pill--placeholder" type="button" title="GitHub link to be added">
+              <span class="hero-pill__icon hero-pill__icon--emoji" aria-hidden="true">🐱</span>
+              <span>GitHub</span>
+            </button>
+            <a class="hero-pill hero-pill--dark" href="#top">
+              <span class="hero-pill__icon hero-pill__icon--emoji" aria-hidden="true">🌐</span>
+              <span>Website</span>
+            </a>
+            <button class="hero-pill hero-pill--dark hero-pill--placeholder" type="button" title="Docker link to be added">
+              <span class="hero-pill__icon hero-pill__icon--emoji" aria-hidden="true">🐳</span>
+              <span>Docker</span>
+            </button>
+            <a class="hero-pill hero-pill--dark" href="https://huggingface.co/datasets/MMMem-org/HippoCamp" target="_blank" rel="noopener">
+              <span class="hero-pill__icon hero-pill__icon--emoji" aria-hidden="true">🤗</span>
+              <span>Hugging Face</span>
+            </a>
+          </div>
+          <ul class="stat-strip" aria-label="Key benchmark statistics">
+            <li><strong>3</strong><span>archetypal profiles</span></li>
+            <li><strong>27</strong><span>file types</span></li>
+            <li><strong>581</strong><span>QA pairs</span></li>
+            <li><strong>48.3%</strong><span>best profiling accuracy</span></li>
+          </ul>
+        </div>
+
+        <figure class="figure-card figure-card--hero">
+          <button
+            class="figure-button js-open-figure"
+            type="button"
+            data-image="./assets/figures/hippo_teaser.png"
+            data-title="HippoCamp Teaser"
+            data-caption="HippoCamp is a benchmark designed to evaluate agents' ability to search, perceive, and reason over long-term, realistic, large-scale personal file systems."
+            data-pdf="../figs/hippo_teaser.pdf"
+          >
+            <img src="./assets/figures/hippo_teaser.png" alt="HippoCamp teaser figure showing a personal computer and a contextual agent reasoning over files.">
+          </button>
+          <figcaption>
+            <strong>Overview of task in HippoCamp Benchmark.</strong> HippoCamp is a benchmark designed to evaluate agents' ability to search, perceive, and reason over long-term, realistic, large-scale personal file systems.
+          </figcaption>
+          <div class="figure-actions">
+            <button
+              class="button button--ghost js-open-figure"
+              type="button"
+              data-image="./assets/figures/hippo_teaser.png"
+              data-title="HippoCamp Teaser"
+              data-caption="HippoCamp is a benchmark designed to evaluate agents' ability to search, perceive, and reason over long-term, realistic, large-scale personal file systems."
+              data-pdf="../figs/hippo_teaser.pdf"
+            >
+              Click To Enlarge
+            </button>
+            <a class="button button--ghost" href="../figs/hippo_teaser.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+          </div>
+        </figure>
+
+      </section>
+
+      <section id="abstract" class="section section--panel">
+        <div class="section-heading section-heading--center">
+          <div class="eyebrow">Abstract</div>
+          <h2>Abstract</h2>
+        </div>
+        <div class="text-card text-card--wide">
+          <p>
+            We present HippoCamp, a new benchmark designed to evaluate agents' capabilities on multimodal file management.
+            Unlike existing agent benchmarks that focus on tasks like web interaction, tool-use, or software automation in generic settings,
+            HippoCamp evaluates agents in user-centric environments to model individual user profiles and search from massive personal files for context-aware reasoning.
+            Our benchmark instantiates device-scale file systems over real-world profiles spanning diverse modalities, comprising 42.4 GB of data across over 2K real-world files.
+            Building upon the raw files, we construct 581 QA pairs to assess agents' capabilities in search, evidence perception, and multi-step reasoning.
+            To facilitate fine-grained analysis, we provide 46.1K densely annotated structured trajectories for step-wise failure diagnosis.
+            We evaluate a wide range of state-of-the-art multimodal large language models and agentic methods on HippoCamp.
+            Our comprehensive experiments reveal a significant performance gap: even the most advanced commercial models achieve merely a 48.0% accuracy in user profiling, struggling particularly with long-horizon retrieval and cross-modal reasoning within dense personal file systems.
+            Furthermore, our step-wise failure diagnosis identifies multimodal perception and evidence grounding as the primary bottlenecks.
+            Ultimately, HippoCamp exposes the critical limitations of current agents in realistic, user-centric environments and provides a robust foundation for developing next-generation personal AI assistants.
+          </p>
+        </div>
+      </section>
+
+      <section id="overview" class="section">
+        <div class="section-heading section-heading--overview">
+          <div class="eyebrow">Overview</div>
+          <h2>Personalized Multimodal Memory Benchmark</h2>
+          <p>
+            HippoCamp is a benchmark designed to evaluate agents' ability to search, perceive, and reason over long-term, realistic, large-scale personal file systems.
+            Through tasks that demand grounded retrieval, cross-file pattern inference, and long-horizon reasoning, the benchmark rigorously evaluates the personalized multimodal memory of contextual agents.
+          </p>
+        </div>
+
+        <div class="glance-grid">
+          <article class="glance-card glance-card--rose">
+            <h3>Realistic Personal Environments</h3>
+            <p>We faithfully simulate user-level digital ecosystems by constructing three distinct, file-intensive profiles. This design captures long-term continuity, idiosyncratic folder structures, and the interconnected nature of real-world personal file systems.</p>
+          </article>
+          <article class="glance-card glance-card--sky">
+            <h3>Device-Scale Corpus and Supervision</h3>
+            <p>We provide a massive dataset comprising over 2000 heterogeneous files (totaling 42.4 GB), accompanied by 581 user-need-driven, evidence-grounded queries. To support rigorous evaluation, we include 46.1K fine-grained annotations.</p>
+          </article>
+          <article class="glance-card glance-card--gold">
+            <h3>Search, Perception, and Reasoning</h3>
+            <p>We formulate a rigorous question-answering benchmark built on two core task categories: factual retention and profiling. These tasks require search, multimodal evidence perception, and personalized reasoning across interrelated files over time.</p>
+          </article>
+          <article class="glance-card glance-card--sage">
+            <h3>Verifiable Personalization Remains Hard</h3>
+            <p>Strong systems still struggle with entity disambiguation, multimodal grounding, and iterative evidence synthesis, indicating that personalization remains far from solved.</p>
+          </article>
+        </div>
+
+        <article class="figure-story">
+          <div class="figure-story__copy">
+            <div class="eyebrow">Annotation Hierarchy</div>
+            <h3>Hierarchical Annotation Schema</h3>
+            <p>
+              The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory.
+              Profiling queries sit at the top, requiring long-horizon, cross-modal integration of multiple factual-retention facts into a coherent user model.
+            </p>
+          </div>
+          <figure class="figure-card">
+            <button
+              class="figure-button js-open-figure"
+              type="button"
+              data-image="./assets/figures/1_hierarchy.png"
+              data-title="Hierarchical Annotation Schema"
+              data-caption="The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory."
+              data-pdf="../figs/1_hierarchy.pdf"
+            >
+              <img src="./assets/figures/1_hierarchy.png" alt="Hierarchical annotation schema in HippoCamp.">
+            </button>
+            <figcaption><strong>HippoCamp hierarchical annotation schema.</strong> The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory.</figcaption>
+            <div class="figure-actions">
+              <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/1_hierarchy.png" data-title="Hierarchical Annotation Schema" data-caption="The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory." data-pdf="../figs/1_hierarchy.pdf">Click To Enlarge</button>
+              <a class="button button--ghost" href="../figs/1_hierarchy.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+            </div>
+          </figure>
+        </article>
+
+        <article class="figure-story">
+          <div class="figure-story__copy">
+            <div class="eyebrow">Construction</div>
+            <h3>Pipeline, Task Distribution, and Capability Labels</h3>
+            <p>
+              Benchmark overview: (a) data collection and human-LLM collaborative annotation pipeline for grounded trajectory construction; (b) distribution of factual retention and profiling tasks; and (c) distribution of annotated agent capability labels over search, perception, and reasoning.
+            </p>
+          </div>
+          <figure class="figure-card">
+            <button
+              class="figure-button js-open-figure"
+              type="button"
+              data-image="./assets/figures/2_modality.png"
+              data-title="Benchmark Overview"
+              data-caption="Benchmark overview: data collection and human-LLM collaborative annotation pipeline, task distribution, and agent capability decomposition."
+              data-pdf="../figs/2_modality.pdf"
+            >
+              <img src="./assets/figures/2_modality.png" alt="Benchmark overview, annotation pipeline, and agent capability distribution.">
+            </button>
+            <figcaption><strong>Benchmark overview.</strong> Data collection and human-LLM collaborative annotation pipeline, task distribution, and agent capability decomposition.</figcaption>
+            <div class="figure-actions">
+              <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/2_modality.png" data-title="Benchmark Overview" data-caption="Benchmark overview: data collection and human-LLM collaborative annotation pipeline, task distribution, and agent capability decomposition." data-pdf="../figs/2_modality.pdf">Click To Enlarge</button>
+              <a class="button button--ghost" href="../figs/2_modality.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+            </div>
+          </figure>
+        </article>
+      </section>
+
+      <section id="profiles" class="section section--panel">
+        <div class="section-heading section-heading--overview">
+          <div class="eyebrow">Profiles</div>
+          <h2>Three Archetypal Personal Computing Environments</h2>
+          <p>
+            Each profile instantiates a distinct personal-device environment characterized along multiple dimensions, and is paired with representative file-content statistics and factual-retention and profiling QA examples.
+          </p>
+        </div>
+
+        <figure class="figure-card">
+          <button
+            class="figure-button js-open-figure"
+            type="button"
+            data-image="./assets/figures/3_hippocase.png"
+            data-title="Three HippoCamp Profiles"
+            data-caption="Each profile instantiates a distinct personal-device environment and is paired with representative file-content statistics and factual-retention and profiling QA examples."
+            data-pdf="../figs/3_hippocase.pdf"
+          >
+            <img src="./assets/figures/3_hippocase.png" alt="Three archetypal HippoCamp profiles: Bei, Adam, and Victoria.">
+          </button>
+          <figcaption><strong>Archetypal user profiles in HippoCamp.</strong> Profile A represents a student and content-creator context, Profile B a legal-executive environment, and Profile C a senior-financial-analyst setting.</figcaption>
+          <div class="figure-actions">
+            <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/3_hippocase.png" data-title="Three HippoCamp Profiles" data-caption="Each profile instantiates a distinct personal-device environment and is paired with representative file-content statistics and factual-retention and profiling QA examples." data-pdf="../figs/3_hippocase.pdf">Click To Enlarge</button>
+            <a class="button button--ghost" href="../figs/3_hippocase.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+          </div>
+        </figure>
+
+        <div class="profile-grid">
+          <article class="profile-card profile-card--rose">
+            <h3>Bei Weiwei</h3>
+            <p>Profile A represents a student and content-creator context, highlighting multimodal daily-life traces, study materials, and creative-media artifacts.</p>
+          </article>
+          <article class="profile-card profile-card--sky">
+            <h3>Adam Turner</h3>
+            <p>Profile B represents a legal-executive environment with recurrent coordination, administrative records, structured organization, and workflow-heavy professional documents.</p>
+          </article>
+          <article class="profile-card profile-card--sage">
+            <h3>Victoria Anne Clarke</h3>
+            <p>Profile C represents a senior-financial-analyst setting dominated by large PDFs, structured artifacts, and long-horizon planning and reporting materials.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tasks" class="section">
+        <div class="section-heading">
+          <div class="eyebrow">Tasks</div>
+          <h2>From Single Facts To User-Level Profiles</h2>
+          <p>
+            HippoCamp formulates personalized file management as open-ended, evidence-grounded question answering.
+            Factual retention requires retrieving and reasoning over verifiable file-grounded facts, whereas profiling synthesizes many grounded facts across time into coherent user-level inferences such as preferences, behavioral patterns, scheduling information, retrospective reflections, and workflows.
+          </p>
+        </div>
+
+        <div class="capability-row" aria-label="Core capabilities">
+          <span>Search</span>
+          <span>Perception</span>
+          <span>Reasoning</span>
+        </div>
+
+        <div class="task-family">
+          <div class="task-family__header">
+            <div class="eyebrow">Task Family 1</div>
+            <h3>Factual Retention</h3>
+            <p>
+              A factual retention query requires producing a precise answer that is fully supported by file-grounded evidence under realistic filesystem "haystack" conditions.
+              Evaluation emphasizes high-fidelity factual recall, structured alignment, and evidence-backed answers with minimal hallucination.
+            </p>
+          </div>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <h4>Example 1: Cross-Modal Asset Retrieval</h4>
+              <p>
+                The first example asks the agent to locate a previously written vlog script and identify the corresponding cat photos required by the script.
+                This instance tests precise file localization, structured fact extraction from documents, and cross-modal matching under explicit constraints.
+              </p>
+            </div>
+            <figure class="figure-card">
+              <button
+                class="figure-button js-open-figure"
+                type="button"
+                data-image="./assets/figures/7_factual_retention.png"
+                data-title="Factual Retention Example 1"
+                data-caption="Given a vlog script, the agent extracts the required assets and identifies the matching photos."
+                data-pdf="../figs/7_Factual_Retention.pdf"
+              >
+                <img src="./assets/figures/7_factual_retention.png" alt="Factual retention example showing cross-modal asset retrieval.">
+              </button>
+              <figcaption><strong>Factual retention example.</strong> Given a vlog script, the agent extracts the required assets and identifies the matching photos, with ground-truth answer and evidence visualizations.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/7_factual_retention.png" data-title="Factual Retention Example 1" data-caption="Given a vlog script, the agent extracts the required assets and identifies the matching photos." data-pdf="../figs/7_Factual_Retention.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/7_Factual_Retention.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <h4>Example 2: Document-Video Compliance Verification</h4>
+              <p>
+                The second example evaluates rule-based factual verification under multimodal evidence.
+                The query asks whether the "Saver Menu" logo placement in a user advertisement complies with McDonald's clearspace guidelines.
+              </p>
+            </div>
+            <figure class="figure-card">
+              <button
+                class="figure-button js-open-figure"
+                type="button"
+                data-image="./assets/figures/8_factual_retention.png"
+                data-title="Factual Retention Example 2"
+                data-caption="The agent verifies logo clearspace by extracting the rule from the manual and checking it against video frames."
+                data-pdf="../figs/8_Factual_Retention.pdf"
+              >
+                <img src="./assets/figures/8_factual_retention.png" alt="Factual retention example showing document-video compliance verification.">
+              </button>
+              <figcaption><strong>Factual retention example.</strong> The agent verifies logo clearspace by extracting the rule from the manual and checking it against video frames, with ground-truth answer and evidence visualizations.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/8_factual_retention.png" data-title="Factual Retention Example 2" data-caption="The agent verifies logo clearspace by extracting the rule from the manual and checking it against video frames." data-pdf="../figs/8_Factual_Retention.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/8_Factual_Retention.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+        </div>
+
+        <div class="task-family">
+          <div class="task-family__header">
+            <div class="eyebrow">Task Family 2</div>
+            <h3>Profiling</h3>
+            <p>
+              A profiling query requires inferring user-level attributes from device-resident evidence distributed across files, modalities, and time.
+              Evaluation emphasizes profile consistency, correct temporal anchoring, executability of suggested actions when applicable, and traceability to grounded evidence.
+            </p>
+          </div>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <h4>Profiling Subtasks</h4>
+              <p>
+                Profiling queries are decomposed into five complementary subtasks: preferences, behavioral patterns, scheduling information, retrospective reflections, and workflows.
+                These subtasks share the same evidence-grounding requirement but differ in the dominant abstraction operator, ranging from event-level reconstruction to trait-level generalization.
+              </p>
+            </div>
+            <figure class="figure-card">
+              <button
+                class="figure-button js-open-figure"
+                type="button"
+                data-image="./assets/figures/9_subtasks.png"
+                data-title="Profiling Subtask Distribution"
+                data-caption="Proportions of the five profiling subtasks across the three HippoCamp profiles."
+                data-pdf="../figs/9_subtasks.png"
+              >
+                <img src="./assets/figures/9_subtasks.png" alt="Distribution of profiling subtasks in HippoCamp.">
+              </button>
+              <figcaption><strong>Profiling subtask distribution.</strong> Proportions of the five profiling subtasks across the three HippoCamp profiles.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/9_subtasks.png" data-title="Profiling Subtask Distribution" data-caption="Proportions of the five profiling subtasks across the three HippoCamp profiles." data-pdf="../figs/9_subtasks.png">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/9_subtasks.png" target="_blank" rel="noopener">Open Original Figure</a>
+              </div>
+            </figure>
+          </article>
+
+          <div class="atlas">
+            <div class="atlas__tabs" role="tablist" aria-label="Profiling subtasks">
+              <button class="atlas-tab is-active" type="button" data-atlas-key="preferences">Preferences</button>
+              <button class="atlas-tab" type="button" data-atlas-key="behavioral">Behavioral Patterns</button>
+              <button class="atlas-tab" type="button" data-atlas-key="scheduling">Scheduling</button>
+              <button class="atlas-tab" type="button" data-atlas-key="retrospection">Retrospection</button>
+              <button class="atlas-tab" type="button" data-atlas-key="workflow">Workflows</button>
+            </div>
+
+            <div class="atlas__header">
+              <div class="eyebrow">Profiling Atlas</div>
+              <h3 id="atlas-title">Preferences</h3>
+            </div>
+
+            <figure class="figure-card">
+              <button
+                id="atlas-open"
+                class="figure-button js-open-figure"
+                type="button"
+                data-image="./assets/figures/10_preferences.png"
+                data-title="Preferences"
+                data-caption="Inferring stable photo-editing preferences from an email thread with annotated visual feedback and user confirmation."
+                data-pdf="../figs/10_Preferences.pdf"
+              >
+                <img id="atlas-image" src="./assets/figures/10_preferences.png" alt="Profiling subtask example for preferences.">
+              </button>
+              <figcaption id="atlas-caption">Inferring stable photo-editing preferences from an email thread with annotated visual feedback and user confirmation.</figcaption>
+              <div class="figure-actions">
+                <button id="atlas-open-button" class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/10_preferences.png" data-title="Preferences" data-caption="Inferring stable photo-editing preferences from an email thread with annotated visual feedback and user confirmation." data-pdf="../figs/10_Preferences.pdf">Click To Enlarge</button>
+                <a id="atlas-pdf" class="button button--ghost" href="../figs/10_Preferences.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+
+            <div id="atlas-copy" class="text-card">
+              Preferences profiling captures stable, trait-like choices that generalize across situations and requires evidence-backed abstraction from episodic traces.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="section section--panel section--warm">
+        <div class="section-heading">
+          <div class="eyebrow">Results</div>
+          <h2>Main Results on HippoCamp</h2>
+          <p>
+            We evaluate representative multimodal large language models and agent methods on profiling and factual retention, reporting F1 and accuracy for each archetypal profile and the overall average.
+          </p>
+        </div>
+
+        <div class="result-cards">
+          <article class="result-card">
+            <span class="result-card__metric">Autonomous Agent Systems</span>
+            <h3>ChatGPT Agent Mode</h3>
+            <p>ChatGPT Agent Mode performs best overall, achieving <strong>21.0 F1 / 48.3 Acc</strong> on profiling and <strong>35.3 F1 / 62.8 Acc</strong> on factual retention.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-card__metric">Search Agent Methods</span>
+            <h3>Search-R1</h3>
+            <p>Search-R1 attains strong factual-retention F1 on document-heavy profiles, but achieves only <strong>10.8 overall profiling F1</strong> with <strong>5.0 Acc</strong>, indicating that locating candidate files alone is insufficient for user-level inference.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-card__metric">Capability-Wise Decomposition</span>
+            <h3>Perception Remains a Bottleneck</h3>
+            <p>Perception is a consistent bottleneck across families, with uniformly low accuracy. For example, Standard RAG achieves <strong>13.8%</strong> and Search-R1 achieves <strong>15.7%</strong> on profiling tasks.</p>
+          </article>
+        </div>
+
+        <div class="results-block">
+          <h3>Main Results Table</h3>
+          <div class="table-card table-card--scroll">
+            <div class="table-scroll">
+              <table class="full-table">
+                <thead>
+                  <tr>
+                    <th rowspan="3">Method</th>
+                    <th colspan="8">Profiling</th>
+                    <th colspan="8">Factual Retention</th>
+                  </tr>
+                  <tr>
+                    <th colspan="2">(a) Bei</th>
+                    <th colspan="2">(b) Adam</th>
+                    <th colspan="2">(c) Victoria</th>
+                    <th colspan="2">Overall</th>
+                    <th colspan="2">(a) Bei</th>
+                    <th colspan="2">(b) Adam</th>
+                    <th colspan="2">(c) Victoria</th>
+                    <th colspan="2">Overall</th>
+                  </tr>
+                  <tr>
+                    <th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th>
+                    <th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Standard RAG</td><td>13.7</td><td>10.0</td><td>20.8</td><td>35.0</td><td>20.6</td><td>35.0</td><td>18.4</td><td>26.7</td><td>29.7</td><td>24.2</td><td>39.7</td><td>42.7</td><td>20.5</td><td>23.6</td><td>30.0</td><td>30.2</td></tr>
+                  <tr><td>Self RAG</td><td>13.8</td><td>5.0</td><td>16.0</td><td>25.0</td><td>15.9</td><td>0.0</td><td>15.2</td><td>10.0</td><td>33.9</td><td>26.1</td><td>41.5</td><td>38.8</td><td>20.2</td><td>17.7</td><td>31.9</td><td>27.5</td></tr>
+                  <tr><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>5.5</td><td>5.6</td><td>17.8</td><td>25.0</td><td>12.2</td><td>10.0</td><td>11.8</td><td>13.5</td><td>42.4</td><td>26.1</td><td>60.4</td><td>37.9</td><td>26.5</td><td>21.7</td><td>43.1</td><td>28.5</td></tr>
+                  <tr><td>ReAct (Gemini-2.5-flash)</td><td>13.7</td><td>10.0</td><td>21.4</td><td>25.0</td><td>20.5</td><td>25.0</td><td>18.5</td><td>20.0</td><td>26.9</td><td>24.2</td><td>35.7</td><td>55.3</td><td>17.0</td><td>36.4</td><td>26.5</td><td>38.7</td></tr>
+                  <tr><td>Search-R1</td><td>6.6</td><td>0.0</td><td>16.5</td><td>15.0</td><td>9.4</td><td>0.0</td><td>10.8</td><td>5.0</td><td>38.7</td><td>23.7</td><td>58.0</td><td>28.2</td><td>26.4</td><td>24.1</td><td>41.0</td><td>25.3</td></tr>
+                  <tr><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>5.4</td><td>0.0</td><td>16.3</td><td>25.0</td><td>13.2</td><td>25.0</td><td>11.6</td><td>16.7</td><td>14.6</td><td>10.7</td><td>21.6</td><td>13.6</td><td>15.7</td><td>10.3</td><td>17.3</td><td>11.5</td></tr>
+                  <tr><td>Terminal Agent (Gemini-2.5-flash)</td><td>9.0</td><td>5.0</td><td>17.0</td><td>45.0</td><td>19.0</td><td>25.0</td><td>15.0</td><td>25.0</td><td>21.8</td><td>18.1</td><td>33.1</td><td>31.1</td><td>24.4</td><td>20.7</td><td>26.4</td><td>23.3</td></tr>
+                  <tr><td>Terminal Agent (GPT-5.2)</td><td>8.1</td><td>15.0</td><td>14.9</td><td>45.0</td><td>10.5</td><td>30.0</td><td>11.1</td><td>30.0</td><td>13.0</td><td>29.8</td><td>31.6</td><td>59.2</td><td>29.0</td><td>55.7</td><td>24.6</td><td>48.2</td></tr>
+                  <tr class="row--best"><td>ChatGPT Agent Mode</td><td>23.8</td><td>35.0</td><td>22.7</td><td>55.0</td><td>16.7</td><td>55.0</td><td>21.0</td><td>48.3</td><td>20.4</td><td>31.2</td><td>56.2</td><td>90.3</td><td>29.3</td><td>67.0</td><td>35.3</td><td>62.8</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-block">
+          <h3>Capability-Wise Results</h3>
+          <div class="table-card table-card--scroll">
+            <div class="table-scroll">
+              <table class="full-table">
+                <thead>
+                  <tr>
+                    <th rowspan="3">Method</th>
+                    <th colspan="8">Profiling</th>
+                    <th colspan="8">Factual Retention</th>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Search</th>
+                    <th colspan="2">Perception</th>
+                    <th colspan="2">Reasoning</th>
+                    <th colspan="2">Overall</th>
+                    <th colspan="2">Search</th>
+                    <th colspan="2">Perception</th>
+                    <th colspan="2">Reasoning</th>
+                    <th colspan="2">Overall</th>
+                  </tr>
+                  <tr>
+                    <th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th>
+                    <th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th><th>F1</th><th>Acc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Standard RAG</td><td>26.4</td><td>26.2</td><td>21.8</td><td>13.8</td><td>26.7</td><td>25.5</td><td>25.0</td><td>21.8</td><td>19.0</td><td>26.2</td><td>21.1</td><td>28.7</td><td>13.0</td><td>19.1</td><td>17.7</td><td>24.7</td></tr>
+                  <tr><td>Self RAG</td><td>27.8</td><td>23.1</td><td>23.1</td><td>13.2</td><td>27.7</td><td>22.4</td><td>26.2</td><td>19.6</td><td>15.2</td><td>8.9</td><td>16.4</td><td>12.2</td><td>10.7</td><td>7.0</td><td>14.1</td><td>9.4</td></tr>
+                  <tr><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>36.3</td><td>26.1</td><td>27.9</td><td>16.7</td><td>36.3</td><td>23.9</td><td>33.5</td><td>22.2</td><td>11.9</td><td>13.4</td><td>14.5</td><td>18.7</td><td>8.6</td><td>10.6</td><td>11.7</td><td>14.2</td></tr>
+                  <tr><td>ReAct (Gemini-2.5-flash)</td><td>23.5</td><td>34.9</td><td>20.5</td><td>20.4</td><td>23.4</td><td>33.0</td><td>22.5</td><td>29.4</td><td>19.4</td><td>19.1</td><td>21.3</td><td>23.4</td><td>13.2</td><td>14.8</td><td>18.0</td><td>19.1</td></tr>
+                  <tr><td>Search-R1</td><td>34.8</td><td>24.9</td><td>32.8</td><td>15.7</td><td>35.1</td><td>25.8</td><td>34.2</td><td>22.1</td><td>10.2</td><td>3.8</td><td>12.3</td><td>7.2</td><td>7.8</td><td>3.9</td><td>10.1</td><td>5.0</td></tr>
+                  <tr><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>15.8</td><td>11.1</td><td>14.6</td><td>5.7</td><td>16.9</td><td>11.4</td><td>15.8</td><td>9.4</td><td>12.2</td><td>18.6</td><td>14.0</td><td>24.2</td><td>8.1</td><td>12.2</td><td>11.4</td><td>18.3</td></tr>
+                  <tr><td>Terminal Agent (Gemini-2.5-flash)</td><td>24.5</td><td>21.0</td><td>26.9</td><td>13.7</td><td>25.2</td><td>21.1</td><td>25.5</td><td>18.6</td><td>14.9</td><td>23.3</td><td>14.4</td><td>24.7</td><td>12.2</td><td>17.2</td><td>13.8</td><td>21.7</td></tr>
+                  <tr><td>Terminal Agent (GPT-5.2)</td><td>23.6</td><td>46.3</td><td>15.4</td><td>27.3</td><td>22.6</td><td>44.1</td><td>20.5</td><td>39.2</td><td>10.0</td><td>27.2</td><td>10.2</td><td>29.7</td><td>15.5</td><td>36.4</td><td>11.9</td><td>31.1</td></tr>
+                  <tr class="row--best"><td>ChatGPT Agent Mode</td><td>28.9</td><td>56.5</td><td>15.1</td><td>28.5</td><td>30.2</td><td>55.8</td><td>24.7</td><td>46.9</td><td>19.5</td><td>49.1</td><td>17.3</td><td>55.5</td><td>30.4</td><td>33.8</td><td>22.4</td><td>46.1</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-row">
+          <article class="text-card">
+            <h3>Search Alone Is Not Enough</h3>
+            <p>Search-centric agents attain strong search F1 on profiling, yet their reasoning accuracy remains much lower. Retrieval alone is insufficient for correct extraction.</p>
+          </article>
+          <article class="text-card">
+            <h3>Perception Remains Weak</h3>
+            <p>Perception is a consistent bottleneck across families, underscoring the challenge of interpreting heterogeneous modalities in personal file systems.</p>
+          </article>
+          <article class="text-card">
+            <h3>ChatGPT Agent Mode Is Most Balanced</h3>
+            <p>ChatGPT Agent Mode is the only system with comparatively balanced performance across search, perception, and reasoning, consistent with its iterative discovery advantage.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="analysis" class="section">
+        <div class="section-heading">
+          <div class="eyebrow">Analysis</div>
+          <h2>Where Current Agents Fail</h2>
+          <p>
+            We complement the profile-wise results with finer-grained analysis. We decompose performance by agent capability, characterize systematic failure and success modes, and distill design principles for future agents.
+          </p>
+        </div>
+
+        <figure class="figure-card">
+          <button
+            class="figure-button js-open-figure"
+            type="button"
+            data-image="./assets/figures/4_error_analysis.png"
+            data-title="Representative Failure And Success Patterns"
+            data-caption="The query requires aligning evidence across heterogeneous personal files and modalities. Standard RAG exhibits retrieval mismatch, Search-R1 shows grounding avoidance, Terminal Agent (GPT-5.2) triggers hard evidence hallucination, and ChatGPT Agent Mode makes an entity misattribution error."
+            data-pdf="../figs/4_error_analysis.pdf"
+          >
+            <img src="./assets/figures/4_error_analysis.png" alt="Representative failure and success patterns on a cross-modal profiling query.">
+          </button>
+          <figcaption><strong>Representative failure and success patterns on a cross-modal profiling query.</strong> The query requires aligning evidence across heterogeneous personal files and modalities.</figcaption>
+          <div class="figure-actions">
+            <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/4_error_analysis.png" data-title="Representative Failure And Success Patterns" data-caption="The query requires aligning evidence across heterogeneous personal files and modalities. Standard RAG exhibits retrieval mismatch, Search-R1 shows grounding avoidance, Terminal Agent (GPT-5.2) triggers hard evidence hallucination, and ChatGPT Agent Mode makes an entity misattribution error." data-pdf="../figs/4_error_analysis.pdf">Click To Enlarge</button>
+            <a class="button button--ghost" href="../figs/4_error_analysis.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+          </div>
+        </figure>
+
+        <div class="failure-grid">
+          <article class="failure-card failure-card--rose">
+            <h3>Retrieval Mismatch</h3>
+            <p>RAG-based systems often fail to distinguish user-relevant personal files from semantically related but contextually irrelevant documents.</p>
+          </article>
+          <article class="failure-card failure-card--gold">
+            <h3>Grounding Avoidance</h3>
+            <p>Reasoning-centric agents can locate candidates yet avoid committing to evidence-grounded answers.</p>
+          </article>
+          <article class="failure-card failure-card--sky">
+            <h3>Hard Evidence Hallucination</h3>
+            <p>Terminal-based agents operating in sandboxed environments frequently fabricate file paths or metadata.</p>
+          </article>
+          <article class="failure-card failure-card--sage">
+            <h3>Entity Misattribution</h3>
+            <p>Even the strongest system can retrieve relevant evidence yet bind it to the wrong referent.</p>
+          </article>
+        </div>
+
+        <div class="analysis-stack">
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <div class="eyebrow">Difficulty Axis 1</div>
+              <h3>Evidence Breadth</h3>
+              <p>The number of ground-truth evidence files required per query is sharply peaked at a single evidence file yet exhibits a pronounced heavy tail. The long tail provides hard stress tests for robust retrieval and evidence management.</p>
+            </div>
+            <figure class="figure-card">
+              <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/15_evidence.png" data-title="Evidence Breadth Distribution" data-caption="Number of ground-truth evidence files required per query, shown for each profile and overall. The distribution is heavy-tailed, with many multi-file queries beyond 20 evidence files." data-pdf="../figs/15_Evidence.pdf">
+                <img src="./assets/figures/15_evidence.png" alt="Evidence breadth distribution in HippoCamp.">
+              </button>
+              <figcaption><strong>Evidence breadth distribution.</strong> Number of ground-truth evidence files required per query, shown for each profile and overall. The distribution is heavy-tailed, with many multi-file queries beyond 20 evidence files.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/15_evidence.png" data-title="Evidence Breadth Distribution" data-caption="Number of ground-truth evidence files required per query, shown for each profile and overall. The distribution is heavy-tailed, with many multi-file queries beyond 20 evidence files." data-pdf="../figs/15_Evidence.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/15_Evidence.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <div class="eyebrow">Difficulty Axis 2</div>
+              <h3>Modality Breadth</h3>
+              <p>While unimodal queries dominate, HippoCamp contains a meaningful multimodal tail, including two-modality queries and additional instances requiring three or more modalities. High-value assistance frequently hinges on aligning evidence across modalities.</p>
+            </div>
+            <figure class="figure-card">
+              <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/16_modality.png" data-title="Modality Breadth Distribution" data-caption="Number of distinct modalities required per query, shown for each profile and overall." data-pdf="../figs/16_Modality.pdf">
+                <img src="./assets/figures/16_modality.png" alt="Modality breadth distribution in HippoCamp.">
+              </button>
+              <figcaption><strong>Modality breadth distribution.</strong> Number of distinct modalities required per query, shown for each profile and overall.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/16_modality.png" data-title="Modality Breadth Distribution" data-caption="Number of distinct modalities required per query, shown for each profile and overall." data-pdf="../figs/16_Modality.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/16_Modality.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <div class="eyebrow">Difficulty Axis 3</div>
+              <h3>Reasoning Depth</h3>
+              <p>HippoCamp concentrates around medium-depth problems while maintaining a non-trivial long tail of deep multi-step queries. Real personal-computing queries often require multiple rounds of retrieval, evidence inspection, cross-file reconciliation, and verification.</p>
+            </div>
+            <figure class="figure-card">
+              <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/17_reasoning_steps.png" data-title="Reasoning Step Distribution" data-caption="Number of annotated reasoning steps required per query for each profile and overall. The distribution peaks at medium depth (6-8 steps) with a long tail of deep multi-step queries." data-pdf="../figs/17_Reasoning_steps.pdf">
+                <img src="./assets/figures/17_reasoning_steps.png" alt="Reasoning step distribution in HippoCamp.">
+              </button>
+              <figcaption><strong>Reasoning depth distribution.</strong> Number of annotated reasoning steps required per query for each profile and overall. The distribution peaks at medium depth (6-8 steps) with a long tail of deep multi-step queries.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/17_reasoning_steps.png" data-title="Reasoning Step Distribution" data-caption="Number of annotated reasoning steps required per query for each profile and overall. The distribution peaks at medium depth (6-8 steps) with a long tail of deep multi-step queries." data-pdf="../figs/17_Reasoning_steps.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/17_Reasoning_steps.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <div class="eyebrow">Difficulty</div>
+              <h3>Difficulty Distribution</h3>
+              <p>Across the full benchmark, difficulty is centered at a moderate-to-high level (mean 57.5, median 49.1, n=581) with a substantial hard tail: 26.7% of questions score at least 70. Profiling is systematically harder than factual retention (means 89.3 vs. 53.8).</p>
+            </div>
+            <figure class="figure-card">
+              <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/18_difficulty.png" data-title="Difficulty Distribution" data-caption="Histograms of the difficulty score for each profile and overall, with mean and median markers and task-type overlays." data-pdf="../figs/18_Difficulty.pdf">
+                <img src="./assets/figures/18_difficulty.png" alt="Difficulty distribution in HippoCamp.">
+              </button>
+              <figcaption><strong>Difficulty distributions on HippoCamp.</strong> Histograms of the difficulty score for each profile and overall, with mean and median markers and task-type overlays.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/18_difficulty.png" data-title="Difficulty Distribution" data-caption="Histograms of the difficulty score for each profile and overall, with mean and median markers and task-type overlays." data-pdf="../figs/18_Difficulty.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/18_Difficulty.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <div class="eyebrow">Performance</div>
+              <h3>Performance Declines with Difficulty</h3>
+              <p>Average judge score generally decreases as difficulty increases. Even in low-to-mid difficulty bins, absolute scores remain modest for most methods, and in the high-difficulty regime several method families approach near-floor behavior.</p>
+            </div>
+            <figure class="figure-card">
+              <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/19_difficulty_vs_performance.png" data-title="Difficulty Versus Performance" data-caption="For each profile and for the full benchmark, mean LLM-judge score (0-5) for nine methods is shown as a function of binned difficulty; scores decline with increasing difficulty, with pronounced degradation in the hard tail." data-pdf="../figs/19_difficulty_vs_performance.pdf">
+                <img src="./assets/figures/19_difficulty_vs_performance.png" alt="Difficulty versus performance in HippoCamp.">
+              </button>
+              <figcaption><strong>Difficulty vs. performance.</strong> Mean LLM-judge score declines with increasing difficulty, with pronounced degradation in the hard tail.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/19_difficulty_vs_performance.png" data-title="Difficulty Versus Performance" data-caption="For each profile and for the full benchmark, mean LLM-judge score (0-5) for nine methods is shown as a function of binned difficulty; scores decline with increasing difficulty, with pronounced degradation in the hard tail." data-pdf="../figs/19_difficulty_vs_performance.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/19_difficulty_vs_performance.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+
+          <article class="figure-story">
+            <div class="figure-story__copy">
+              <div class="eyebrow">Evaluation</div>
+              <h3>Unified Evaluation Pipeline</h3>
+              <p>The evaluator loads benchmark JSON records, dispatches them to a method backend through a shared interface, collects answers and optional traces, and computes standardized metrics for aggregation and analysis.</p>
+            </div>
+            <figure class="figure-card">
+              <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/23_evaluation_pipeline.png" data-title="Unified Evaluation Pipeline" data-caption="The evaluator loads benchmark JSON records, dispatches them to a method backend through a shared interface, collects answers and optional traces, and computes standardized metrics for aggregation and analysis." data-pdf="../figs/23_evaluation_pipeline.pdf">
+                <img src="./assets/figures/23_evaluation_pipeline.png" alt="Unified evaluation pipeline for HippoCamp.">
+              </button>
+              <figcaption><strong>Unified evaluation pipeline.</strong> The evaluator loads benchmark JSON records, dispatches them to a method backend through a shared interface, collects answers and optional traces, and computes standardized metrics for aggregation and analysis.</figcaption>
+              <div class="figure-actions">
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/23_evaluation_pipeline.png" data-title="Unified Evaluation Pipeline" data-caption="The evaluator loads benchmark JSON records, dispatches them to a method backend through a shared interface, collects answers and optional traces, and computes standardized metrics for aggregation and analysis." data-pdf="../figs/23_evaluation_pipeline.pdf">Click To Enlarge</button>
+                <a class="button button--ghost" href="../figs/23_evaluation_pipeline.pdf" target="_blank" rel="noopener">Open Original PDF</a>
+              </div>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="citation" class="section section--panel">
+        <div class="section-heading section-heading--center">
+          <div class="eyebrow">Citation</div>
+          <h2>BibTeX</h2>
+          <p>If you find HippoCamp useful, please consider citing the paper.</p>
+        </div>
+
+        <div class="citation-card">
+          <button id="copy-citation" class="button button--secondary button--small" type="button">Copy BibTeX</button>
+          <pre id="citation-block"><code>@article{yang2026hippocamp,
+  title={HippoCamp: Benchmarking Contextual Agents on Personal Computers},
+  author={Yang, Zhe and Tian, Shulin and Hu, Kairui and Liu, Shuai and Nguyen, Hoang-Nhat and Zhang, Yichi and Guo, Zujin and Yu, Mengying and Zhang, Zinan and Yang, Jingkang and Loy, Chen Change and Liu, Ziwei},
+  journal={arXiv preprint arXiv:2603.03276},
+  year={2026}
+}</code></pre>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="lightbox" class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close-lightbox></div>
+    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <button id="lightbox-close" class="lightbox__close" type="button" aria-label="Close figure viewer">Close</button>
+      <div class="lightbox__header">
+        <h3 id="lightbox-title"></h3>
+        <a id="lightbox-pdf" class="button button--ghost" href="#" target="_blank" rel="noopener">Open Original File</a>
+      </div>
+      <div class="lightbox__content">
+        <img id="lightbox-image" src="" alt="">
+      </div>
+      <p id="lightbox-caption" class="lightbox__caption"></p>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
