@@ -492,6 +492,24 @@ h3 {
   margin: 0;
 }
 
+.publication-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.publication-note a {
+  color: var(--navy);
+  border-bottom: 1px solid rgba(34, 58, 94, 0.22);
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 .publication-meta {
   display: flex;
   flex-wrap: wrap;
