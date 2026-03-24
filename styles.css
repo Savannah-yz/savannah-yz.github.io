@@ -85,9 +85,20 @@ select {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: 0.02em;
+}
+
+.brand__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(33, 62, 103, 0.18);
 }
 
 .site-nav {
