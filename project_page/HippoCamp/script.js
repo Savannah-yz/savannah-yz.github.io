@@ -85,25 +85,22 @@ atlasTabs.forEach((button) => {
 
 setAtlasFigure("preferences");
 
-const copyButton = document.getElementById("copy-citation");
-const citationBlock = document.getElementById("citation-block");
+const leaderboardTabs = document.querySelectorAll(".leaderboard-tab");
+const leaderboardPanels = document.querySelectorAll(".leaderboard-panel");
 
-if (copyButton && citationBlock) {
-  copyButton.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(citationBlock.textContent);
-      copyButton.textContent = "Copied";
-      window.setTimeout(() => {
-        copyButton.textContent = "Copy BibTeX";
-      }, 1400);
-    } catch {
-      copyButton.textContent = "Copy failed";
-      window.setTimeout(() => {
-        copyButton.textContent = "Copy BibTeX";
-      }, 1400);
-    }
+leaderboardTabs.forEach((button) => {
+  button.addEventListener("click", () => {
+    const { leaderboardKey } = button.dataset;
+    leaderboardTabs.forEach((tab) => tab.classList.remove("is-active"));
+    leaderboardPanels.forEach((panel) => {
+      panel.classList.toggle(
+        "is-active",
+        panel.dataset.leaderboardPanel === leaderboardKey
+      );
+    });
+    button.classList.add("is-active");
   });
-}
+});
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
