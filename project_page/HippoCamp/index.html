@@ -19,9 +19,10 @@
         <nav class="top-nav" aria-label="Section navigation">
           <a href="#abstract">Abstract</a>
           <a href="#overview">Overview</a>
+          <a href="#leaderboard">Leaderboard</a>
           <a href="#profiles">Profiles</a>
           <a href="#tasks">Examples</a>
-          <a href="#leaderboard">Leaderboard</a>
+          <a href="#annotation">Annotation</a>
           <a href="#analysis">Analysis</a>
         </nav>
       </div>
@@ -60,9 +61,9 @@
           </div>
           <p class="hero__affiliation">Nanyang Technological University, Singapore</p>
           <p class="hero__summary">
-            HippoCamp evaluates agents' ability to search, perceive, and reason over realistic, multimodal personal file systems.
-            The benchmark contains <strong>42.4 GB</strong> across <strong>over 2K heterogeneous files</strong>,
+            We construct three personal computers comprising <strong>42.4 GB</strong> across <strong>over 2K heterogeneous files</strong>,
             <strong>581 user-need-driven, evidence-grounded queries</strong>, and <strong>46.1K fine-grained annotations</strong>.
+            The benchmark evaluates agents' ability to search, perceive, and reason over realistic, multimodal personal file systems.
           </p>
           <div class="hero__actions">
             <button class="hero-pill hero-pill--dark hero-pill--placeholder" type="button" title="Paper link to be added">
@@ -134,7 +135,7 @@
           <div class="eyebrow">Abstract</div>
           <h2>Abstract</h2>
         </div>
-        <div class="text-card text-card--wide">
+        <div class="abstract-body">
           <p>
             We present HippoCamp, a new benchmark designed to evaluate agents' capabilities on multimodal file management.
             Unlike existing agent benchmarks that focus on tasks like web interaction, tool-use, or software automation in generic settings,
@@ -151,10 +152,10 @@
       </section>
 
       <section id="overview" class="section">
-        <div class="section-heading section-heading--overview">
+        <div class="section-heading">
           <div class="eyebrow">Overview</div>
           <h2>Personalized Multimodal Memory Benchmark</h2>
-          <p class="section-heading__lead--left">
+          <p>
             HippoCamp is a benchmark designed to evaluate agents' ability to search, perceive, and reason over long-term, realistic, large-scale personal file systems.
             Through tasks that demand grounded retrieval, cross-file pattern inference, and long-horizon reasoning, the benchmark rigorously evaluates the personalized multimodal memory of contextual agents.
           </p>
@@ -163,19 +164,19 @@
         <div class="glance-grid">
           <article class="glance-card glance-card--rose">
             <h3>Realistic Personal Environments</h3>
-            <p>We faithfully simulate user-level digital ecosystems by constructing three distinct, file-intensive profiles. This design captures long-term continuity, idiosyncratic folder structures, and the interconnected nature of real-world personal file systems.</p>
+            <p>We construct three distinct, file-intensive user profiles that faithfully simulate real-world digital ecosystems. Each profile captures long-term continuity, idiosyncratic folder structures, and cross-file interconnections.</p>
           </article>
           <article class="glance-card glance-card--sky">
             <h3>Device-Scale Corpus and Supervision</h3>
-            <p>We provide a massive dataset comprising over 2000 heterogeneous files (totaling 42.4 GB), accompanied by 581 user-need-driven, evidence-grounded queries. To support rigorous evaluation, we include 46.1K fine-grained annotations.</p>
+            <p>The benchmark comprises over 2,000 heterogeneous files totaling 42.4 GB, paired with 581 evidence-grounded queries. We further provide 46.1K fine-grained annotations for step-wise failure diagnosis.</p>
           </article>
           <article class="glance-card glance-card--gold">
             <h3>Search, Perception, and Reasoning</h3>
-            <p>We formulate a rigorous question-answering benchmark built on two core task categories: factual retention and profiling. These tasks require search, multimodal evidence perception, and personalized reasoning across interrelated files over time.</p>
+            <p>We design two core task categories — factual retention and profiling — that demand search, multimodal perception, and personalized reasoning. Each query requires grounding answers in evidence distributed across files and modalities.</p>
           </article>
           <article class="glance-card glance-card--sage">
             <h3>Verifiable Personalization Remains Hard</h3>
-            <p>Strong systems still struggle with entity disambiguation, multimodal grounding, and iterative evidence synthesis, indicating that personalization remains far from solved.</p>
+            <p>Even the strongest systems struggle with entity disambiguation, multimodal grounding, and iterative evidence synthesis. Our results show that verifiable personalization on personal computers remains far from solved.</p>
           </article>
         </div>
 
@@ -208,11 +209,15 @@
       </section>
 
       <section id="leaderboard" class="section section--panel leaderboard-section">
+        <div class="section-heading">
+          <div class="eyebrow">Leaderboard</div>
+          <h2>HippoCamp Leaderboard</h2>
+          <p>
+            Which contextual agent performs best on realistic personal file systems? We benchmark a wide range of state-of-the-art multimodal models and agentic methods, reporting profiling accuracy, factual-retention accuracy, and a composite score.
+          </p>
+        </div>
         <div class="leaderboard-card">
           <div class="leaderboard-intro">
-            <h2>HippoCamp Leaderboard</h2>
-            <p class="leaderboard-quote">"Which contextual agent performs best on realistic personal file systems?"</p>
-
             <div class="leaderboard-badges">
               <span class="leaderboard-badge">Official</span>
               <span class="leaderboard-badge">581 QA Pairs</span>
@@ -274,15 +279,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td>2026.3.5</td><td>Agent</td><td>21.0</td><td>48.3</td><td>35.3</td><td>62.8</td><td class="leaderboard-score">55.6</td><td>Most balanced overall</td></tr>
-                    <tr><td>2</td><td>Terminal Agent (GPT-5.2)</td><td>2026.3.5</td><td>Terminal Agent</td><td>11.1</td><td>30.0</td><td>24.6</td><td>48.2</td><td class="leaderboard-score">39.1</td><td>Strong factual retention</td></tr>
-                    <tr><td>3</td><td>ReAct (Gemini-2.5-flash)</td><td>2026.3.5</td><td>ReAct</td><td>18.5</td><td>20.0</td><td>26.5</td><td>38.7</td><td class="leaderboard-score">29.4</td><td>Best ReAct variant</td></tr>
-                    <tr><td>4</td><td>Standard RAG</td><td>2026.3.5</td><td>RAG</td><td>18.4</td><td>26.7</td><td>30.0</td><td>30.2</td><td class="leaderboard-score">28.5</td><td>Stable retrieval baseline</td></tr>
-                    <tr><td>5</td><td>Terminal Agent (Gemini-2.5-flash)</td><td>2026.3.5</td><td>Terminal Agent</td><td>15.0</td><td>25.0</td><td>26.4</td><td>23.3</td><td class="leaderboard-score">24.2</td><td>Mid-tier across both tracks</td></tr>
-                    <tr><td>6</td><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>ReAct</td><td>11.8</td><td>13.5</td><td>43.1</td><td>28.5</td><td class="leaderboard-score">21.0</td><td>High factual F1, low accuracy</td></tr>
-                    <tr><td>7</td><td>Self RAG</td><td>2026.3.5</td><td>RAG</td><td>15.2</td><td>10.0</td><td>31.9</td><td>27.5</td><td class="leaderboard-score">18.8</td><td>Weak profile grounding</td></tr>
-                    <tr><td>8</td><td>Search-R1</td><td>2026.3.5</td><td>Search Agent</td><td>10.8</td><td>5.0</td><td>41.0</td><td>25.3</td><td class="leaderboard-score">15.2</td><td>Search-heavy but weak inference</td></tr>
-                    <tr><td>9</td><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>Terminal Agent</td><td>11.6</td><td>16.7</td><td>17.3</td><td>11.5</td><td class="leaderboard-score">14.1</td><td>Lowest overall factual accuracy</td></tr>
+                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td>Mar. 2026</td><td>Agent</td><td>21.0</td><td>48.3</td><td>35.3</td><td>62.8</td><td class="leaderboard-score">55.6</td><td>Most balanced overall</td></tr>
+                    <tr><td>2</td><td>Terminal Agent (GPT-5.2)</td><td>Mar. 2026</td><td>Terminal Agent</td><td>11.1</td><td>30.0</td><td>24.6</td><td>48.2</td><td class="leaderboard-score">39.1</td><td>Strong factual retention</td></tr>
+                    <tr><td>3</td><td>ReAct (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>ReAct</td><td>18.5</td><td>20.0</td><td>26.5</td><td>38.7</td><td class="leaderboard-score">29.4</td><td>Best ReAct variant</td></tr>
+                    <tr><td>4</td><td>Standard RAG</td><td>Mar. 2026</td><td>RAG</td><td>18.4</td><td>26.7</td><td>30.0</td><td>30.2</td><td class="leaderboard-score">28.5</td><td>Stable retrieval baseline</td></tr>
+                    <tr><td>5</td><td>Terminal Agent (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>Terminal Agent</td><td>15.0</td><td>25.0</td><td>26.4</td><td>23.3</td><td class="leaderboard-score">24.2</td><td>Mid-tier across both tracks</td></tr>
+                    <tr><td>6</td><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>ReAct</td><td>11.8</td><td>13.5</td><td>43.1</td><td>28.5</td><td class="leaderboard-score">21.0</td><td>High factual F1, low accuracy</td></tr>
+                    <tr><td>7</td><td>Self RAG</td><td>Mar. 2026</td><td>RAG</td><td>15.2</td><td>10.0</td><td>31.9</td><td>27.5</td><td class="leaderboard-score">18.8</td><td>Weak profile grounding</td></tr>
+                    <tr><td>8</td><td>Search-R1</td><td>Mar. 2026</td><td>Search Agent</td><td>10.8</td><td>5.0</td><td>41.0</td><td>25.3</td><td class="leaderboard-score">15.2</td><td>Search-heavy but weak inference</td></tr>
+                    <tr><td>9</td><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>Terminal Agent</td><td>11.6</td><td>16.7</td><td>17.3</td><td>11.5</td><td class="leaderboard-score">14.1</td><td>Lowest overall factual accuracy</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -307,15 +312,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td>2026.3.5</td><td>23.8 / 35.0</td><td>22.7 / 55.0</td><td>16.7 / 55.0</td><td>21.0</td><td class="leaderboard-score">48.3</td></tr>
-                    <tr><td>2</td><td>Terminal Agent (GPT-5.2)</td><td>2026.3.5</td><td>8.1 / 15.0</td><td>14.9 / 45.0</td><td>10.5 / 30.0</td><td>11.1</td><td class="leaderboard-score">30.0</td></tr>
-                    <tr><td>3</td><td>Standard RAG</td><td>2026.3.5</td><td>13.7 / 10.0</td><td>20.8 / 35.0</td><td>20.6 / 35.0</td><td>18.4</td><td class="leaderboard-score">26.7</td></tr>
-                    <tr><td>4</td><td>Terminal Agent (Gemini-2.5-flash)</td><td>2026.3.5</td><td>9.0 / 5.0</td><td>17.0 / 45.0</td><td>19.0 / 25.0</td><td>15.0</td><td class="leaderboard-score">25.0</td></tr>
-                    <tr><td>5</td><td>ReAct (Gemini-2.5-flash)</td><td>2026.3.5</td><td>13.7 / 10.0</td><td>21.4 / 25.0</td><td>20.5 / 25.0</td><td>18.5</td><td class="leaderboard-score">20.0</td></tr>
-                    <tr><td>6</td><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>5.4 / 0.0</td><td>16.3 / 25.0</td><td>13.2 / 25.0</td><td>11.6</td><td class="leaderboard-score">16.7</td></tr>
-                    <tr><td>7</td><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>5.5 / 5.6</td><td>17.8 / 25.0</td><td>12.2 / 10.0</td><td>11.8</td><td class="leaderboard-score">13.5</td></tr>
-                    <tr><td>8</td><td>Self RAG</td><td>2026.3.5</td><td>13.8 / 5.0</td><td>16.0 / 25.0</td><td>15.9 / 0.0</td><td>15.2</td><td class="leaderboard-score">10.0</td></tr>
-                    <tr><td>9</td><td>Search-R1</td><td>2026.3.5</td><td>6.6 / 0.0</td><td>16.5 / 15.0</td><td>9.4 / 0.0</td><td>10.8</td><td class="leaderboard-score">5.0</td></tr>
+                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td>Mar. 2026</td><td>23.8 / 35.0</td><td>22.7 / 55.0</td><td>16.7 / 55.0</td><td>21.0</td><td class="leaderboard-score">48.3</td></tr>
+                    <tr><td>2</td><td>Terminal Agent (GPT-5.2)</td><td>Mar. 2026</td><td>8.1 / 15.0</td><td>14.9 / 45.0</td><td>10.5 / 30.0</td><td>11.1</td><td class="leaderboard-score">30.0</td></tr>
+                    <tr><td>3</td><td>Standard RAG</td><td>Mar. 2026</td><td>13.7 / 10.0</td><td>20.8 / 35.0</td><td>20.6 / 35.0</td><td>18.4</td><td class="leaderboard-score">26.7</td></tr>
+                    <tr><td>4</td><td>Terminal Agent (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>9.0 / 5.0</td><td>17.0 / 45.0</td><td>19.0 / 25.0</td><td>15.0</td><td class="leaderboard-score">25.0</td></tr>
+                    <tr><td>5</td><td>ReAct (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>13.7 / 10.0</td><td>21.4 / 25.0</td><td>20.5 / 25.0</td><td>18.5</td><td class="leaderboard-score">20.0</td></tr>
+                    <tr><td>6</td><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>5.4 / 0.0</td><td>16.3 / 25.0</td><td>13.2 / 25.0</td><td>11.6</td><td class="leaderboard-score">16.7</td></tr>
+                    <tr><td>7</td><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>5.5 / 5.6</td><td>17.8 / 25.0</td><td>12.2 / 10.0</td><td>11.8</td><td class="leaderboard-score">13.5</td></tr>
+                    <tr><td>8</td><td>Self RAG</td><td>Mar. 2026</td><td>13.8 / 5.0</td><td>16.0 / 25.0</td><td>15.9 / 0.0</td><td>15.2</td><td class="leaderboard-score">10.0</td></tr>
+                    <tr><td>9</td><td>Search-R1</td><td>Mar. 2026</td><td>6.6 / 0.0</td><td>16.5 / 15.0</td><td>9.4 / 0.0</td><td>10.8</td><td class="leaderboard-score">5.0</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -340,15 +345,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td>2026.3.5</td><td>20.4 / 31.2</td><td>56.2 / 90.3</td><td>29.3 / 67.0</td><td>35.3</td><td class="leaderboard-score">62.8</td></tr>
-                    <tr><td>2</td><td>Terminal Agent (GPT-5.2)</td><td>2026.3.5</td><td>13.0 / 29.8</td><td>31.6 / 59.2</td><td>29.0 / 55.7</td><td>24.6</td><td class="leaderboard-score">48.2</td></tr>
-                    <tr><td>3</td><td>ReAct (Gemini-2.5-flash)</td><td>2026.3.5</td><td>26.9 / 24.2</td><td>35.7 / 55.3</td><td>17.0 / 36.4</td><td>26.5</td><td class="leaderboard-score">38.7</td></tr>
-                    <tr><td>4</td><td>Standard RAG</td><td>2026.3.5</td><td>29.7 / 24.2</td><td>39.7 / 42.7</td><td>20.5 / 23.6</td><td>30.0</td><td class="leaderboard-score">30.2</td></tr>
-                    <tr><td>5</td><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>42.4 / 26.1</td><td>60.4 / 37.9</td><td>26.5 / 21.7</td><td>43.1</td><td class="leaderboard-score">28.5</td></tr>
-                    <tr><td>6</td><td>Self RAG</td><td>2026.3.5</td><td>33.9 / 26.1</td><td>41.5 / 38.8</td><td>20.2 / 17.7</td><td>31.9</td><td class="leaderboard-score">27.5</td></tr>
-                    <tr><td>7</td><td>Search-R1</td><td>2026.3.5</td><td>38.7 / 23.7</td><td>58.0 / 28.2</td><td>26.4 / 24.1</td><td>41.0</td><td class="leaderboard-score">25.3</td></tr>
-                    <tr><td>8</td><td>Terminal Agent (Gemini-2.5-flash)</td><td>2026.3.5</td><td>21.8 / 18.1</td><td>33.1 / 31.1</td><td>24.4 / 20.7</td><td>26.4</td><td class="leaderboard-score">23.3</td></tr>
-                    <tr><td>9</td><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>14.6 / 10.7</td><td>21.6 / 13.6</td><td>15.7 / 10.3</td><td>17.3</td><td class="leaderboard-score">11.5</td></tr>
+                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td>Mar. 2026</td><td>20.4 / 31.2</td><td>56.2 / 90.3</td><td>29.3 / 67.0</td><td>35.3</td><td class="leaderboard-score">62.8</td></tr>
+                    <tr><td>2</td><td>Terminal Agent (GPT-5.2)</td><td>Mar. 2026</td><td>13.0 / 29.8</td><td>31.6 / 59.2</td><td>29.0 / 55.7</td><td>24.6</td><td class="leaderboard-score">48.2</td></tr>
+                    <tr><td>3</td><td>ReAct (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>26.9 / 24.2</td><td>35.7 / 55.3</td><td>17.0 / 36.4</td><td>26.5</td><td class="leaderboard-score">38.7</td></tr>
+                    <tr><td>4</td><td>Standard RAG</td><td>Mar. 2026</td><td>29.7 / 24.2</td><td>39.7 / 42.7</td><td>20.5 / 23.6</td><td>30.0</td><td class="leaderboard-score">30.2</td></tr>
+                    <tr><td>5</td><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>42.4 / 26.1</td><td>60.4 / 37.9</td><td>26.5 / 21.7</td><td>43.1</td><td class="leaderboard-score">28.5</td></tr>
+                    <tr><td>6</td><td>Self RAG</td><td>Mar. 2026</td><td>33.9 / 26.1</td><td>41.5 / 38.8</td><td>20.2 / 17.7</td><td>31.9</td><td class="leaderboard-score">27.5</td></tr>
+                    <tr><td>7</td><td>Search-R1</td><td>Mar. 2026</td><td>38.7 / 23.7</td><td>58.0 / 28.2</td><td>26.4 / 24.1</td><td>41.0</td><td class="leaderboard-score">25.3</td></tr>
+                    <tr><td>8</td><td>Terminal Agent (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>21.8 / 18.1</td><td>33.1 / 31.1</td><td>24.4 / 20.7</td><td>26.4</td><td class="leaderboard-score">23.3</td></tr>
+                    <tr><td>9</td><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>14.6 / 10.7</td><td>21.6 / 13.6</td><td>15.7 / 10.3</td><td>17.3</td><td class="leaderboard-score">11.5</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -373,15 +378,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>ChatGPT Agent Mode</td><td>2026.3.5</td><td>56.5</td><td>28.5</td><td>55.8</td><td>49.1</td><td>55.5</td><td>33.8</td></tr>
-                    <tr><td>Terminal Agent (GPT-5.2)</td><td>2026.3.5</td><td>46.3</td><td>27.3</td><td>44.1</td><td>27.2</td><td>29.7</td><td>36.4</td></tr>
-                    <tr><td>ReAct (Gemini-2.5-flash)</td><td>2026.3.5</td><td>34.9</td><td>20.4</td><td>33.0</td><td>19.1</td><td>23.4</td><td>14.8</td></tr>
-                    <tr><td>Search-R1</td><td>2026.3.5</td><td>24.9</td><td>15.7</td><td>25.8</td><td>3.8</td><td>7.2</td><td>3.9</td></tr>
-                    <tr><td>Standard RAG</td><td>2026.3.5</td><td>26.2</td><td>13.8</td><td>25.5</td><td>26.2</td><td>28.7</td><td>19.1</td></tr>
-                    <tr><td>Self RAG</td><td>2026.3.5</td><td>23.1</td><td>13.2</td><td>22.4</td><td>8.9</td><td>12.2</td><td>7.0</td></tr>
-                    <tr><td>Terminal Agent (Gemini-2.5-flash)</td><td>2026.3.5</td><td>21.0</td><td>13.7</td><td>21.1</td><td>23.3</td><td>24.7</td><td>17.2</td></tr>
-                    <tr><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>26.1</td><td>16.7</td><td>23.9</td><td>13.4</td><td>18.7</td><td>10.6</td></tr>
-                    <tr><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>2026.3.5</td><td>11.1</td><td>5.7</td><td>11.4</td><td>18.6</td><td>24.2</td><td>12.2</td></tr>
+                    <tr class="row--best"><td>ChatGPT Agent Mode</td><td>Mar. 2026</td><td>56.5</td><td>28.5</td><td>55.8</td><td>49.1</td><td>55.5</td><td>33.8</td></tr>
+                    <tr><td>Terminal Agent (GPT-5.2)</td><td>Mar. 2026</td><td>46.3</td><td>27.3</td><td>44.1</td><td>27.2</td><td>29.7</td><td>36.4</td></tr>
+                    <tr><td>ReAct (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>34.9</td><td>20.4</td><td>33.0</td><td>19.1</td><td>23.4</td><td>14.8</td></tr>
+                    <tr><td>Search-R1</td><td>Mar. 2026</td><td>24.9</td><td>15.7</td><td>25.8</td><td>3.8</td><td>7.2</td><td>3.9</td></tr>
+                    <tr><td>Standard RAG</td><td>Mar. 2026</td><td>26.2</td><td>13.8</td><td>25.5</td><td>26.2</td><td>28.7</td><td>19.1</td></tr>
+                    <tr><td>Self RAG</td><td>Mar. 2026</td><td>23.1</td><td>13.2</td><td>22.4</td><td>8.9</td><td>12.2</td><td>7.0</td></tr>
+                    <tr><td>Terminal Agent (Gemini-2.5-flash)</td><td>Mar. 2026</td><td>21.0</td><td>13.7</td><td>21.1</td><td>23.3</td><td>24.7</td><td>17.2</td></tr>
+                    <tr><td>ReAct (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>26.1</td><td>16.7</td><td>23.9</td><td>13.4</td><td>18.7</td><td>10.6</td></tr>
+                    <tr><td>Terminal Agent (Qwen3-VL-8B-Instruct)</td><td>Mar. 2026</td><td>11.1</td><td>5.7</td><td>11.4</td><td>18.6</td><td>24.2</td><td>12.2</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -394,9 +399,9 @@
       </section>
 
       <section id="profiles" class="section section--panel">
-        <div class="section-heading section-heading--overview">
+        <div class="section-heading">
           <div class="eyebrow">Profiles</div>
-          <h2>Three Archetypal Personal Computing Environments</h2>
+          <h2>Personal Computing Environments</h2>
           <p>
             Each profile instantiates a distinct personal-device environment characterized along multiple dimensions, and is paired with representative file-content statistics and factual-retention and profiling QA examples.
           </p>
@@ -432,16 +437,16 @@
           </p>
         </div>
 
-        <div class="capability-row" aria-label="Core capabilities">
-          <span>Search</span>
-          <span>Perception</span>
-          <span>Reasoning</span>
+        <div class="example-tabs" role="tablist" aria-label="Example category">
+          <button class="example-tab is-active" type="button" data-example-key="factual">Factual Retention</button>
+          <button class="example-tab" type="button" data-example-key="profiling">Profiling</button>
         </div>
 
-        <div class="task-family">
-          <div class="task-family__header">
-            <div class="eyebrow">Benchmark Task 1 Example</div>
-            <h3>Factual Retention</h3>
+        <div class="example-panel is-active" data-example-panel="factual">
+          <div class="task-family">
+            <div class="task-family__header">
+              <div class="eyebrow">Benchmark Task 1 Example</div>
+              <h3>Factual Retention</h3>
             <p>
               These benchmark examples require producing precise answers that are fully supported by file-grounded evidence under realistic filesystem "haystack" conditions.
               Evaluation emphasizes high-fidelity factual recall, structured alignment, and evidence-backed answers with minimal hallucination.
@@ -456,7 +461,7 @@
                 This instance tests precise file localization, structured fact extraction from documents, and cross-modal matching under explicit constraints.
               </p>
             </div>
-            <figure class="figure-card figure-card--subtask-dist">
+            <figure class="figure-card">
               <button
                 class="figure-button js-open-figure"
                 type="button"
@@ -501,12 +506,14 @@
               </div>
             </figure>
           </article>
+          </div>
         </div>
 
-        <div class="task-family">
-          <div class="task-family__header">
-            <div class="eyebrow">Benchmark Task 2 Example</div>
-            <h3>Profiling</h3>
+        <div class="example-panel" data-example-panel="profiling">
+          <div class="task-family">
+            <div class="task-family__header">
+              <div class="eyebrow">Benchmark Task 2 Example</div>
+              <h3>Profiling</h3>
             <p>
               These benchmark examples require inferring user-level attributes from device-resident evidence distributed across files, modalities, and time.
               Evaluation emphasizes profile consistency, correct temporal anchoring, executability of suggested actions when applicable, and traceability to grounded evidence.
@@ -527,14 +534,14 @@
                 type="button"
                 data-image="./assets/figures/9_subtasks.png"
                 data-title="Profiling Subtask Distribution"
-                data-caption="Proportions of the five profiling subtasks across the three HippoCamp profiles."
+                data-caption="Proportions of the five profiling subtasks across the three profiles."
                 data-pdf="../figs/9_subtasks.png"
               >
                 <img src="./assets/figures/9_subtasks.png" alt="Distribution of profiling subtasks in HippoCamp.">
               </button>
-              <figcaption><strong>Profiling subtask distribution.</strong> Proportions of the five profiling subtasks across the three HippoCamp profiles.</figcaption>
+              <figcaption><strong>Profiling subtask distribution.</strong> Proportions of the five profiling subtasks across the three profiles.</figcaption>
               <div class="figure-actions">
-                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/9_subtasks.png" data-title="Profiling Subtask Distribution" data-caption="Proportions of the five profiling subtasks across the three HippoCamp profiles." data-pdf="../figs/9_subtasks.png">Click To Enlarge</button>
+                <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/9_subtasks.png" data-title="Profiling Subtask Distribution" data-caption="Proportions of the five profiling subtasks across the three profiles." data-pdf="../figs/9_subtasks.png">Click To Enlarge</button>
                 <a class="button button--ghost" href="../figs/9_subtasks.png" target="_blank" rel="noopener">Open Original Figure</a>
               </div>
             </figure>
@@ -577,37 +584,37 @@
               Preferences profiling captures stable, trait-like choices that generalize across situations and requires evidence-backed abstraction from episodic traces.
             </div>
           </div>
+          </div>
         </div>
       </section>
 
-      <section class="section">
-        <article class="figure-story">
-          <div class="figure-story__copy">
-            <div class="eyebrow">Annotation Hierarchy</div>
-            <h3>Hierarchical Annotation Schema</h3>
-            <p>
-              The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory.
-              Profiling queries sit at the top, requiring long-horizon, cross-modal integration of multiple factual-retention facts into a coherent user model.
-            </p>
+      <section id="annotation" class="section">
+        <div class="section-heading">
+          <div class="eyebrow">Annotation Hierarchy</div>
+          <h2>Hierarchical Annotation Schema</h2>
+          <p>
+            The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory.
+            Profiling queries sit at the top, requiring long-horizon, cross-modal integration of multiple factual-retention facts into a coherent user model.
+          </p>
+        </div>
+
+        <figure class="figure-card" style="max-width: var(--content-width); margin-left: auto; margin-right: auto;">
+          <button
+            class="figure-button js-open-figure"
+            type="button"
+            data-image="./assets/figures/1_hierarchy.png"
+            data-title="Hierarchical Annotation Schema"
+            data-caption="The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory."
+            data-pdf="../figs/1_hierarchy.pdf"
+          >
+            <img src="./assets/figures/1_hierarchy.png" alt="Hierarchical annotation schema in HippoCamp.">
+          </button>
+          <figcaption><strong>HippoCamp hierarchical annotation schema.</strong> The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory.</figcaption>
+          <div class="figure-actions">
+            <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/1_hierarchy.png" data-title="Hierarchical Annotation Schema" data-caption="The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory." data-pdf="../figs/1_hierarchy.pdf">Click To Enlarge</button>
+            <a class="button button--ghost" href="../figs/1_hierarchy.pdf" target="_blank" rel="noopener">Open Original PDF</a>
           </div>
-          <figure class="figure-card">
-            <button
-              class="figure-button js-open-figure"
-              type="button"
-              data-image="./assets/figures/1_hierarchy.png"
-              data-title="Hierarchical Annotation Schema"
-              data-caption="The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory."
-              data-pdf="../figs/1_hierarchy.pdf"
-            >
-              <img src="./assets/figures/1_hierarchy.png" alt="Hierarchical annotation schema in HippoCamp.">
-            </button>
-            <figcaption><strong>HippoCamp hierarchical annotation schema.</strong> The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory.</figcaption>
-            <div class="figure-actions">
-              <button class="button button--ghost js-open-figure" type="button" data-image="./assets/figures/1_hierarchy.png" data-title="Hierarchical Annotation Schema" data-caption="The pyramid organizes supervision from low-level atomic grounding and action traces to structured trajectories and QA tasks, with increasing abstraction and aggregation toward user-level memory." data-pdf="../figs/1_hierarchy.pdf">Click To Enlarge</button>
-              <a class="button button--ghost" href="../figs/1_hierarchy.pdf" target="_blank" rel="noopener">Open Original PDF</a>
-            </div>
-          </figure>
-        </article>
+        </figure>
       </section>
 
       <section id="analysis" class="section">
@@ -640,19 +647,19 @@
         <div class="failure-grid">
           <article class="failure-card failure-card--rose">
             <h3>Retrieval Mismatch</h3>
-            <p>RAG-based systems often fail to distinguish user-relevant personal files from semantically related but contextually irrelevant documents.</p>
+            <p>RAG-based systems often retrieve semantically similar but contextually irrelevant documents, failing to isolate user-relevant personal files.</p>
           </article>
           <article class="failure-card failure-card--gold">
             <h3>Grounding Avoidance</h3>
-            <p>Reasoning-centric agents can locate candidates yet avoid committing to evidence-grounded answers.</p>
+            <p>Reasoning-centric agents can locate candidate evidence yet systematically avoid committing to concrete, evidence-grounded answers.</p>
           </article>
           <article class="failure-card failure-card--sky">
             <h3>Hard Evidence Hallucination</h3>
-            <p>Terminal-based agents operating in sandboxed environments frequently fabricate file paths or metadata.</p>
+            <p>Terminal-based agents in sandboxed environments frequently fabricate file paths, metadata, or non-existent content as supporting evidence.</p>
           </article>
           <article class="failure-card failure-card--sage">
             <h3>Entity Misattribution</h3>
-            <p>Even the strongest system can retrieve relevant evidence yet bind it to the wrong referent.</p>
+            <p>Even the strongest systems can retrieve correct evidence yet bind it to the wrong entity, producing plausible but incorrect answers.</p>
           </article>
         </div>
 
@@ -663,7 +670,6 @@
             <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/15_evidence.png" data-title="Evidence Breadth Distribution" data-caption="Number of ground-truth evidence files required per query, shown for each profile and overall. The distribution is heavy-tailed, with many multi-file queries beyond 20 evidence files.">
               <img src="./assets/figures/15_evidence.png" alt="Evidence breadth distribution in HippoCamp.">
             </button>
-            <p class="analysis-card__hint">Click image to enlarge</p>
           </article>
 
           <article class="analysis-card">
@@ -672,7 +678,6 @@
             <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/16_modality.png" data-title="Modality Breadth Distribution" data-caption="Number of distinct modalities required per query, shown for each profile and overall.">
               <img src="./assets/figures/16_modality.png" alt="Modality breadth distribution in HippoCamp.">
             </button>
-            <p class="analysis-card__hint">Click image to enlarge</p>
           </article>
 
           <article class="analysis-card">
@@ -681,7 +686,6 @@
             <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/17_reasoning_steps.png" data-title="Reasoning Step Distribution" data-caption="Number of annotated reasoning steps required per query for each profile and overall. The distribution peaks at medium depth (6-8 steps) with a long tail of deep multi-step queries.">
               <img src="./assets/figures/17_reasoning_steps.png" alt="Reasoning step distribution in HippoCamp.">
             </button>
-            <p class="analysis-card__hint">Click image to enlarge</p>
           </article>
 
           <article class="analysis-card">
@@ -690,7 +694,6 @@
             <button class="figure-button js-open-figure" type="button" data-image="./assets/figures/18_difficulty.png" data-title="Difficulty Distribution" data-caption="Histograms of the difficulty score for each profile and overall, with mean and median markers and task-type overlays.">
               <img src="./assets/figures/18_difficulty.png" alt="Difficulty distribution in HippoCamp.">
             </button>
-            <p class="analysis-card__hint">Click image to enlarge</p>
           </article>
         </div>
       </section>

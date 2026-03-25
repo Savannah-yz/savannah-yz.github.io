@@ -85,6 +85,18 @@ atlasTabs.forEach((button) => {
 
 setAtlasFigure("preferences");
 
+/* Example category tabs (Profiling / Factual Retention) */
+document.querySelectorAll(".example-tab").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var key = btn.dataset.exampleKey;
+    document.querySelectorAll(".example-tab").forEach(function (t) { t.classList.remove("is-active"); });
+    document.querySelectorAll(".example-panel").forEach(function (p) {
+      if (p.dataset.examplePanel === key) { p.classList.add("is-active"); } else { p.classList.remove("is-active"); }
+    });
+    btn.classList.add("is-active");
+  });
+});
+
 const leaderboardTabs = document.querySelectorAll(".leaderboard-tab");
 const leaderboardPanels = document.querySelectorAll(".leaderboard-panel");
 const leaderboardTables = document.querySelectorAll(".leaderboard-table");
