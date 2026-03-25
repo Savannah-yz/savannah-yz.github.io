@@ -87,6 +87,7 @@ setAtlasFigure("preferences");
 
 const leaderboardTabs = document.querySelectorAll(".leaderboard-tab");
 const leaderboardPanels = document.querySelectorAll(".leaderboard-panel");
+const leaderboardTables = document.querySelectorAll(".leaderboard-table");
 
 leaderboardTabs.forEach((button) => {
   button.addEventListener("click", () => {
@@ -99,6 +100,112 @@ leaderboardTabs.forEach((button) => {
       );
     });
     button.classList.add("is-active");
+  });
+});
+
+const leaderboardCollator = new Intl.Collator(undefined, {
+  numeric: true,
+  sensitivity: "base"
+});
+
+function getSortPayload(cell) {
+  const text = (cell?.textContent || "").trim().replace(/\s+/g, " ");
+  const numbers = [...text.matchAll(/-?\d+(?:\.\d+)?/g)].map((match) =>
+    Number.parseFloat(match[0])
+  );
+
+  return {
+    text,
+    textKey: text.toLowerCase(),
+    numbers
+  };
+}
+
+function isNumericLeaderboardColumn(rows, columnIndex) {
+  return rows.some((row) => {
+    const payload = getSortPayload(row.children[columnIndex]);
+    return payload.numbers.length > 0;
+  });
+}
+
+function getInitialSortDirection(header, rows, columnIndex) {
+  const label = header.textContent.trim().toLowerCase();
+  if (label === "rank") return "asc";
+  return isNumericLeaderboardColumn(rows, columnIndex) ? "desc" : "asc";
+}
+
+function compareLeaderboardRows(aRow, bRow, columnIndex, direction) {
+  const multiplier = direction === "asc" ? 1 : -1;
+  const aPayload = getSortPayload(aRow.children[columnIndex]);
+  const bPayload = getSortPayload(bRow.children[columnIndex]);
+
+  if (aPayload.numbers.length && bPayload.numbers.length) {
+    const length = Math.max(aPayload.numbers.length, bPayload.numbers.length);
+    for (let index = 0; index < length; index += 1) {
+      const aValue = aPayload.numbers[index] ?? Number.NEGATIVE_INFINITY;
+      const bValue = bPayload.numbers[index] ?? Number.NEGATIVE_INFINITY;
+      if (aValue !== bValue) {
+        return (aValue - bValue) * multiplier;
+      }
+    }
+  }
+
+  return leaderboardCollator.compare(aPayload.textKey, bPayload.textKey) * multiplier;
+}
+
+function setLeaderboardHeaderState(headers, activeHeader, direction) {
+  headers.forEach((header) => {
+    const isActive = header === activeHeader;
+    header.classList.toggle("is-sorted", isActive);
+    header.classList.toggle("is-sorted-asc", isActive && direction === "asc");
+    header.classList.toggle("is-sorted-desc", isActive && direction === "desc");
+    header.setAttribute(
+      "aria-sort",
+      isActive ? (direction === "asc" ? "ascending" : "descending") : "none"
+    );
+  });
+}
+
+leaderboardTables.forEach((table) => {
+  const headers = [...table.querySelectorAll("thead th")];
+  const tbody = table.querySelector("tbody");
+  if (!headers.length || !tbody) return;
+
+  headers.forEach((header, columnIndex) => {
+    header.classList.add("is-sortable");
+    header.setAttribute("role", "button");
+    header.setAttribute("tabindex", "0");
+    header.setAttribute("aria-sort", "none");
+
+    const handleSort = () => {
+      const rows = [...tbody.querySelectorAll("tr")];
+      const nextDirection = header.dataset.sortDirection
+        ? header.dataset.sortDirection === "asc"
+          ? "desc"
+          : "asc"
+        : getInitialSortDirection(header, rows, columnIndex);
+
+      rows
+        .sort((aRow, bRow) =>
+          compareLeaderboardRows(aRow, bRow, columnIndex, nextDirection)
+        )
+        .forEach((row) => tbody.appendChild(row));
+
+      headers.forEach((item) => {
+        if (item !== header) {
+          delete item.dataset.sortDirection;
+        }
+      });
+      header.dataset.sortDirection = nextDirection;
+      setLeaderboardHeaderState(headers, header, nextDirection);
+    };
+
+    header.addEventListener("click", handleSort);
+    header.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      handleSort();
+    });
   });
 });
 

@@ -931,7 +931,7 @@ h1 span + span {
 
 .leaderboard-summary {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin: 24px 0 4px;
 }
@@ -1025,6 +1025,41 @@ h1 span + span {
   color: var(--ink);
   font-size: 0.9rem;
   white-space: nowrap;
+}
+
+.leaderboard-table th.is-sortable {
+  position: relative;
+  padding-right: 34px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.leaderboard-table th.is-sortable::after {
+  content: "↕";
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(69, 57, 44, 0.42);
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.leaderboard-table th.is-sortable.is-sorted::after {
+  color: var(--ink);
+}
+
+.leaderboard-table th.is-sortable.is-sorted-asc::after {
+  content: "↑";
+}
+
+.leaderboard-table th.is-sortable.is-sorted-desc::after {
+  content: "↓";
+}
+
+.leaderboard-table th.is-sortable:focus-visible {
+  outline: 2px solid rgba(98, 182, 230, 0.45);
+  outline-offset: -2px;
 }
 
 .leaderboard-table tbody tr:nth-child(even) td {
