@@ -236,7 +236,7 @@
               <li><strong>Three user environments:</strong> Scores are averaged across Bei, Adam, and Victoria.</li>
               <li><strong>Composite score:</strong> The leaderboard score is the mean of overall profiling accuracy and overall factual-retention accuracy.</li>
               <li><strong>Fine-grained diagnosis:</strong> Capability-wise performance is further decomposed into search, perception, and reasoning.</li>
-              <li><strong>Method release:</strong> For entries with a separate backbone model, the release column tracks the first public release of the method or agent itself, not the backbone model.</li>
+              <li><strong>Release fields:</strong> Method Release tracks the first public release of the method or agent, while Model Release tracks the first public release of the listed backbone model.</li>
             </ul>
           </div>
 
@@ -272,9 +272,10 @@
                   <thead>
                     <tr>
                       <th>Rank</th>
+                      <th>Method Release</th>
                       <th>Method</th>
                       <th>Backbone Model</th>
-                      <th>Method Release</th>
+                      <th>Model Release</th>
                       <th>Profiling F1</th>
                       <th>Profiling Acc</th>
                       <th>Factual F1</th>
@@ -284,15 +285,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td></td><td>2025-07-17</td><td>21.0</td><td>48.3</td><td>35.3</td><td>62.8</td><td class="leaderboard-score">55.6</td><td>Most balanced overall</td></tr>
-                    <tr><td>2</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-07-17</td><td>11.1</td><td>30.0</td><td>24.6</td><td>48.2</td><td class="leaderboard-score">39.1</td><td>Strong factual retention</td></tr>
-                    <tr><td>3</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2022-10-06</td><td>18.5</td><td>20.0</td><td>26.5</td><td>38.7</td><td class="leaderboard-score">29.4</td><td>Best ReAct variant</td></tr>
-                    <tr><td>4</td><td>Standard RAG</td><td></td><td>2020-05-22</td><td>18.4</td><td>26.7</td><td>30.0</td><td>30.2</td><td class="leaderboard-score">28.5</td><td>Stable retrieval baseline</td></tr>
-                    <tr><td>5</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-07-17</td><td>15.0</td><td>25.0</td><td>26.4</td><td>23.3</td><td class="leaderboard-score">24.2</td><td>Mid-tier across both tracks</td></tr>
-                    <tr><td>6</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2022-10-06</td><td>11.8</td><td>13.5</td><td>43.1</td><td>28.5</td><td class="leaderboard-score">21.0</td><td>High factual F1, low accuracy</td></tr>
-                    <tr><td>7</td><td>Self-RAG</td><td></td><td>2023-10-17</td><td>15.2</td><td>10.0</td><td>31.9</td><td>27.5</td><td class="leaderboard-score">18.8</td><td>Weak profile grounding</td></tr>
-                    <tr><td>8</td><td>Search-R1</td><td></td><td>2025-03-12</td><td>10.8</td><td>5.0</td><td>41.0</td><td>25.3</td><td class="leaderboard-score">15.2</td><td>Search-heavy but weak inference</td></tr>
-                    <tr><td>9</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-07-17</td><td>11.6</td><td>16.7</td><td>17.3</td><td>11.5</td><td class="leaderboard-score">14.1</td><td>Lowest overall factual accuracy</td></tr>
+                    <tr class="row--best"><td>1</td><td>2025-07-17</td><td>ChatGPT Agent Mode</td><td></td><td></td><td>21.0</td><td>48.3</td><td>35.3</td><td>62.8</td><td class="leaderboard-score">55.6</td><td>Most balanced overall</td></tr>
+                    <tr><td>2</td><td>2025-07-17</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-12-11</td><td>11.1</td><td>30.0</td><td>24.6</td><td>48.2</td><td class="leaderboard-score">39.1</td><td>Strong factual retention</td></tr>
+                    <tr><td>3</td><td>2022-10-06</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>18.5</td><td>20.0</td><td>26.5</td><td>38.7</td><td class="leaderboard-score">29.4</td><td>Best ReAct variant</td></tr>
+                    <tr><td>4</td><td>2020-05-22</td><td>Standard RAG</td><td></td><td></td><td>18.4</td><td>26.7</td><td>30.0</td><td>30.2</td><td class="leaderboard-score">28.5</td><td>Stable retrieval baseline</td></tr>
+                    <tr><td>5</td><td>2025-07-17</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>15.0</td><td>25.0</td><td>26.4</td><td>23.3</td><td class="leaderboard-score">24.2</td><td>Mid-tier across both tracks</td></tr>
+                    <tr><td>6</td><td>2022-10-06</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>11.8</td><td>13.5</td><td>43.1</td><td>28.5</td><td class="leaderboard-score">21.0</td><td>High factual F1, low accuracy</td></tr>
+                    <tr><td>7</td><td>2023-10-17</td><td>Self-RAG</td><td></td><td></td><td>15.2</td><td>10.0</td><td>31.9</td><td>27.5</td><td class="leaderboard-score">18.8</td><td>Weak profile grounding</td></tr>
+                    <tr><td>8</td><td>2025-03-12</td><td>Search-R1</td><td></td><td></td><td>10.8</td><td>5.0</td><td>41.0</td><td>25.3</td><td class="leaderboard-score">15.2</td><td>Search-heavy but weak inference</td></tr>
+                    <tr><td>9</td><td>2025-07-17</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>11.6</td><td>16.7</td><td>17.3</td><td>11.5</td><td class="leaderboard-score">14.1</td><td>Lowest overall factual accuracy</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -307,9 +308,10 @@
                   <thead>
                     <tr>
                       <th>Rank</th>
+                      <th>Method Release</th>
                       <th>Method</th>
                       <th>Backbone Model</th>
-                      <th>Method Release</th>
+                      <th>Model Release</th>
                       <th>Bei F1 / Acc</th>
                       <th>Adam F1 / Acc</th>
                       <th>Victoria F1 / Acc</th>
@@ -318,15 +320,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td></td><td>2025-07-17</td><td>23.8 / 35.0</td><td>22.7 / 55.0</td><td>16.7 / 55.0</td><td>21.0</td><td class="leaderboard-score">48.3</td></tr>
-                    <tr><td>2</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-07-17</td><td>8.1 / 15.0</td><td>14.9 / 45.0</td><td>10.5 / 30.0</td><td>11.1</td><td class="leaderboard-score">30.0</td></tr>
-                    <tr><td>3</td><td>Standard RAG</td><td></td><td>2020-05-22</td><td>13.7 / 10.0</td><td>20.8 / 35.0</td><td>20.6 / 35.0</td><td>18.4</td><td class="leaderboard-score">26.7</td></tr>
-                    <tr><td>4</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-07-17</td><td>9.0 / 5.0</td><td>17.0 / 45.0</td><td>19.0 / 25.0</td><td>15.0</td><td class="leaderboard-score">25.0</td></tr>
-                    <tr><td>5</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2022-10-06</td><td>13.7 / 10.0</td><td>21.4 / 25.0</td><td>20.5 / 25.0</td><td>18.5</td><td class="leaderboard-score">20.0</td></tr>
-                    <tr><td>6</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-07-17</td><td>5.4 / 0.0</td><td>16.3 / 25.0</td><td>13.2 / 25.0</td><td>11.6</td><td class="leaderboard-score">16.7</td></tr>
-                    <tr><td>7</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2022-10-06</td><td>5.5 / 5.6</td><td>17.8 / 25.0</td><td>12.2 / 10.0</td><td>11.8</td><td class="leaderboard-score">13.5</td></tr>
-                    <tr><td>8</td><td>Self-RAG</td><td></td><td>2023-10-17</td><td>13.8 / 5.0</td><td>16.0 / 25.0</td><td>15.9 / 0.0</td><td>15.2</td><td class="leaderboard-score">10.0</td></tr>
-                    <tr><td>9</td><td>Search-R1</td><td></td><td>2025-03-12</td><td>6.6 / 0.0</td><td>16.5 / 15.0</td><td>9.4 / 0.0</td><td>10.8</td><td class="leaderboard-score">5.0</td></tr>
+                    <tr class="row--best"><td>1</td><td>2025-07-17</td><td>ChatGPT Agent Mode</td><td></td><td></td><td>23.8 / 35.0</td><td>22.7 / 55.0</td><td>16.7 / 55.0</td><td>21.0</td><td class="leaderboard-score">48.3</td></tr>
+                    <tr><td>2</td><td>2025-07-17</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-12-11</td><td>8.1 / 15.0</td><td>14.9 / 45.0</td><td>10.5 / 30.0</td><td>11.1</td><td class="leaderboard-score">30.0</td></tr>
+                    <tr><td>3</td><td>2020-05-22</td><td>Standard RAG</td><td></td><td></td><td>13.7 / 10.0</td><td>20.8 / 35.0</td><td>20.6 / 35.0</td><td>18.4</td><td class="leaderboard-score">26.7</td></tr>
+                    <tr><td>4</td><td>2025-07-17</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>9.0 / 5.0</td><td>17.0 / 45.0</td><td>19.0 / 25.0</td><td>15.0</td><td class="leaderboard-score">25.0</td></tr>
+                    <tr><td>5</td><td>2022-10-06</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>13.7 / 10.0</td><td>21.4 / 25.0</td><td>20.5 / 25.0</td><td>18.5</td><td class="leaderboard-score">20.0</td></tr>
+                    <tr><td>6</td><td>2025-07-17</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>5.4 / 0.0</td><td>16.3 / 25.0</td><td>13.2 / 25.0</td><td>11.6</td><td class="leaderboard-score">16.7</td></tr>
+                    <tr><td>7</td><td>2022-10-06</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>5.5 / 5.6</td><td>17.8 / 25.0</td><td>12.2 / 10.0</td><td>11.8</td><td class="leaderboard-score">13.5</td></tr>
+                    <tr><td>8</td><td>2023-10-17</td><td>Self-RAG</td><td></td><td></td><td>13.8 / 5.0</td><td>16.0 / 25.0</td><td>15.9 / 0.0</td><td>15.2</td><td class="leaderboard-score">10.0</td></tr>
+                    <tr><td>9</td><td>2025-03-12</td><td>Search-R1</td><td></td><td></td><td>6.6 / 0.0</td><td>16.5 / 15.0</td><td>9.4 / 0.0</td><td>10.8</td><td class="leaderboard-score">5.0</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -341,9 +343,10 @@
                   <thead>
                     <tr>
                       <th>Rank</th>
+                      <th>Method Release</th>
                       <th>Method</th>
                       <th>Backbone Model</th>
-                      <th>Method Release</th>
+                      <th>Model Release</th>
                       <th>Bei F1 / Acc</th>
                       <th>Adam F1 / Acc</th>
                       <th>Victoria F1 / Acc</th>
@@ -352,15 +355,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>1</td><td>ChatGPT Agent Mode</td><td></td><td>2025-07-17</td><td>20.4 / 31.2</td><td>56.2 / 90.3</td><td>29.3 / 67.0</td><td>35.3</td><td class="leaderboard-score">62.8</td></tr>
-                    <tr><td>2</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-07-17</td><td>13.0 / 29.8</td><td>31.6 / 59.2</td><td>29.0 / 55.7</td><td>24.6</td><td class="leaderboard-score">48.2</td></tr>
-                    <tr><td>3</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2022-10-06</td><td>26.9 / 24.2</td><td>35.7 / 55.3</td><td>17.0 / 36.4</td><td>26.5</td><td class="leaderboard-score">38.7</td></tr>
-                    <tr><td>4</td><td>Standard RAG</td><td></td><td>2020-05-22</td><td>29.7 / 24.2</td><td>39.7 / 42.7</td><td>20.5 / 23.6</td><td>30.0</td><td class="leaderboard-score">30.2</td></tr>
-                    <tr><td>5</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2022-10-06</td><td>42.4 / 26.1</td><td>60.4 / 37.9</td><td>26.5 / 21.7</td><td>43.1</td><td class="leaderboard-score">28.5</td></tr>
-                    <tr><td>6</td><td>Self-RAG</td><td></td><td>2023-10-17</td><td>33.9 / 26.1</td><td>41.5 / 38.8</td><td>20.2 / 17.7</td><td>31.9</td><td class="leaderboard-score">27.5</td></tr>
-                    <tr><td>7</td><td>Search-R1</td><td></td><td>2025-03-12</td><td>38.7 / 23.7</td><td>58.0 / 28.2</td><td>26.4 / 24.1</td><td>41.0</td><td class="leaderboard-score">25.3</td></tr>
-                    <tr><td>8</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-07-17</td><td>21.8 / 18.1</td><td>33.1 / 31.1</td><td>24.4 / 20.7</td><td>26.4</td><td class="leaderboard-score">23.3</td></tr>
-                    <tr><td>9</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-07-17</td><td>14.6 / 10.7</td><td>21.6 / 13.6</td><td>15.7 / 10.3</td><td>17.3</td><td class="leaderboard-score">11.5</td></tr>
+                    <tr class="row--best"><td>1</td><td>2025-07-17</td><td>ChatGPT Agent Mode</td><td></td><td></td><td>20.4 / 31.2</td><td>56.2 / 90.3</td><td>29.3 / 67.0</td><td>35.3</td><td class="leaderboard-score">62.8</td></tr>
+                    <tr><td>2</td><td>2025-07-17</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-12-11</td><td>13.0 / 29.8</td><td>31.6 / 59.2</td><td>29.0 / 55.7</td><td>24.6</td><td class="leaderboard-score">48.2</td></tr>
+                    <tr><td>3</td><td>2022-10-06</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>26.9 / 24.2</td><td>35.7 / 55.3</td><td>17.0 / 36.4</td><td>26.5</td><td class="leaderboard-score">38.7</td></tr>
+                    <tr><td>4</td><td>2020-05-22</td><td>Standard RAG</td><td></td><td></td><td>29.7 / 24.2</td><td>39.7 / 42.7</td><td>20.5 / 23.6</td><td>30.0</td><td class="leaderboard-score">30.2</td></tr>
+                    <tr><td>5</td><td>2022-10-06</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>42.4 / 26.1</td><td>60.4 / 37.9</td><td>26.5 / 21.7</td><td>43.1</td><td class="leaderboard-score">28.5</td></tr>
+                    <tr><td>6</td><td>2023-10-17</td><td>Self-RAG</td><td></td><td></td><td>33.9 / 26.1</td><td>41.5 / 38.8</td><td>20.2 / 17.7</td><td>31.9</td><td class="leaderboard-score">27.5</td></tr>
+                    <tr><td>7</td><td>2025-03-12</td><td>Search-R1</td><td></td><td></td><td>38.7 / 23.7</td><td>58.0 / 28.2</td><td>26.4 / 24.1</td><td>41.0</td><td class="leaderboard-score">25.3</td></tr>
+                    <tr><td>8</td><td>2025-07-17</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>21.8 / 18.1</td><td>33.1 / 31.1</td><td>24.4 / 20.7</td><td>26.4</td><td class="leaderboard-score">23.3</td></tr>
+                    <tr><td>9</td><td>2025-07-17</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>14.6 / 10.7</td><td>21.6 / 13.6</td><td>15.7 / 10.3</td><td>17.3</td><td class="leaderboard-score">11.5</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -374,9 +377,10 @@
                 <table class="leaderboard-table">
                   <thead>
                     <tr>
+                      <th>Method Release</th>
                       <th>Method</th>
                       <th>Backbone Model</th>
-                      <th>Method Release</th>
+                      <th>Model Release</th>
                       <th>Profiling Search Acc</th>
                       <th>Profiling Perception Acc</th>
                       <th>Profiling Reasoning Acc</th>
@@ -386,15 +390,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="row--best"><td>ChatGPT Agent Mode</td><td></td><td>2025-07-17</td><td>56.5</td><td>28.5</td><td>55.8</td><td>49.1</td><td>55.5</td><td>33.8</td></tr>
-                    <tr><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-07-17</td><td>46.3</td><td>27.3</td><td>44.1</td><td>27.2</td><td>29.7</td><td>36.4</td></tr>
-                    <tr><td>ReAct</td><td>Gemini-2.5-flash</td><td>2022-10-06</td><td>34.9</td><td>20.4</td><td>33.0</td><td>19.1</td><td>23.4</td><td>14.8</td></tr>
-                    <tr><td>Search-R1</td><td></td><td>2025-03-12</td><td>24.9</td><td>15.7</td><td>25.8</td><td>3.8</td><td>7.2</td><td>3.9</td></tr>
-                    <tr><td>Standard RAG</td><td></td><td>2020-05-22</td><td>26.2</td><td>13.8</td><td>25.5</td><td>26.2</td><td>28.7</td><td>19.1</td></tr>
-                    <tr><td>Self-RAG</td><td></td><td>2023-10-17</td><td>23.1</td><td>13.2</td><td>22.4</td><td>8.9</td><td>12.2</td><td>7.0</td></tr>
-                    <tr><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-07-17</td><td>21.0</td><td>13.7</td><td>21.1</td><td>23.3</td><td>24.7</td><td>17.2</td></tr>
-                    <tr><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2022-10-06</td><td>26.1</td><td>16.7</td><td>23.9</td><td>13.4</td><td>18.7</td><td>10.6</td></tr>
-                    <tr><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-07-17</td><td>11.1</td><td>5.7</td><td>11.4</td><td>18.6</td><td>24.2</td><td>12.2</td></tr>
+                    <tr class="row--best"><td>2025-07-17</td><td>ChatGPT Agent Mode</td><td></td><td></td><td>56.5</td><td>28.5</td><td>55.8</td><td>49.1</td><td>55.5</td><td>33.8</td></tr>
+                    <tr><td>2025-07-17</td><td>Terminal Agent</td><td>GPT-5.2</td><td>2025-12-11</td><td>46.3</td><td>27.3</td><td>44.1</td><td>27.2</td><td>29.7</td><td>36.4</td></tr>
+                    <tr><td>2022-10-06</td><td>ReAct</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>34.9</td><td>20.4</td><td>33.0</td><td>19.1</td><td>23.4</td><td>14.8</td></tr>
+                    <tr><td>2025-03-12</td><td>Search-R1</td><td></td><td></td><td>24.9</td><td>15.7</td><td>25.8</td><td>3.8</td><td>7.2</td><td>3.9</td></tr>
+                    <tr><td>2020-05-22</td><td>Standard RAG</td><td></td><td></td><td>26.2</td><td>13.8</td><td>25.5</td><td>26.2</td><td>28.7</td><td>19.1</td></tr>
+                    <tr><td>2023-10-17</td><td>Self-RAG</td><td></td><td></td><td>23.1</td><td>13.2</td><td>22.4</td><td>8.9</td><td>12.2</td><td>7.0</td></tr>
+                    <tr><td>2025-07-17</td><td>Terminal Agent</td><td>Gemini-2.5-flash</td><td>2025-04-17</td><td>21.0</td><td>13.7</td><td>21.1</td><td>23.3</td><td>24.7</td><td>17.2</td></tr>
+                    <tr><td>2022-10-06</td><td>ReAct</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>26.1</td><td>16.7</td><td>23.9</td><td>13.4</td><td>18.7</td><td>10.6</td></tr>
+                    <tr><td>2025-07-17</td><td>Terminal Agent</td><td>Qwen3-30B-A3B</td><td>2025-04-29</td><td>11.1</td><td>5.7</td><td>11.4</td><td>18.6</td><td>24.2</td><td>12.2</td></tr>
                   </tbody>
                 </table>
               </div>
