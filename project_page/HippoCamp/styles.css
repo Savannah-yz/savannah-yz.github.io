@@ -539,6 +539,20 @@ h1 span + span {
   font-size: 1rem;
 }
 
+.citation-card pre {
+  min-height: 132px;
+  margin: 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px dashed rgba(52, 111, 209, 0.22);
+  background: rgba(255, 255, 255, 0.66);
+  font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
+  font-size: 0.94rem;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
 .figure-actions {
   display: none;
 }
