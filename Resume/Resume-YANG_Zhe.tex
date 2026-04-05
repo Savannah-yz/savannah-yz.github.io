@@ -1,0 +1,173 @@
+\documentclass[a4paper,11pt]{article}
+
+% ---- Packages ----
+\usepackage[top=0.6in, bottom=0.6in, left=0.75in, right=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% ---- Style Settings ----
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.05}
+
+% Section formatting: small caps style with rule
+\titleformat{\section}{\vspace{2pt}\large\bfseries\scshape}{}{0em}{}[\vspace{-6pt}\rule{\textwidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{12pt}{5pt}
+
+% List settings
+\setlist[itemize]{topsep=3pt, itemsep=2pt, parsep=1pt, leftmargin=1.5em, label=\textbullet}
+
+% Colors
+\definecolor{linkcolor}{HTML}{2255AA}
+\hypersetup{colorlinks=true, urlcolor=linkcolor, linkcolor=linkcolor}
+
+% ---- Publication helper ----
+\newcommand{\pubentry}[5]{%
+  % #1=title, #2=authors, #3=description, #4=venue, #5=status
+  \item \begin{minipage}[t]{0.78\linewidth}
+    \textbf{#1} \\[1pt]
+    #2 \\[1pt]
+    \textit{#3}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.18\linewidth}
+    \raggedleft
+    \textbf{#4} \\ #5
+  \end{minipage}
+  \vspace{2pt}
+}
+
+% ---- Experience helper ----
+\newcommand{\expentry}[4]{%
+  % #1=org, #2=date, #3=role, #4=keywords
+  \item \textbf{#1} \hfill #2 \\
+    \textit{#3} \\
+    #4
+}
+
+% ============================================================
+\begin{document}
+
+% ---- Header ----
+\begin{center}
+  {\LARGE\bfseries ZHE YANG} \\[4pt]
+  \faPhone\ +65 8264 4077 \quad $|$ \quad
+  \faEnvelope\ \href{mailto:zhe012@e.ntu.edu.sg}{zhe012@e.ntu.edu.sg} \quad $|$ \quad
+  \faHome\ \href{https://savannah-yz.github.io/}{Homepage}
+\end{center}
+
+% ---- Education ----
+\section{Education}
+
+\textbf{Nanyang Technological University} \hfill Sep.\ 2025 -- Present \\
+\textit{Master of Science in Artificial Intelligence (MSAI)} \hfill \textit{Singapore}
+\begin{itemize}
+  \item GPA: \textbf{5.0}\,/\,5.0
+  \item Advisor: Prof. Ziwei Liu
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{The Chinese University of Hong Kong} \hfill Sep.\ 2021 -- May 2025 \\
+\textit{B.Sc.\ in Computer Science (First Class Honor)} \hfill \textit{Hong Kong SAR, China}
+\begin{itemize}
+  \item Major GPA: \textbf{3.802}\,/\,4.000 (top 5\%)
+  \item Advisor: Prof. Michael R.\ Lyu
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Peking University} \hfill July 2023 \\
+\textit{Summer School (Grade: 94)} \hfill \textit{Beijing, China}
+
+% ---- Experience ----
+\section{Experience}
+
+\begin{itemize}[itemsep=6pt]
+  \expentry{MMLab, Nanyang Technological University}{Sep.\ 2025 -- Present}%
+    {Research Intern, advised by Prof.\ Ziwei Liu}%
+    {Multimodal Agents, Contextual Benchmarking, Personalized File-System Memory}
+
+  \expentry{ARISE Lab, The Chinese University of Hong Kong}{Jun.\ 2024 -- May 2025}%
+    {Research Intern, advised by Prof.\ Michael R.\ Lyu}%
+    {LLM Memorization, Data Privacy, Tokenization Security}
+
+  \expentry{Geovis Technology Co., Ltd}{Jul.\ 2024 -- Aug.\ 2024}%
+    {Algorithm Intern, Product Research \& Development Department}%
+    {Knowledge Graph, Model Fine-tuning, Neo4j, Automated Data Acquisition}
+
+  \expentry{Online Research Seminar}{Feb.\ 2024 -- Mar.\ 2024}%
+    {Research Participant, advised by Prof.\ Dejan Markovi\'{c}}%
+    {EEG Signal Processing, Disease Onset Prediction}
+
+  \expentry{IDEA Lab, The Chinese University of Hong Kong}{Jun.\ 2023 -- Sep.\ 2023}%
+    {Research Intern, advised by Prof.\ Tsung-Yi Ho}%
+    {Adversarial Attacks, Facial Recognition Robustness}
+\end{itemize}
+
+% ---- Publications & Manuscripts ----
+\section{Publications}
+
+\begin{itemize}[itemsep=6pt]
+  \pubentry{HippoCamp: Benchmarking Contextual Agents on Personal Computers}%
+    {\textbf{Zhe Yang}, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen, Yichi Zhang, Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy, and Ziwei Liu.}%
+    {A benchmark for evaluating agents' capabilities on multimodal file management in user-centric environments to model individual user profiles and search from massive personal files for context-aware reasoning.}%
+    {ECCV 2026}{Under Review}
+
+  \pubentry{FileGram: Grounding Agent Personalization in File-System Behavioral Traces}%
+    {Shuai Liu, Shulin Tian, Kairui Hu, Yuhao Dong, \textbf{Zhe Yang}, Bo Li, Jingkang Yang, Chen Change Loy, and Ziwei Liu.}%
+    {A framework grounding agent personalization in file-system behavioral traces with a scalable data engine and bottom-up memory architecture.}%
+    {ECCV 2026}{Under Review}
+
+  \pubentry{Data Compressibility Quantifies LLM Memorization}%
+    {Yizhan Huang, \textbf{Zhe Yang}, Meifang Chen, Nianchen Huang, Jianping Zhang, and Michael R.\ Lyu.}%
+    {A compressibility-based framework to quantify and characterize data memorization in LLMs.}%
+    {TMLR}{Under Review}
+
+  \pubentry{Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective}%
+    {Meifang Chen, \textbf{Zhe Yang}, Nianchen Huang, Yizhan Huang, Yichen Li, Zihan Li, and Michael R.\ Lyu.}%
+    {Revealed that BPE tokenization creates ``Gibberish Bias'' that increases secret memorization and leakage risks in Code LLMs.}%
+    {ACL 2025}{Findings \\ \textbf{NeurIPS 2025} \\ DL4C Workshop}
+
+  \pubentry{RAUIE: A Relation-Augmented Document-level Event Extraction Model Based on UIE}%
+    {Y.\ Liang, H.\ Jia, L.\ Wang, Y.\ Huang, and \textbf{Zhe Yang}.}%
+    {Introduced entity relationships into prompts via prompt-based learning and designed a relation-augmentation algorithm to improve document-level event extraction on long-tail distributions.}%
+    {AINIT 2024}{}
+
+  % \pubentry{Fatigue Driving Detection Technology Based on EEG Signal}%
+  %   {\textbf{Zhe Yang}.}%
+  %   {Developed an EEG-based fatigue driving detection approach leveraging signal processing and machine learning techniques.}%
+  %   {AIDML 2024}{}
+\end{itemize}
+
+% ---- Honors ----
+\section{Honors \& Awards}
+
+\begin{itemize}[itemsep=3pt]
+  \item \textbf{HKSAR Government Scholarship} (Top 1\% in Hong Kong) \hfill 2025
+  \item \textbf{Silver Award for Outstanding Academic Performance} (Top 3\%, CUHK) \hfill 2024
+  \item \textbf{Dean's List} (2022--2025, top 10\% in the department), CUHK \hfill 2022--2025
+  \item CUHK Student Envoy \hfill 2021
+\end{itemize}
+
+% % ---- Skills ----
+\section{Skills}
+
+\textbf{Programming:} Python, C/C++, Java, HTML, R, MATLAB, RISC-V Assembly \\[2pt]
+\textbf{Frameworks \& Tools:} PyTorch, MySQL, Neo4j, Linux, Git, \LaTeX, Figma, Canva \\[2pt]
+\textbf{Languages:} Mandarin (Native), English (GRE: 322)
+
+% % ---- Activities ----
+% \section{Activities \& Service}
+
+% \begin{itemize}[itemsep=3pt]
+%   \item \textbf{Shaw College Mainland Student Union}, Propagandist --- Designed promotional materials (500+ downloads, 1000+ shares); organized events increasing participation by 30\%.
+%   \item \textbf{Independence Times Electronic Magazine}, Art Editor --- Led social media campaigns, designed 30+ posters, managed 10+ articles.
+%   \item \textbf{Three Heart Club}, Promotion Officer --- Achieved 2,200 views on key post and 300+ new followers through public welfare campaigns.
+% \end{itemize}
+
+\end{document}
