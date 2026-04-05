@@ -381,10 +381,74 @@ img {
 }
 
 /* ============ ABOUT ============ */
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(220px, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+
 .about-content {
   color: var(--text-1);
   font-family: var(--font-sans);
-  max-width: 68ch;
+}
+
+.about-aside {
+  padding: 22px 24px 24px;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+.aside-block {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.aside-block:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.aside-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.aside-line {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-0);
+}
+
+.aside-line strong {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text-0);
+}
+
+.aside-line--spaced {
+  margin-top: 10px;
+}
+
+.aside-sub {
+  margin: 1px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-2);
+  letter-spacing: 0.01em;
 }
 
 .about-content p {
@@ -819,6 +883,11 @@ img {
 
   .hero-name {
     font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .pub-container {
