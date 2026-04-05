@@ -313,6 +313,15 @@ img {
 
 .hero-contact {
   margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-contact-sep {
+  color: var(--text-2);
+  font-family: var(--font-mono);
 }
 
 .hero-email {
