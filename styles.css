@@ -373,38 +373,67 @@ img {
 /* ============ ABOUT ============ */
 .about-content {
   color: var(--text-1);
+  font-family: var(--font-sans);
+  max-width: 68ch;
 }
 
 .about-content p {
-  margin-bottom: 12px;
-  font-size: 0.98rem;
-  line-height: 1.72;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  line-height: 1.78;
 }
 
 .about-content p:last-child {
   margin-bottom: 0;
 }
 
-.about-content a {
-  color: var(--text-0);
+.about-content > p:first-of-type::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.4rem;
+  font-weight: 700;
+  float: left;
+  line-height: 0.88;
+  padding: 6px 10px 0 0;
+  color: var(--accent);
+}
+
+.about-content a,
+.about-content strong {
+  font-family: var(--font-sans);
   font-weight: 600;
-  border-bottom: 1px solid var(--accent-dim);
-  transition: border-color 0.2s;
+  color: var(--text-0);
+  font-style: normal;
+}
+
+.about-content a {
+  background-image: linear-gradient(transparent 62%, var(--accent-dim) 62%, var(--accent-dim) 92%, transparent 92%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-image 0.25s ease, color 0.25s ease;
+  padding: 0 2px;
 }
 
 .about-content a:hover {
   color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-.about-content strong {
-  color: var(--text-0);
-  font-weight: 600;
+  background-image: linear-gradient(transparent 0%, var(--accent-dim) 0%, var(--accent-dim) 100%, transparent 100%);
 }
 
 .research-highlight {
+  font-family: var(--font-serif) !important;
+  font-style: italic;
+  font-size: 1.18rem !important;
+  line-height: 1.55 !important;
   color: var(--text-0) !important;
-  font-size: 1.02rem;
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--accent);
+  margin-top: 22px !important;
+}
+
+.research-highlight strong {
+  font-family: var(--font-serif) !important;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 /* ============ PUBLICATIONS GRID ============ */
