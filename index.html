@@ -6,14 +6,17 @@
   <title>Zhe Yang</title>
   <meta name="description" content="Personal website of Zhe Yang, MSAI student at NTU researching multimodal agents, personalized AI systems, and LLM memorization, privacy, and tokenization security.">
   <link rel="icon" type="image/png" href="./yangzhe.png?v=2">
-  <link rel="stylesheet" href="./styles.css?v=20260405c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20260405d">
 </head>
 <body>
   <div class="site-shell">
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="#top" aria-label="Zhe Yang homepage">
-          <img class="brand__logo" src="./yangzhe.png" alt="Zhe Yang logo" width="40" height="40">
+          <img class="brand__logo" src="./yangzhe.png" alt="Zhe Yang logo" width="32" height="32">
           <span>Zhe Yang</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
@@ -28,108 +31,84 @@
 
     <main id="top">
       <section class="hero">
+        <img class="hero__photo" src="./assets/yangzhe.JPG" alt="Portrait of Zhe Yang">
         <div class="hero__content">
-          <div class="hero__eyebrow">Academic Homepage</div>
           <h1>Zhe Yang</h1>
+          <p class="hero__tagline">MSAI @ Nanyang Technological University</p>
           <p class="hero__lead">
-            Master's student in <strong>Artificial Intelligence (MSAI)</strong> at
+            I am a Master's student in <strong>Artificial Intelligence</strong> at
             <strong>Nanyang Technological University</strong>, researching
             <strong>contextual multimodal agents</strong>, <strong>agent personalization</strong>,
             and <strong>memory-grounded AI</strong> with <strong>Prof. Ziwei Liu</strong> at MMLab.
-            Previously, I received my <strong>B.Sc. in Computer Science with First Class Honor</strong>
-            from <strong>CUHK</strong>, working with <strong>Prof. Michael R. Lyu</strong> on
-            LLM memorization, privacy, and tokenization security.
+            Previously, I received my <strong>B.Sc. in Computer Science</strong> with
+            <strong>First Class Honor</strong> from <strong>CUHK</strong>, working with
+            <strong>Prof. Michael R. Lyu</strong> on LLM memorization, privacy, and
+            tokenization security.
           </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="mailto:zhe012@e.ntu.edu.sg">Email</a>
-            <a class="button button--secondary" href="./assets/Resume-YANG_Zhe.pdf" target="_blank" rel="noopener">CV</a>
-            <a class="button button--secondary" href="#publications">Publications</a>
+          <div class="hero__links">
+            <a href="mailto:zhe012@e.ntu.edu.sg">Email</a>
+            <a href="./assets/Resume-YANG_Zhe.pdf" target="_blank" rel="noopener">CV</a>
+            <a href="https://scholar.google.com/" target="_blank" rel="noopener">Scholar</a>
+            <a href="https://github.com/Savannah-yz" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
-
-        <aside class="hero__card" aria-label="Profile summary">
-          <div class="avatar-orb">
-            <div class="avatar-orb__ring avatar-orb__ring--outer"></div>
-            <div class="avatar-orb__ring avatar-orb__ring--inner"></div>
-            <img class="avatar-orb__photo" src="./assets/yangzhe.JPG" alt="Portrait of Zhe Yang">
-          </div>
-
-          <div class="hero-card__block">
-            <span class="mini-label">Research Themes</span>
-            <p>Contextual multimodal agents</p>
-            <p>Personal AI and memory systems</p>
-            <p>LLM memorization and privacy</p>
-          </div>
-
-          <div class="hero-card__block">
-            <span class="mini-label">Current Profile</span>
-            <p>Master of Science in AI, NTU</p>
-            <p>GPA 5.0 / 5.0</p>
-            <p>Research with Prof. Ziwei Liu</p>
-          </div>
-
-          <div class="hero-card__block">
-            <span class="mini-label">Background</span>
-            <p>B.Sc. in Computer Science, CUHK</p>
-            <p>First Class Honor, top 5% major GPA</p>
-            <p>Research with Prof. Michael R. Lyu</p>
-          </div>
-        </aside>
       </section>
 
       <section id="about" class="section">
         <div class="section-heading">
-          <span class="section-kicker">Background</span>
-          <h2>Education &amp; Skills</h2>
+          <span class="section-number">01</span>
+          <h2>Background</h2>
         </div>
 
-        <div class="about-grid about-grid--compact">
-          <div class="about-card">
-            <span class="mini-label">Education</span>
-            <ul class="detail-list">
-              <li><strong>2025.09 - Present</strong> M.S. in Artificial Intelligence, NTU</li>
-              <li><strong>2021.09 - 2025.05</strong> B.Sc. in Computer Science, CUHK</li>
-              <li><strong>2023.07</strong> Summer School, Peking University (Grade: 94)</li>
+        <div class="about-grid">
+          <div class="about-block">
+            <span class="about-block__label">Education</span>
+            <ul>
+              <li><strong>2025.09 – Now</strong> M.S. in Artificial Intelligence, NTU</li>
+              <li><strong>2021.09 – 2025.05</strong> B.Sc. in Computer Science, CUHK</li>
+              <li><strong>2023.07</strong> Summer School, Peking University</li>
             </ul>
           </div>
 
-          <div class="about-card">
-            <span class="mini-label">Skills</span>
-            <ul class="detail-list">
-              <li>Python, C/C++, Java, HTML, R, MATLAB, RISC-V Assembly</li>
-              <li>PyTorch, Neo4j, MySQL, Linux, Git</li>
-              <li>LaTeX, Figma, Canva</li>
-              <li>Mandarin (native), English (GRE 322)</li>
+          <div class="about-block">
+            <span class="about-block__label">Skills</span>
+            <ul>
+              <li><strong>Languages</strong> Python, C/C++, Java, R, MATLAB</li>
+              <li><strong>Tools</strong> PyTorch, Neo4j, MySQL, Linux, Git, LaTeX</li>
+              <li><strong>Spoken</strong> Mandarin (native), English (GRE 322)</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section id="publications" class="section section--tint">
+      <section id="publications" class="section">
         <div class="section-heading">
-          <span class="section-kicker">Publications</span>
-          <h2>Papers</h2>
+          <span class="section-number">02</span>
+          <h2>Publications</h2>
         </div>
 
         <div class="publication-list">
-          <article class="publication-entry publication-entry--featured">
+          <article class="publication-entry">
             <div class="publication-media">
               <img src="./project_page/HippoCamp/assets/figures/hippo_teaser.png" alt="HippoCamp teaser figure">
             </div>
             <div class="publication-body">
               <h3>HippoCamp: Benchmarking Contextual Agents on Personal Computers</h3>
               <p class="publication-authors">
-                Zhe Yang, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen, Yichi Zhang,
-                Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy, and Ziwei Liu.
+                <span class="me">Zhe Yang</span>, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen,
+                Yichi Zhang, Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy,
+                and Ziwei Liu.
+              </p>
+              <p class="publication-venue">
+                <span class="pub-badge pub-badge--review">Under Review</span>
               </p>
               <div class="publication-links">
-                <a href="https://hippocamp-ai.github.io/" target="_blank" rel="noopener">🌐 Project Page</a>
-                <a href="https://huggingface.co/papers/2604.01221" target="_blank" rel="noopener">📄 Paper</a>
-                <a href="https://github.com/Savannah-yz/HippoCamp" target="_blank" rel="noopener">💻 GitHub</a>
-                <a href="https://huggingface.co/datasets/MMMem-org/HippoCamp" target="_blank" rel="noopener">📦 Dataset</a>
-                <a href="https://youtu.be/ed-v_nhoaR4" target="_blank" rel="noopener">🎬 Demo Video</a>
+                <a href="https://hippocamp-ai.github.io/" target="_blank" rel="noopener">Project</a>
+                <a href="https://huggingface.co/papers/2604.01221" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/Savannah-yz/HippoCamp" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://huggingface.co/datasets/MMMem-org/HippoCamp" target="_blank" rel="noopener">Dataset</a>
+                <a href="https://youtu.be/ed-v_nhoaR4" target="_blank" rel="noopener">Video</a>
               </div>
-              <p class="publication-area">Area: multimodal agents, contextual reasoning, personalized AI</p>
             </div>
           </article>
 
@@ -138,7 +117,7 @@
               <div class="publication-thumb publication-thumb--trace">
                 <span class="publication-thumb__mono">FG</span>
                 <div class="publication-thumb__foot">
-                  <span class="publication-thumb__kicker">Agent Personalization</span>
+                  <span class="publication-thumb__kicker">Personalization</span>
                   <strong class="publication-thumb__title">FileGram</strong>
                 </div>
               </div>
@@ -146,13 +125,12 @@
             <div class="publication-body">
               <h3>FileGram: Grounding Agent Personalization in File-System Behavioral Traces</h3>
               <p class="publication-authors">
-                Shuai Liu, Shulin Tian, Kairui Hu, Yuhao Dong, Zhe Yang, Bo Li, Jingkang Yang,
-                Chen Change Loy, and Ziwei Liu.
+                Shuai Liu, Shulin Tian, Kairui Hu, Yuhao Dong, <span class="me">Zhe Yang</span>,
+                Bo Li, Jingkang Yang, Chen Change Loy, and Ziwei Liu.
               </p>
               <p class="publication-venue">
                 <span class="pub-badge pub-badge--review">Under Review</span>
               </p>
-              <p class="publication-area">Area: agent personalization, memory systems, file-system behavioral traces</p>
             </div>
           </article>
 
@@ -161,7 +139,7 @@
               <div class="publication-thumb publication-thumb--memory">
                 <span class="publication-thumb__mono">DC</span>
                 <div class="publication-thumb__foot">
-                  <span class="publication-thumb__kicker">LLM Memorization</span>
+                  <span class="publication-thumb__kicker">Memorization</span>
                   <strong class="publication-thumb__title">Compressibility</strong>
                 </div>
               </div>
@@ -169,12 +147,12 @@
             <div class="publication-body">
               <h3>Data Compressibility Quantifies LLM Memorization</h3>
               <p class="publication-authors">
-                Yizhan Huang, Zhe Yang, Meifang Chen, Nianchen Huang, Jianping Zhang, and Michael R. Lyu.
+                Yizhan Huang, <span class="me">Zhe Yang</span>, Meifang Chen, Nianchen Huang,
+                Jianping Zhang, and Michael R. Lyu.
               </p>
               <p class="publication-venue">
                 <span class="pub-badge pub-badge--review">Under Review</span>
               </p>
-              <p class="publication-area">Area: LLM memorization, data privacy, empirical characterization</p>
             </div>
           </article>
 
@@ -185,17 +163,16 @@
             <div class="publication-body">
               <h3>Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective</h3>
               <p class="publication-authors">
-                Meifang Chen, Zhe Yang, Nianchen Huang, Yizhan Huang, Yichen Li, Zihan Li,
-                and Michael R. Lyu.
+                Meifang Chen, <span class="me">Zhe Yang</span>, Nianchen Huang, Yizhan Huang,
+                Yichen Li, Zihan Li, and Michael R. Lyu.
               </p>
               <p class="publication-venue">
-                <strong>ACL 2025 Findings · NeurIPS 2025 DL4C Workshop</strong>
+                <strong>ACL 2025 Findings</strong> · <strong>NeurIPS 2025 DL4C Workshop</strong>
                 <span class="pub-badge pub-badge--published">Published</span>
               </p>
               <div class="publication-links">
-                <a href="https://openreview.net/pdf?id=c3OYeGH1Zj" target="_blank" rel="noopener">📄 Paper</a>
+                <a href="https://openreview.net/pdf?id=c3OYeGH1Zj" target="_blank" rel="noopener">Paper</a>
               </div>
-              <p class="publication-area">Area: code LLM security, tokenization, memorization</p>
             </div>
           </article>
 
@@ -212,13 +189,15 @@
             <div class="publication-body">
               <h3>RAUIE: A Relation-Augmented Document-level Event Extraction Model Based on UIE</h3>
               <p class="publication-authors">
-                Y. Liang, H. Jia, L. Wang, Y. Huang, and Zhe Yang.
+                Y. Liang, H. Jia, L. Wang, Y. Huang, and <span class="me">Zhe Yang</span>.
               </p>
               <p class="publication-venue">
                 <strong>AINIT 2024</strong>
                 <span class="pub-badge pub-badge--published">Published</span>
               </p>
-              <p class="publication-area">Area: event extraction, prompt learning, information extraction</p>
+              <div class="publication-links">
+                <a href="https://ieeexplore.ieee.org/document/10581499" target="_blank" rel="noopener">Paper</a>
+              </div>
             </div>
           </article>
         </div>
@@ -226,115 +205,89 @@
 
       <section id="experience" class="section">
         <div class="section-heading">
-          <span class="section-kicker">Experience</span>
-          <h2>Research experience</h2>
+          <span class="section-number">03</span>
+          <h2>Experience</h2>
         </div>
 
         <div class="timeline">
           <article class="timeline-item">
-            <div class="timeline-item__date">2025.09 - Present</div>
+            <div class="timeline-item__date">2025.09 – Now</div>
             <div class="timeline-item__body">
               <h3>Research Intern, MMLab, Nanyang Technological University</h3>
-              <p>
-                Advised by Prof. Ziwei Liu. Working on multimodal agents, contextual benchmarking,
-                and personalized file-system memory for long-horizon user modeling.
-              </p>
+              <p>Advised by Prof. Ziwei Liu. Multimodal agents, contextual benchmarking, and personalized file-system memory.</p>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="timeline-item__date">2024.06 - 2025.05</div>
+            <div class="timeline-item__date">2024.06 – 2025.05</div>
             <div class="timeline-item__body">
               <h3>Research Intern, ARISE Lab, The Chinese University of Hong Kong</h3>
-              <p>
-                Advised by Prof. Michael R. Lyu. Worked on LLM memorization, data privacy,
-                and tokenization-related security risks, including memorization characterization
-                and secret leakage in code LLMs.
-              </p>
+              <p>Advised by Prof. Michael R. Lyu. LLM memorization, data privacy, and tokenization-related security risks.</p>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="timeline-item__date">2024.07 - 2024.08</div>
+            <div class="timeline-item__date">2024.07 – 2024.08</div>
             <div class="timeline-item__body">
               <h3>Algorithm Intern, Geovis Technology Co., Ltd</h3>
-              <p>
-                Worked in Product Research &amp; Development on knowledge graphs, model fine-tuning,
-                Neo4j-based pipelines, and automated data acquisition.
-              </p>
+              <p>Product R&amp;D. Knowledge graphs, model fine-tuning, Neo4j pipelines, automated data acquisition.</p>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="timeline-item__date">2024.02 - 2024.03</div>
+            <div class="timeline-item__date">2024.02 – 2024.03</div>
             <div class="timeline-item__body">
               <h3>Research Participant, Online Research Seminar</h3>
-              <p>
-                Participated in a seminar advised by Prof. Dejan Marković, focusing on EEG signal
-                processing and disease onset prediction.
-              </p>
+              <p>Advised by Prof. Dejan Marković. EEG signal processing and disease onset prediction.</p>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="timeline-item__date">2023.06 - 2023.09</div>
+            <div class="timeline-item__date">2023.06 – 2023.09</div>
             <div class="timeline-item__body">
               <h3>Research Intern, IDEA Lab, The Chinese University of Hong Kong</h3>
-              <p>
-                Advised by Prof. Tsung-Yi Ho. Studied adversarial attacks on facial recognition
-                systems and analyzed robustness issues in deployed recognition pipelines.
-              </p>
+              <p>Advised by Prof. Tsung-Yi Ho. Adversarial attacks on facial recognition and robustness analysis.</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="honors" class="section section--tint">
+      <section id="honors" class="section">
         <div class="section-heading">
-          <span class="section-kicker">Honors</span>
-          <h2>Awards</h2>
+          <span class="section-number">04</span>
+          <h2>Honors</h2>
         </div>
 
-        <div class="honors-grid">
-          <article class="honor-card">
-            <span class="honor-year">2025</span>
-            <h3>HKSAR Government Scholarship</h3>
-            <p>Top 1% in Hong Kong.</p>
-          </article>
-
-          <article class="honor-card">
-            <span class="honor-year">2024</span>
-            <h3>Silver Award for Outstanding Academic Performance</h3>
-            <p>Top 3% at CUHK.</p>
-          </article>
-
-          <article class="honor-card">
-            <span class="honor-year">2022 - 2025</span>
-            <h3>Dean's List</h3>
-            <p>Top 10% in the department at CUHK.</p>
-          </article>
-
-          <article class="honor-card">
-            <span class="honor-year">2021</span>
-            <h3>CUHK Student Envoy</h3>
-            <p>Selected student representative for outreach and engagement.</p>
-          </article>
+        <div class="honors-list">
+          <div class="honor-item">
+            <div class="honor-item__year">2025</div>
+            <div class="honor-item__body"><strong>HKSAR Government Scholarship</strong> <span>— Top 1% in Hong Kong</span></div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-item__year">2024</div>
+            <div class="honor-item__body"><strong>Silver Award for Outstanding Academic Performance</strong> <span>— Top 3% at CUHK</span></div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-item__year">2022 – 2025</div>
+            <div class="honor-item__body"><strong>Dean's List</strong> <span>— Top 10% in the department, CUHK</span></div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-item__year">2021</div>
+            <div class="honor-item__body"><strong>CUHK Student Envoy</strong></div>
+          </div>
         </div>
       </section>
 
       <section id="contact" class="section section--contact">
         <div class="section-heading">
-          <span class="section-kicker">Contact</span>
-          <h2>Get in touch</h2>
+          <span class="section-number">05</span>
+          <h2>Contact</h2>
         </div>
-
-        <div class="contact-panel contact-panel--single">
-          <p class="contact-line contact-line--inline">
-            <a href="tel:+6582644077">+65 8264 4077</a>
-            <span class="contact-sep" aria-hidden="true">·</span>
-            <a href="mailto:zhe012@e.ntu.edu.sg">zhe012@e.ntu.edu.sg</a>
-          </p>
-        </div>
+        <p class="contact-line">
+          <a href="mailto:zhe012@e.ntu.edu.sg">zhe012@e.ntu.edu.sg</a>
+          <span class="contact-sep">·</span>
+          <a href="tel:+6582644077">+65 8264 4077</a>
+        </p>
       </section>
     </main>
 
