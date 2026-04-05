@@ -456,6 +456,15 @@ h3 {
   object-fit: cover;
 }
 
+.publication-media--paper {
+  background: #ffffff;
+}
+
+.publication-media--paper img {
+  object-fit: cover;
+  object-position: center top;
+}
+
 .publication-thumb {
   position: relative;
   min-height: 100%;
