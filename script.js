@@ -85,3 +85,53 @@ document.querySelectorAll(".pub-card").forEach((card) => {
     card.style.setProperty("--glow-y", y + "%");
   });
 });
+
+// ============ Hero: rotating "thinking about" keyword ============
+(function rotateThinkingWord() {
+  const el = document.getElementById("rotating-word");
+  if (!el) return;
+  const words = [
+    "multimodal agents",
+    "world models",
+    "agent personalization",
+    "long-horizon memory",
+    "LLM privacy",
+    "file-system reasoning",
+  ];
+  let i = 0;
+  let typing = true;
+  let charIdx = 0;
+  const typeDelay = 65;
+  const eraseDelay = 35;
+  const holdDelay = 1600;
+
+  function tick() {
+    const word = words[i];
+    if (typing) {
+      charIdx++;
+      el.textContent = word.slice(0, charIdx);
+      if (charIdx === word.length) {
+        typing = false;
+        setTimeout(tick, holdDelay);
+        return;
+      }
+      setTimeout(tick, typeDelay);
+    } else {
+      charIdx--;
+      el.textContent = word.slice(0, charIdx);
+      if (charIdx === 0) {
+        typing = true;
+        i = (i + 1) % words.length;
+        setTimeout(tick, 260);
+        return;
+      }
+      setTimeout(tick, eraseDelay);
+    }
+  }
+  // initial state already shows first word; wait then start cycle
+  setTimeout(() => {
+    typing = false;
+    charIdx = words[0].length;
+    tick();
+  }, 2200);
+})();
