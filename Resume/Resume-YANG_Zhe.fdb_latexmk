@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1774930393.69376 "/Users/yangzhe/Desktop/Resume/Resume-YANG_Zhe.tex" "Resume-YANG_Zhe.pdf" "Resume-YANG_Zhe" 1774930394.39628 0
-  "/Users/yangzhe/Desktop/Resume/Resume-YANG_Zhe.tex" 1774930393.58029 7130 7ce6c6020c8aa219aaa8210d8b81b2f2 ""
+["pdflatex"] 1782756891.06518 "/Users/yangzhe/Desktop/savannah-yz.github.io/Resume/Resume-YANG_Zhe.tex" "Resume-YANG_Zhe.pdf" "Resume-YANG_Zhe" 1782756891.65736 0
+  "/Users/yangzhe/Desktop/savannah-yz.github.io/Resume/Resume-YANG_Zhe.tex" 1782756886.37895 7365 270778ff5fc230f6bf3dc7a351abf9fa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -86,9 +86,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1712033690.13278 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1712033628 8221440 b587507a47ffd6a47470e132037acccb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Resume-YANG_Zhe.aux" 1774930394.33018 700 df34bdb65a20a167e566d8110df72213 "pdflatex"
-  "Resume-YANG_Zhe.out" 1774930394.3307 484 424e1a9257c19c543192a94e73d3daa9 "pdflatex"
-  "Resume-YANG_Zhe.tex" 1774930393.58029 7130 7ce6c6020c8aa219aaa8210d8b81b2f2 ""
+  "Resume-YANG_Zhe.aux" 1782756891.57146 700 df34bdb65a20a167e566d8110df72213 "pdflatex"
+  "Resume-YANG_Zhe.out" 1782756891.57198 484 424e1a9257c19c543192a94e73d3daa9 "pdflatex"
+  "Resume-YANG_Zhe.tex" 1782756886.37895 7365 270778ff5fc230f6bf3dc7a351abf9fa ""
   (generated)
   "Resume-YANG_Zhe.aux"
   "Resume-YANG_Zhe.log"
