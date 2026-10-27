@@ -113,8 +113,28 @@ try {
   box(0.25, 0.26, 0.29, 0.07, lavender, robot, 0.33, 0.38, 0);
   box(1.05, 0.88, 0.77, 0.22, porcelain, robot, 0, 0.92, 0);
   box(0.59, 0.35, 0.045, 0.1, material("#e2e2f4", 0.6), robot, 0, 0.98, 0.394);
+  const badgeCanvas = document.createElement("canvas");
+  badgeCanvas.width = 256;
+  badgeCanvas.height = 128;
+  const badgeContext = badgeCanvas.getContext("2d");
+  badgeContext.fillStyle = "#e4e3f5";
+  badgeContext.fillRect(0, 0, 256, 128);
+  badgeContext.fillStyle = "#7875ad";
+  badgeContext.font = "500 66px sans-serif";
+  badgeContext.textAlign = "center";
+  badgeContext.fillText("ZY", 128, 86);
+  const badgeTexture = new THREE.CanvasTexture(badgeCanvas);
+  badgeTexture.colorSpace = THREE.SRGBColorSpace;
+  mesh(
+    new THREE.PlaneGeometry(0.39, 0.2),
+    new THREE.MeshBasicMaterial({ map: badgeTexture }),
+    robot,
+    0,
+    0.99,
+    0.425,
+  );
   cylinder(0.17, 0.17, 0.15, lavender, robot, 0, 1.43, 0);
-  const button = sphere(0.075, peach, robot, 0, 0.99, 0.43);
+  const button = sphere(0.038, peach, robot, 0.34, 1.12, 0.36);
   button.scale.z = 0.5;
   for (const x of [-0.17, 0, 0.17])
     box(0.06, 0.024, 0.024, 0.011, pale, robot, x, 0.71, 0.397);
@@ -122,7 +142,7 @@ try {
   const head = new THREE.Group();
   head.position.set(0, 2.05, 0);
   robot.add(head);
-  box(1.64, 1.17, 1.02, 0.27, porcelain, head);
+  box(1.64, 1.17, 1.02, 0.34, porcelain, head);
   box(1.37, 0.85, 0.12, 0.22, screen, head, 0, -0.015, 0.486);
   const eyes = [-0.29, 0.29].map((x) =>
     box(0.13, 0.25, 0.04, 0.064, eyeMat, head, x, 0.055, 0.56),
@@ -138,12 +158,39 @@ try {
   );
   cheeks.forEach((c) => c.scale.set(1.4, 0.65, 0.3));
   cylinder(0.045, 0.045, 0.2, lavender, head, 0, 0.66, -0.03);
-  sphere(0.115, peach, head, 0, 0.82, -0.03);
+  // Two mismatched memory tabs, a small personal detail rather than a stock antenna.
+  const tabOne = box(
+    0.13,
+    0.23,
+    0.075,
+    0.035,
+    lavender,
+    head,
+    -0.085,
+    0.82,
+    -0.03,
+  );
+  tabOne.rotation.z = 0.3;
+  const tabTwo = box(0.14, 0.3, 0.075, 0.035, peach, head, 0.08, 0.85, -0.03);
+  tabTwo.rotation.z = -0.2;
   const ear = cylinder(0.16, 0.16, 0.1, pale, head, -0.83, -0.03, 0);
   ear.rotation.z = Math.PI / 2;
   const ear2 = ear.clone();
   ear2.position.x = 0.83;
   head.add(ear2);
+  const memoryPack = box(
+    0.14,
+    0.37,
+    0.36,
+    0.045,
+    lavender,
+    head,
+    0.87,
+    -0.04,
+    -0.02,
+  );
+  for (let row = 0; row < 3; row++)
+    box(0.025, 0.045, 0.2, 0.01, peach, head, 0.95, 0.04 - row * 0.09, 0.01);
 
   function makeArm(x) {
     const arm = new THREE.Group();
@@ -298,11 +345,7 @@ try {
     pointer.x = 0;
     pointer.y = 0;
   });
-  const greetings = [
-    "Hi there! Nice to meet you. 👋",
-    "Research is better with curious friends.",
-    "You bring the ideas. I’ll bring the curiosity.",
-  ];
+  const greetings = ["Hello! 👋", "Nice to meet you.", "Good to see you."];
   let greetingIndex = 0;
   waveButton.addEventListener("click", () => {
     speech.textContent = greetings[greetingIndex++ % greetings.length];
@@ -314,7 +357,7 @@ try {
       renderStill();
     }
     greetingTimer = setTimeout(() => {
-      speech.textContent = "A little curiosity goes a long way.";
+      speech.textContent = "Hello, there.";
       speech.classList.remove("greeting");
       if (paused) {
         rightArm.rotation.z = 0.22;

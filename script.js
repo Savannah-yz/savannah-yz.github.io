@@ -81,4 +81,81 @@
         `${count} ${count === 1 ? "work" : "works"}`;
     });
   });
+
+  // Figure links still open the image normally without JavaScript.
+  const figureDialog = document.querySelector(".figure-dialog");
+  let figureTrigger;
+  document.querySelectorAll("[data-figure]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        !figureDialog.showModal
+      )
+        return;
+      event.preventDefault();
+      figureTrigger = link;
+      const img = figureDialog.querySelector("img");
+      img.src = link.href;
+      img.alt = link.querySelector("img").alt;
+      document.querySelector("#figure-caption").textContent =
+        link.dataset.caption;
+      figureDialog.showModal();
+      document.body.classList.add("dialog-open");
+    });
+  });
+  figureDialog
+    .querySelector(".close-figure")
+    .addEventListener("click", () => figureDialog.close());
+  figureDialog.addEventListener("click", (event) => {
+    if (event.target !== figureDialog) return;
+    const rect = figureDialog.getBoundingClientRect();
+    if (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    )
+      figureDialog.close();
+  });
+  figureDialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+    figureTrigger?.focus({ preventScroll: true });
+  });
+
+  const note = document.querySelector(".note-section");
+  const noteTitle = document.querySelector("#note-title");
+  const nextNote = document.querySelector(".next-note");
+  const reminders = [
+    "What I want<br><span>wants me more.</span>",
+    "Everything is working<br><span>in my favor.</span>",
+  ];
+  let noteIndex = 0,
+    noteTimer,
+    celebrateTimer;
+  nextNote.hidden = false;
+  noteTitle.setAttribute("aria-live", "polite");
+  nextNote.addEventListener("click", () => {
+    clearTimeout(noteTimer);
+    clearTimeout(celebrateTimer);
+    noteIndex = (noteIndex + 1) % reminders.length;
+    const update = () => {
+      noteTitle.innerHTML = reminders[noteIndex];
+      document.querySelector(".note-count").textContent =
+        `0${noteIndex + 1} / 02`;
+      note.classList.remove("changing");
+      note.classList.add("celebrate");
+      celebrateTimer = setTimeout(
+        () => note.classList.remove("celebrate"),
+        850,
+      );
+    };
+    if (paused || reducedMotion.matches) update();
+    else {
+      note.classList.add("changing");
+      noteTimer = setTimeout(update, 160);
+    }
+  });
 })();

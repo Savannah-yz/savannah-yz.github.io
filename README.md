@@ -34,16 +34,20 @@ The supplied October 2026 CV is the source for education, positions, contributio
 - RAUIE: https://doi.org/10.1109/AINIT61980.2024.10581499 (publisher may present an anti-bot check).
 - InnerFeel: supplied CV only; no verified public URL was found. It remains labeled “Under review”, without an unrelated link.
 
-The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. Four simple SVG drawings are decorative illustrations, **not** empirical figures or paper results.
+The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. InnerFeel’s teaser was extracted from Figure 1 of the manuscript supplied by the user on 28 October 2026. The complete private manuscript is not included in this repository. Three typographic paper covers and the current-project sketches are original decorative compositions, not figures or empirical results from the papers.
 
-## Design direction
+## Design direction and provenance
 
-The CV, publication links, Scholar, GitHub, and email are immediately visible. A small interactive robot adds personality beside the content; visitors never need to explore a 3D world to find information. The pale periwinkle palette, rounded sans-serif type, and miniature desk replace the previous serif-and-orbit design.
+The CV, publications, Scholar, GitHub, and email remain directly accessible. DM Sans provides larger, lighter body and display type; Caveat is used for the personal reminders. Every publication uses the same image-and-text row. Five paper images can be enlarged in an accessible dialog. The remaining three use typographic covers. Current projects and the experience timeline use native HTML disclosures, retaining titles, dates, and roles in the visible summary.
 
-Spatial portfolio references included https://room.bokoko33.me/ and https://bruno-simon.com/, while https://dennissnellenberg.com/ and https://pablocuello.com/ informed the exploration of navigation and motion. The robot, scene, and layout are original; no portfolio template or third-party artwork was copied. The user's preference explicitly favors direct access to research over game-like navigation.
+The robot is constructed in `src/robot-scene.js` with Three.js sphere, cylinder, rounded-box, and tube geometry. No downloaded robot model, stock character, portfolio source code, or external texture is used. The ZY badge, paired memory tabs, and side memory module were added for this homepage. Basic screen-faced robots are a common visual motif; this documents implementation provenance rather than claiming that no similar character exists anywhere. Three.js is the rendering library and its MIT license is retained locally.
+
+Spatial portfolio references included https://room.bokoko33.me/ and https://bruno-simon.com/; https://dennissnellenberg.com/ and https://pablocuello.com/ were browsing references for layout and motion. These are references, not source templates. The user prefers immediately readable research content over game-like navigation.
+
+The hero’s research description and both ongoing project drawers follow the supplied CV’s Research Interests and Research Projects sections. The personal-reminder button alternates the user’s two requested sentiments.
 
 ## Motion and accessibility
 
 The scene respects `prefers-reduced-motion`; visitors can also pause it beside the robot. A saved preference persists between visits. Rendering stops offscreen and while the tab is hidden, with device-pixel ratio capped and updates limited to 30 fps. On reduced motion, the greeting button changes pose without animation. Touch devices retain normal page scrolling. If WebGL is unavailable or loses its context, the static robot illustration remains visible.
 
-Semantic headings, descriptive links, keyboard focus, a skip link, and a collapsible mobile menu are provided. All publication content and CV links work without JavaScript. The UI uses Google Fonts with a system-font fallback; the 3D code and all illustrations are local assets.
+Semantic headings, descriptive links, keyboard focus, a skip link, a collapsible mobile menu, native details disclosures, and a focus-contained figure dialog are provided. Escape closes the figure dialog and returns focus to the originating figure. The reminder and garden motion also respect reduced-motion and pause preferences. All publication content and CV links work without JavaScript. The UI uses Google Fonts with a system-font fallback; the 3D code and all illustrations are local assets.

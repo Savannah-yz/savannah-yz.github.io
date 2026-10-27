@@ -4,7 +4,6 @@
     "category": "peer",
     "venue": "ECCV 2026",
     "year": "2026",
-    "featured": true,
     "title": "HippoCamp: Benchmarking Contextual Agents on Personal Computers",
     "authors": "Zhe Yang, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen, Yichi Zhang, Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy, Ziwei Liu",
     "description": "Can an agent make sense of a life’s worth of files? A device-scale benchmark with 2,000+ real files, 581 questions, and step-wise failure diagnosis.",
@@ -25,7 +24,6 @@
     "category": "report",
     "venue": "Technical report",
     "year": "2026",
-    "featured": true,
     "title": "Has GPT-6-Astra Achieved Embodied Intelligence?",
     "authors": "SenseNova & Joint Research Team (including Zhe Yang; alphabetical author order)",
     "description": "Probing embodied competence and practical limitations, then asking what a next-generation benchmark should measure in a world that keeps moving.",
@@ -71,9 +69,12 @@
     "authors": "X. Zhang*, S. Tian*, Zhe Yang, K. Zhu, Z. Huang, K. Hu, Y. Zheng, E. Cambria, Z. Liu",
     "description": "Studying emotion understanding as per-user belief tracking, with memory isolation and evaluation across different perspectives.",
     "contribution": "RESEARCH FRAMING · EVALUATION DESIGN · VISUALIZATION",
-    "art": "innerfeel",
     "links": [],
-    "availability": "Manuscript under review · Public link to follow."
+    "availability": "Manuscript under review · Public link to follow.",
+    "image": "assets/images/innerfeel.webp",
+    "imageAlt": "InnerFeel teaser: self-reports and partner reports in egocentric social interactions; people and frames are illustrative renderings",
+    "imageStyle": "contain",
+    "figureCaption": "InnerFeel at a glance. People and frames in the teaser are illustrative renderings, as noted in the manuscript."
   },
   {
     "id": "filegram",

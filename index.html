@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,7 +13,7 @@
     <link href="https://savannah-yz.github.io/" rel="canonical" />
     <meta content="website" property="og:type" />
     <meta
-      content="Zhe Yang — Robots, agents & a little curiosity"
+      content="Zhe Yang — Robots &amp; agents for everyday life"
       property="og:title"
     />
     <meta
@@ -35,11 +36,11 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;450;500;550;600;650;700;750;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=DM+Sans:wght@400;450;500;550;600;650;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="./styles.css?v=20261028-playful" rel="stylesheet" />
-    <script defer="" src="./script.js?v=20261028-playful"></script>
+    <link href="./styles.css?v=20261028-studio" rel="stylesheet" />
+    <script defer="" src="./script.js?v=20261028-studio"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -62,16 +63,19 @@
         ]
       }
     </script>
-    <script type="module" src="./assets/robot-scene.js?v=2"></script>
+    <script
+      src="./assets/robot-scene.js?v=20261028-studio"
+      type="module"
+    ></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header wrap">
-      <a class="brand" href="#home" aria-label="Zhe Yang, home"
-        ><span class="brand-robot" aria-hidden="true"><i></i><i></i></span>Zhe
+      <a aria-label="Zhe Yang, home" class="brand" href="#home"
+        ><span aria-hidden="true" class="brand-robot"><i></i><i></i></span>Zhe
         Yang<span class="brand-period">.</span></a
       >
-      <nav class="desktop-nav" aria-label="Main navigation">
+      <nav aria-label="Main navigation" class="desktop-nav">
         <a href="#publications">Publications</a><a href="#about">About</a
         ><a href="#experience">Experience</a
         ><a href="mailto:zhe012@e.ntu.edu.sg">Contact ↗</a>
@@ -80,60 +84,52 @@
         <a
           class="nav-cv"
           href="./assets/Resume-YANG_Zhe.pdf"
-          target="_blank"
           rel="noopener"
+          target="_blank"
           >Download CV <span aria-hidden="true">↓</span></a
         ><button
+          aria-controls="mobile-nav"
+          aria-expanded="false"
           class="menu-button"
           type="button"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
         >
           Menu <span aria-hidden="true">＋</span>
         </button>
       </div>
     </header>
     <nav
-      class="mobile-nav wrap"
-      id="mobile-nav"
       aria-label="Mobile navigation"
-      hidden
+      class="mobile-nav wrap"
+      hidden=""
+      id="mobile-nav"
     >
       <a href="#publications">Publications</a><a href="#about">About</a
       ><a href="#experience">Experience</a
       ><a href="mailto:zhe012@e.ntu.edu.sg">Contact ↗</a>
     </nav>
     <main id="main">
-      <section id="home" class="hero wrap" aria-labelledby="hero-title">
+      <section aria-labelledby="hero-title" class="hero wrap" id="home">
         <div class="hero-copy">
-          <div class="hello-label">
-            <img
-              src="./assets/images/zhe-yang.webp"
-              width="44"
-              height="44"
-              alt="Zhe Yang"
-            /><span>A curious human, building helpful AI.</span
-            ><span class="hand" aria-hidden="true">✋</span>
-          </div>
           <h1 id="hero-title">Hi, I’m <span>Zhe.</span></h1>
           <p class="hero-statement">
-            Robots that remember.<br />Agents that
-            <span class="underlined">understand.</span>
+            Robots and agents<br />for
+            <span class="underlined">everyday life.</span>
           </p>
           <p class="hero-description">
-            I study how robots and multimodal agents can learn from experience
-            and help with everyday life.
+            I work on versatile robots and multimodal agents, focusing on
+            long-horizon tasks through policy learning, memory, and realistic
+            evaluation.
           </p>
           <p class="hero-affiliation">
-            <strong>M.Sc. in AI @ NTU MMLab</strong><br />Embodied AI Intern @
-            SenseTime · Singapore
+            <span>M.Sc. in AI · NTU MMLab</span
+            ><span>Embodied AI Intern · SenseTime</span>
           </p>
           <div class="hero-actions">
             <a
               class="button primary"
               href="./assets/Resume-YANG_Zhe.pdf"
-              target="_blank"
               rel="noopener"
+              target="_blank"
               >Download my CV <span aria-hidden="true">↓</span></a
             ><a class="button secondary" href="#publications"
               >See publications <span aria-hidden="true">↘</span></a
@@ -141,98 +137,96 @@
           </div>
           <div class="social-links">
             <a
-              href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&hl=en"
-              target="_blank"
+              href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&amp;hl=en"
               rel="noopener"
+              target="_blank"
               >Google Scholar ↗</a
             ><a
               href="https://github.com/Savannah-yz"
-              target="_blank"
               rel="noopener"
+              target="_blank"
               >GitHub ↗</a
             ><a href="mailto:zhe012@e.ntu.edu.sg">Email ↗</a>
           </div>
         </div>
         <div class="robot-playground">
-          <div class="scene-blob" aria-hidden="true"></div>
-          <span class="scene-doodle doodle-one" aria-hidden="true">+</span
-          ><span class="scene-doodle doodle-two" aria-hidden="true">✦</span
-          ><span class="scene-doodle doodle-three" aria-hidden="true">+</span>
+          <div aria-hidden="true" class="scene-blob"></div>
+          <span aria-hidden="true" class="scene-doodle doodle-one">+</span
+          ><span aria-hidden="true" class="scene-doodle doodle-two">✦</span
+          ><span aria-hidden="true" class="scene-doodle doodle-three">+</span>
           <div
+            aria-label="A friendly little 3D robot on a miniature desk, with books and a tiny plant"
             class="robot-stage"
             id="robot-stage"
             role="img"
-            aria-label="A friendly little 3D robot on a miniature desk, with books and a tiny plant"
           >
             <img
-              class="robot-fallback"
-              src="./assets/robot-fallback.svg"
               alt=""
-              width="560"
+              class="robot-fallback"
               height="480"
+              src="./assets/robot-fallback.svg"
+              width="560"
             />
           </div>
-          <div class="speech-bubble" id="robot-speech" aria-live="polite">
-            A little curiosity goes a long way.
+          <div aria-live="polite" class="speech-bubble" id="robot-speech">
+            Hello, there.
           </div>
           <div class="scene-controls">
-            <button type="button" id="wave-button" hidden>
+            <button hidden="" id="wave-button" type="button">
               Say hi <span aria-hidden="true">👋</span></button
             ><button
-              class="motion-button"
-              type="button"
-              aria-pressed="false"
               aria-label="Pause animations"
-              hidden
+              aria-pressed="false"
+              class="motion-button"
+              hidden=""
+              type="button"
             >
               <span aria-hidden="true">Ⅱ</span
               ><span class="motion-label">Pause motion</span>
             </button>
           </div>
-          <p class="scene-caption">
-            A tiny lab buddy. A big world to figure out.
-          </p>
+          <p class="scene-caption">A little memory keeper.</p>
         </div>
       </section>
-      <div class="topic-strip wrap" aria-label="Research interests">
-        <span>Currently curious about</span
+      <div aria-label="Research interests" class="topic-strip wrap">
+        <span>Research focus</span
         ><span class="topic"><i class="dot blue"></i>Embodied intelligence</span
         ><span class="topic"><i class="dot peach"></i>Long-horizon memory</span
         ><span class="topic"><i class="dot purple"></i>Multimodal agents</span>
       </div>
       <section
+        aria-labelledby="about-title"
         class="about wrap section"
         id="about"
-        aria-labelledby="about-title"
       >
         <div class="about-photo">
           <img
+            alt="Zhe Yang holding a bouquet of roses"
+            height="994"
+            loading="lazy"
             src="./assets/images/zhe-yang.webp"
             width="960"
-            height="994"
-            alt="Zhe Yang holding a bouquet of roses"
-            loading="lazy"
           /><span>hello from Singapore ☀</span>
         </div>
         <div class="about-copy">
           <p class="section-kicker">A LITTLE ABOUT ME</p>
-          <h2 id="about-title">Bringing AI into everyday life.</h2>
+          <h2 id="about-title">From remembering to acting.</h2>
           <p>
             I’m a master’s student in Artificial Intelligence at
-            <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener"
+            <a href="https://www.ntu.edu.sg/" rel="noopener" target="_blank"
               >Nanyang Technological University</a
             >, working with
             <a
               href="https://www.mmlab-ntu.com/person/ccloy/"
-              target="_blank"
               rel="noopener"
+              target="_blank"
               >Prof. Chen Change Loy</a
             >
             and
             <a
               href="https://liuziwei7.github.io/"
-              target="_blank"
               rel="noopener"
+              target="_blank"
               >Prof. Ziwei Liu</a
             >
             at MMLab. I also work on embodied AI at SenseTime.
@@ -245,8 +239,8 @@
             worked with
             <a
               href="https://www.cse.cuhk.edu.hk/lyu/"
-              target="_blank"
               rel="noopener"
+              target="_blank"
               >Prof. Michael R. Lyu</a
             >
             on LLM memorization and privacy.
@@ -254,60 +248,61 @@
         </div>
       </section>
       <section
+        aria-labelledby="publications-title"
         class="publications section"
         id="publications"
-        aria-labelledby="publications-title"
       >
         <div class="wrap">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">RESEARCH & PUBLICATIONS</p>
-              <h2 id="publications-title">
-                Things I’ve been working on<span class="blue-text">.</span>
-              </h2>
+              <p class="section-kicker">PAPERS &amp; BENCHMARKS</p>
+              <h2 id="publications-title">Research &amp; publications</h2>
             </div>
             <a
               class="inline-link"
-              href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&hl=en"
-              target="_blank"
+              href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&amp;hl=en"
               rel="noopener"
+              target="_blank"
               >Google Scholar ↗</a
             >
           </div>
           <p class="section-description">
-            Papers, benchmarks, and a few steps toward more capable agents.
+            Memory, reasoning, and learning to act in the world.
           </p>
-          <div class="publication-controls" hidden>
-            <div class="filters" role="group" aria-label="Filter publications">
-              <button type="button" data-filter="all" aria-pressed="true">
+          <div class="publication-controls" hidden="">
+            <div aria-label="Filter publications" class="filters" role="group">
+              <button aria-pressed="true" data-filter="all" type="button">
                 All <span>8</span></button
-              ><button type="button" data-filter="peer" aria-pressed="false">
+              ><button aria-pressed="false" data-filter="peer" type="button">
                 Peer-reviewed <span>5</span></button
-              ><button type="button" data-filter="review" aria-pressed="false">
+              ><button aria-pressed="false" data-filter="review" type="button">
                 Under review <span>2</span></button
-              ><button type="button" data-filter="report" aria-pressed="false">
+              ><button aria-pressed="false" data-filter="report" type="button">
                 Reports <span>1</span>
               </button>
             </div>
-            <span class="filter-count" aria-live="polite">8 works</span>
+            <span aria-live="polite" class="filter-count">8 works</span>
           </div>
           <div class="publication-grid">
             <!-- PUBLICATIONS:START -->
-            <article
-              class="pub featured"
-              id="paper-hippocamp"
-              data-category="peer"
-            >
-              <div class="pub-media contain">
-                <img
+            <article class="pub" id="paper-hippocamp" data-category="peer">
+              <a
+                class="pub-media contain"
+                href="./assets/images/hippocamp.webp"
+                target="_blank"
+                rel="noopener"
+                data-figure
+                data-caption="HippoCamp overview: contextual reasoning over personal files"
+                aria-label="Enlarge HippoCamp: Benchmarking Contextual Agents on Personal Computers figure"
+                ><img
                   src="./assets/images/hippocamp.webp"
                   alt="HippoCamp overview: contextual reasoning over personal files"
                   loading="lazy"
                   decoding="async"
-                  width="1200"
-                  height="700"
-                />
-              </div>
+                /><span class="zoom-hint" aria-hidden="true"
+                  >View figure ↗</span
+                ></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type peer">ECCV 2026</span
@@ -368,21 +363,24 @@
                 </div>
               </div>
             </article>
-            <article
-              class="pub featured"
-              id="paper-embodied"
-              data-category="report"
-            >
-              <div class="pub-media photo">
-                <img
+            <article class="pub" id="paper-embodied" data-category="report">
+              <a
+                class="pub-media photo"
+                href="./assets/images/embodied.webp"
+                target="_blank"
+                rel="noopener"
+                data-figure
+                data-caption="Cutaway view of the simulated apartment used in the embodied benchmark prototype"
+                aria-label="Enlarge Has GPT-6-Astra Achieved Embodied Intelligence? figure"
+                ><img
                   src="./assets/images/embodied.webp"
                   alt="Cutaway view of the simulated apartment used in the embodied benchmark prototype"
                   loading="lazy"
                   decoding="async"
-                  width="1200"
-                  height="700"
-                />
-              </div>
+                /><span class="zoom-hint" aria-hidden="true"
+                  >View figure ↗</span
+                ></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type report">Technical report</span
@@ -432,16 +430,23 @@
               </div>
             </article>
             <article class="pub" id="paper-egotools" data-category="peer">
-              <div class="pub-media photo">
-                <img
+              <a
+                class="pub-media photo"
+                href="./assets/images/egotools.webp"
+                target="_blank"
+                rel="noopener"
+                data-figure
+                data-caption="First-person view of tool use in a kitchen from EgoTools"
+                aria-label="Enlarge EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos figure"
+                ><img
                   src="./assets/images/egotools.webp"
                   alt="First-person view of tool use in a kitchen from EgoTools"
                   loading="lazy"
                   decoding="async"
-                  width="1200"
-                  height="700"
-                />
-              </div>
+                /><span class="zoom-hint" aria-hidden="true"
+                  >View figure ↗</span
+                ></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type peer">EMNLP 2026 · Accepted</span
@@ -507,33 +512,23 @@
               </div>
             </article>
             <article class="pub" id="paper-innerfeel" data-category="review">
-              <div class="pub-media">
-                <div class="pub-art innerfeel" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 250 160"
-                    xmlns="http://www.w3.org/2000/svg"
-                    font-family="monospace"
-                  >
-                    <g fill="none" stroke="#9293ca" stroke-width="1.2">
-                      <circle cx="100" cy="72" r="42" />
-                      <circle cx="151" cy="72" r="42" />
-                      <path d="M68 82Q100 111 132 82M119 65Q150 40 181 65" />
-                    </g>
-                    <circle cx="87" cy="65" r="3" fill="#eaa075" />
-                    <circle cx="108" cy="65" r="3" fill="#eaa075" />
-                    <text
-                      x="125"
-                      y="140"
-                      text-anchor="middle"
-                      font-size="9"
-                      fill="#8387a6"
-                      letter-spacing="2"
-                    >
-                      TWO PERSPECTIVES
-                    </text>
-                  </svg>
-                </div>
-              </div>
+              <a
+                class="pub-media contain"
+                href="./assets/images/innerfeel.webp"
+                target="_blank"
+                rel="noopener"
+                data-figure
+                data-caption="InnerFeel at a glance. People and frames in the teaser are illustrative renderings, as noted in the manuscript."
+                aria-label="Enlarge InnerFeel: Benchmarking Multi-Perspective Emotion Report Prediction in Egocentric Social Interactions figure"
+                ><img
+                  src="./assets/images/innerfeel.webp"
+                  alt="InnerFeel teaser: self-reports and partner reports in egocentric social interactions; people and frames are illustrative renderings"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="zoom-hint" aria-hidden="true"
+                  >View figure ↗</span
+                ></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type review">Under review</span
@@ -561,16 +556,23 @@
               </div>
             </article>
             <article class="pub" id="paper-filegram" data-category="review">
-              <div class="pub-media contain">
-                <img
+              <a
+                class="pub-media contain"
+                href="./assets/images/filegram.webp"
+                target="_blank"
+                rel="noopener"
+                data-figure
+                data-caption="FileGram framework for personalization through file-system behavioral traces"
+                aria-label="Enlarge FileGram: Grounding Agent Personalization in File-System Behavioral Traces figure"
+                ><img
                   src="./assets/images/filegram.webp"
                   alt="FileGram framework for personalization through file-system behavioral traces"
                   loading="lazy"
                   decoding="async"
-                  width="1200"
-                  height="700"
-                />
-              </div>
+                /><span class="zoom-hint" aria-hidden="true"
+                  >View figure ↗</span
+                ></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type review">Under review · Preprint</span
@@ -622,41 +624,19 @@
               </div>
             </article>
             <article class="pub" id="paper-secrets" data-category="peer">
-              <div class="pub-media">
-                <div class="pub-art secrets" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 250 160"
-                    xmlns="http://www.w3.org/2000/svg"
-                    font-family="monospace"
-                  >
-                    <g fill="none" stroke="#a0a4ca">
-                      <rect x="26" y="32" width="198" height="84" rx="7" />
-                      <path d="M26 55H224" />
-                      <circle cx="40" cy="43" r="2" />
-                      <circle cx="50" cy="43" r="2" />
-                      <circle cx="60" cy="43" r="2" />
-                    </g>
-                    <text x="48" y="83" font-size="16" fill="#7374d9">
-                      sk_••••••••
-                    </text>
-                    <path
-                      d="M48 98H87M94 98H132M139 98H191"
-                      stroke="#eaa075"
-                      stroke-width="4"
-                    />
-                    <text
-                      x="125"
-                      y="143"
-                      text-anchor="middle"
-                      font-size="8"
-                      fill="#8387a6"
-                      letter-spacing="2"
-                    >
-                      SECRETS IN TOKEN SPACE
-                    </text>
-                  </svg>
-                </div>
-              </div>
+              <a
+                class="pub-media paper-cover cover-privacy"
+                href="https://aclanthology.org/2026.findings-acl.6/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Read Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective"
+                ><span class="cover-topic">LLM PRIVACY</span
+                ><span class="cover-title">Behind<br />the tokens.</span>
+                <div class="token-pieces"><i>sk_</i><i>••••</i><i>••••</i></div>
+                <span class="cover-bottom"
+                  >Findings of ACL 2026 <b>↗</b></span
+                ></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type peer">Findings of ACL 2026</span
@@ -702,43 +682,21 @@
               id="paper-compressibility"
               data-category="peer"
             >
-              <div class="pub-media">
-                <div class="pub-art compressibility" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 250 160"
-                    xmlns="http://www.w3.org/2000/svg"
-                    font-family="monospace"
-                  >
-                    <path d="M36 20V126H225" fill="none" stroke="#b2b6d9" />
-                    <path
-                      d="M50 112L207 29"
-                      stroke="#eaa075"
-                      stroke-width="1.5"
-                    />
-                    <g fill="#7374d9">
-                      <circle cx="58" cy="105" r="4" />
-                      <circle cx="76" cy="95" r="4" />
-                      <circle cx="94" cy="93" r="4" />
-                      <circle cx="111" cy="78" r="4" />
-                      <circle cx="132" cy="75" r="4" />
-                      <circle cx="149" cy="61" r="4" />
-                      <circle cx="168" cy="55" r="4" />
-                      <circle cx="188" cy="40" r="4" />
-                      <circle cx="205" cy="35" r="4" />
-                    </g>
-                    <text
-                      x="130"
-                      y="147"
-                      text-anchor="middle"
-                      font-size="8"
-                      fill="#8387a6"
-                      letter-spacing="1.5"
-                    >
-                      ENTROPY ↔ MEMORIZATION
-                    </text>
-                  </svg>
+              <a
+                class="pub-media paper-cover cover-memory"
+                href="https://openreview.net/forum?id=6L4UXc7P3h"
+                target="_blank"
+                rel="noopener"
+                aria-label="Read Data Compressibility Quantifies LLM Memorization"
+                ><span class="cover-topic">LLM MEMORIZATION</span
+                ><span class="cover-title">Memory<br />has a pattern.</span>
+                <div class="bit-grid">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                  ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                  ><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
                 </div>
-              </div>
+                <span class="cover-bottom">TMLR 2026 <b>↗</b></span></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type peer">TMLR 2026</span
@@ -788,30 +746,19 @@
               </div>
             </article>
             <article class="pub" id="paper-rauie" data-category="peer">
-              <div class="pub-media">
-                <div class="pub-art extract" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 250 160"
-                    xmlns="http://www.w3.org/2000/svg"
-                    font-family="monospace"
-                  >
-                    <g stroke="#969bca" fill="none">
-                      <path
-                        d="M55 45L124 82L197 42M124 82L61 124M124 82L194 126"
-                      />
-                      <rect x="28" y="29" width="54" height="30" rx="5" />
-                      <rect x="98" y="67" width="54" height="30" rx="5" />
-                      <rect x="170" y="26" width="54" height="30" rx="5" />
-                      <rect x="34" y="109" width="54" height="30" rx="5" />
-                      <rect x="167" y="111" width="54" height="30" rx="5" />
-                    </g>
-                    <circle cx="125" cy="82" r="5" fill="#eaa075" />
-                    <g stroke="#969bca">
-                      <path d="M41 43H69M183 41H211M48 124H74M181 126H207" />
-                    </g>
-                  </svg>
+              <a
+                class="pub-media paper-cover cover-relations"
+                href="https://doi.org/10.1109/AINIT61980.2024.10581499"
+                target="_blank"
+                rel="noopener"
+                aria-label="Read RAUIE: A Relation-Augmented Document-Level Event Extraction Model Based on UIE"
+                ><span class="cover-topic">INFORMATION EXTRACTION</span
+                ><span class="cover-title">Connecting<br />the events.</span>
+                <div class="relation-pieces">
+                  <i>event</i><b>↗</b><i>relation</i>
                 </div>
-              </div>
+                <span class="cover-bottom">AINIT 2024 <b>↗</b></span></a
+              >
               <div class="pub-body">
                 <div class="pub-meta">
                   <span class="pub-type peer">AINIT 2024</span
@@ -851,111 +798,214 @@
         </div>
       </section>
       <section
-        class="current-work wrap section"
         aria-labelledby="current-title"
+        class="current-work wrap section"
+        id="current-work"
       >
         <div class="section-heading">
           <div>
-            <p class="section-kicker">CURRENTLY ON MY DESK</p>
-            <h2 id="current-title">Still asking. Still building.</h2>
+            <p class="section-kicker">WORK IN PROGRESS</p>
+            <h2 id="current-title">
+              On my desk<span class="handwritten small-note">right now</span>
+            </h2>
           </div>
-          <span class="in-progress"><i></i> In progress</span>
+          <span class="in-progress"><i></i> Since June 2026</span>
         </div>
-        <div class="work-grid">
-          <article>
-            <span class="work-icon" aria-hidden="true">↺</span>
-            <h3>Memory for a changing world</h3>
-            <p>
-              Exploring endogenous and exogenous memory for world action models,
-              co-developing RMBench++, and building real-robot evaluation
-              pipelines.
-            </p>
-            <span class="work-meta"
-              >With Dr. Zhonghua Wu · Jun 2026–present</span
-            >
-          </article>
-          <article>
-            <span class="work-icon coral" aria-hidden="true">▶</span>
-            <h3>Learning to act by watching</h3>
-            <p>
-              Integrating native latent actions into π0.5, testing in RoboTwin,
-              and connecting teleoperation, model inference, and real-robot
-              experiments.
-            </p>
-            <span class="work-meta"
-              >With Dr. Qingyi Tao · Jun 2026–present</span
-            >
-          </article>
+        <div class="research-drawers">
+          <details class="research-drawer memory-drawer" open="">
+            <summary>
+              <span class="drawer-index">01</span
+              ><span class="drawer-title"
+                ><span>Memory for world action models</span
+                ><small>Endogenous &amp; exogenous memory</small></span
+              ><span aria-hidden="true" class="drawer-action">＋</span>
+            </summary>
+            <div class="drawer-content">
+              <div aria-hidden="true" class="project-sketch memory-sketch">
+                <span class="sketch-label">A WORLD THAT KEEPS CHANGING</span>
+                <div class="memory-stack">
+                  <i>past experience</i><i>new observations</i
+                  ><i>next action <b>↗</b></i>
+                </div>
+                <span class="sketch-footer">remember · update · act</span>
+              </div>
+              <div class="project-details">
+                <p class="project-mentor">With Dr. Zhonghua Wu</p>
+                <h3>Connecting memory to decisions.</h3>
+                <p>
+                  I assist in designing dual memory, co-develop RMBench++, and
+                  build the real-robot pipeline for data acquisition, model
+                  deployment, and robot control.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Endogenous memory</strong> compresses older history
+                    into gist tokens.
+                  </li>
+                  <li>
+                    <strong>Exogenous memory</strong> records where predictions
+                    and new observations disagree.
+                  </li>
+                  <li>
+                    <strong>Evaluation</strong> combines training, simulation,
+                    and real-robot experiments.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          <details class="research-drawer action-drawer">
+            <summary>
+              <span class="drawer-index">02</span
+              ><span class="drawer-title"
+                ><span>Learning actions from video</span
+                ><small>Native latent action models</small></span
+              ><span aria-hidden="true" class="drawer-action">＋</span>
+            </summary>
+            <div class="drawer-content">
+              <div aria-hidden="true" class="project-sketch action-sketch">
+                <span class="sketch-label">FROM WATCHING TO DOING</span>
+                <div class="video-strip">
+                  <span>01</span><span>02</span><span>03</span>
+                </div>
+                <div class="action-tokens">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <span class="sketch-footer"
+                  >video → latent actions → policy</span
+                >
+              </div>
+              <div class="project-details">
+                <p class="project-mentor">With Dr. Qingyi Tao</p>
+                <h3>Taking learned actions to real robots.</h3>
+                <p>
+                  I integrated register-token latent actions into π0.5 and ran
+                  closed-loop manipulation evaluation in RoboTwin.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Policy integration</strong> connects native latent
+                    actions with downstream robot learning.
+                  </li>
+                  <li>
+                    <strong>Real-robot experiments</strong> cover teleoperation,
+                    data formatting, model inference and deployment, and
+                    success-rate evaluation.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </details>
         </div>
       </section>
       <section
+        aria-labelledby="experience-title"
         class="experience wrap section"
         id="experience"
-        aria-labelledby="experience-title"
       >
         <div class="section-heading">
           <div>
-            <p class="section-kicker">ALONG THE WAY</p>
-            <h2 id="experience-title">A few chapters so far.</h2>
+            <p class="section-kicker">EXPERIENCE &amp; EDUCATION</p>
+            <h2 id="experience-title">Along the way</h2>
           </div>
           <a
             class="inline-link"
             href="./assets/Resume-YANG_Zhe.pdf"
-            target="_blank"
             rel="noopener"
+            target="_blank"
             >Full CV ↓</a
           >
         </div>
         <div class="experience-grid">
           <div class="timeline">
-            <article>
-              <span class="timeline-mark">S</span>
-              <div>
-                <time>JUN 2026 — PRESENT</time>
-                <h3>SenseTime</h3>
-                <p>Algorithm Intern · Embodied AI</p>
-                <span>Singapore</span>
-              </div>
-            </article>
-            <article>
-              <span class="timeline-mark ntu">N</span>
-              <div>
-                <time>SEP 2025 — PRESENT</time>
-                <h3>Nanyang Technological University</h3>
-                <p>M.Sc. in Artificial Intelligence · GPA 5.0 / 5.0</p>
-                <span>MMLab · Chen Change Loy & Ziwei Liu</span>
-              </div>
-            </article>
-            <article>
-              <span class="timeline-mark cuhk">C</span>
-              <div>
-                <time>JUN 2024 — MAY 2025</time>
-                <h3>CUHK · ARISE Lab</h3>
-                <p>Research Intern · LLM Memorization & Privacy</p>
-                <span>Advised by Michael R. Lyu</span>
-              </div>
-            </article>
-            <article>
-              <span class="timeline-mark geovis">G</span>
-              <div>
-                <time>JUL — AUG 2024</time>
-                <h3>GEOVIS Technology</h3>
-                <p>Algorithm Intern</p>
-                <span>Knowledge graphs & question answering</span>
-              </div>
-            </article>
-            <article>
-              <span class="timeline-mark cuhk">C</span>
-              <div>
-                <time>SEP 2021 — MAY 2025</time>
-                <h3>The Chinese University of Hong Kong</h3>
-                <p>B.Sc. in Computer Science · First Class Honours</p>
-                <span>Major GPA 3.80 / 4.0</span>
-              </div>
-            </article>
+            <details class="timeline-entry">
+              <summary>
+                <span class="timeline-mark">S</span>
+                <div>
+                  <time>JUN 2026 — PRESENT</time>
+                  <h3>SenseTime</h3>
+                  <p>Algorithm Intern · Embodied AI</p>
+                  <span>Singapore</span>
+                </div>
+                <span aria-hidden="true" class="timeline-toggle">＋</span>
+              </summary>
+              <p class="timeline-more">
+                Core contributor to the GPT-6-Astra technical report, including
+                the benchmark prototype and BEHAVIOR-1K evaluation. Current
+                projects study memory for world action models and native latent
+                action models.
+              </p>
+            </details>
+            <details class="timeline-entry">
+              <summary>
+                <span class="timeline-mark ntu">N</span>
+                <div>
+                  <time>SEP 2025 — PRESENT</time>
+                  <h3>Nanyang Technological University</h3>
+                  <p>M.Sc. in Artificial Intelligence · GPA 5.0 / 5.0</p>
+                  <span>MMLab · Chen Change Loy &amp; Ziwei Liu</span>
+                </div>
+                <span aria-hidden="true" class="timeline-toggle">＋</span>
+              </summary>
+              <p class="timeline-more">
+                MMLab@NTU, advised by Prof. Chen Change Loy and Prof. Ziwei Liu.
+                Research on versatile robots and multimodal agents for everyday
+                tasks.
+              </p>
+            </details>
+            <details class="timeline-entry">
+              <summary>
+                <span class="timeline-mark cuhk">C</span>
+                <div>
+                  <time>JUN 2024 — MAY 2025</time>
+                  <h3>CUHK · ARISE Lab</h3>
+                  <p>Undergraduate thesis · LLM Memorization &amp; Privacy</p>
+                  <span>Advised by Michael R. Lyu</span>
+                </div>
+                <span aria-hidden="true" class="timeline-toggle">＋</span>
+              </summary>
+              <p class="timeline-more">
+                Undergraduate thesis research on the relationship between
+                entropy and LLM memorization, including a 400K+ sample inference
+                pipeline and investigation of code-secret leakage.
+              </p>
+            </details>
+            <details class="timeline-entry">
+              <summary>
+                <span class="timeline-mark geovis">G</span>
+                <div>
+                  <time>JUL — AUG 2024</time>
+                  <h3>GEOVIS Technology</h3>
+                  <p>Algorithm Intern</p>
+                  <span>Knowledge graphs &amp; question answering</span>
+                </div>
+                <span aria-hidden="true" class="timeline-toggle">＋</span>
+              </summary>
+              <p class="timeline-more">
+                Built an automated data collection framework, fine-tuned OneKE
+                for unstructured data parsing, and developed a Neo4j-based
+                question-answering backend.
+              </p>
+            </details>
+            <details class="timeline-entry">
+              <summary>
+                <span class="timeline-mark cuhk">C</span>
+                <div>
+                  <time>SEP 2021 — MAY 2025</time>
+                  <h3>The Chinese University of Hong Kong</h3>
+                  <p>B.Sc. in Computer Science · First Class Honours</p>
+                  <span>Major GPA 3.80 / 4.0</span>
+                </div>
+                <span aria-hidden="true" class="timeline-toggle">＋</span>
+              </summary>
+              <p class="timeline-more">
+                B.Sc. in Computer Science, First Class Honours. Major GPA:
+                3.80/4.0. Dean’s List on four occasions.
+              </p>
+            </details>
           </div>
           <aside class="milestones">
-            <h3>A few happy milestones <span aria-hidden="true">🏅</span></h3>
+            <h3>A few milestones</h3>
             <div>
               <time>2024–2025</time>
               <h4>HKSAR Government Scholarship</h4>
@@ -978,8 +1028,8 @@
                 HippoCamp ·
                 <a
                   href="https://beamv2-eccv-workshop.github.io/"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >BEAM 2 at ECCV ↗</a
                 >
               </p>
@@ -987,25 +1037,44 @@
           </aside>
         </div>
       </section>
-      <section class="note-section wrap" aria-label="A personal reminder">
-        <div class="note-sticker" aria-hidden="true">☺</div>
-        <div>
-          <p class="section-kicker">A LITTLE REMINDER I KEEP</p>
-          <blockquote>What I want<br /><span>wants me more.</span></blockquote>
-          <p>Everything is working in my favor.</p>
+      <section aria-labelledby="note-title" class="note-section wrap">
+        <div class="note-paper">
+          <div class="note-topline">
+            <span>NOTES TO SELF</span
+            ><span aria-live="polite" class="note-count">01 / 02</span>
+          </div>
+          <h2 id="note-title">What I want<br /><span>wants me more.</span></h2>
+          <div class="note-bottomline">
+            <span class="note-signature">Zhe</span
+            ><button class="next-note" hidden="" type="button">
+              Another little reminder <span aria-hidden="true">↗</span>
+            </button>
+          </div>
         </div>
-        <div class="note-flower" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span
-          ><span></span><i></i>
+        <div aria-hidden="true" class="note-garden">
+          <span class="garden-spark spark-one">✦</span
+          ><span class="garden-spark spark-two">✧</span
+          ><span class="garden-spark spark-three">✦</span>
+          <div class="garden-orbit"></div>
+          <div class="garden-flower">
+            <div class="petals">
+              <i></i><i></i><i></i><i></i><i></i><i></i
+              ><b><span></span><span></span><em></em></b>
+            </div>
+            <div class="flower-stem"></div>
+            <div class="flower-leaf leaf-left"></div>
+            <div class="flower-leaf leaf-right"></div>
+          </div>
+          <span class="garden-note handwritten"
+            >a little faith,<br />a little sunshine.</span
+          >
         </div>
       </section>
       <footer class="wrap" id="contact">
         <div class="footer-main">
           <div>
-            <h2>Let’s make something <span>good.</span></h2>
-            <p>
-              Always happy to talk about robots, agents, and interesting ideas.
-            </p>
+            <h2>Say hello.</h2>
+            <p>For conversations about robots, agents, and research.</p>
           </div>
           <a class="button primary" href="mailto:zhe012@e.ntu.edu.sg"
             >Say hello <span aria-hidden="true">↗</span></a
@@ -1018,5 +1087,11 @@
         </div>
       </footer>
     </main>
+    <dialog aria-labelledby="figure-caption" class="figure-dialog">
+      <button aria-label="Close figure" class="close-figure" type="button">
+        Close <span aria-hidden="true">×</span></button
+      ><img alt="" />
+      <p id="figure-caption"></p>
+    </dialog>
   </body>
 </html>
