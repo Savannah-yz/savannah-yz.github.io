@@ -34,20 +34,31 @@ The supplied October 2026 CV is the source for education, positions, contributio
 - RAUIE: https://doi.org/10.1109/AINIT61980.2024.10581499 (publisher may present an anti-bot check).
 - InnerFeel: supplied CV only; no verified public URL was found. It remains labeled “Under review”, without an unrelated link.
 
-The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. InnerFeel’s teaser was extracted from Figure 1 of the manuscript supplied by the user on 28 October 2026. The complete private manuscript is not included in this repository. Three typographic paper covers and the current-project sketches are original decorative compositions, not figures or empirical results from the papers.
+The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. InnerFeel’s teaser was extracted from Figure 1 of the manuscript supplied by the user on 28 October 2026. The complete private manuscript is not included in this repository. Three typographic paper covers are original decorative compositions, not figures from the papers. The ongoing-work character is a procedural toy animation, not a demonstration of a trained policy.
 
 ## Design direction and provenance
 
-The CV, publications, Scholar, GitHub, and email remain directly accessible. DM Sans provides larger, lighter body and display type; Caveat is used for the personal reminders. Every publication uses the same image-and-text row. Five paper images can be enlarged in an accessible dialog. The remaining three use typographic covers. Current projects and the experience timeline use native HTML disclosures, retaining titles, dates, and roles in the visible summary.
+The CV, publications, Scholar, GitHub, and email remain directly accessible. DM Sans provides larger, lighter body and display type; Caveat is used for the personal reminders. Every publication uses the same image-and-text row. Five paper images can be enlarged in an accessible dialog. The remaining three use typographic covers. Current projects are always-visible chapters beside one sticky character scene; optional technical detail and the experience timeline use native HTML disclosures.
 
 The robot is constructed in `src/robot-scene.js` with Three.js sphere, cylinder, rounded-box, and tube geometry. No downloaded robot model, stock character, portfolio source code, or external texture is used. The ZY badge, paired memory tabs, and side memory module were added for this homepage. Basic screen-faced robots are a common visual motif; this documents implementation provenance rather than claiming that no similar character exists anywhere. Three.js is the rendering library and its MIT license is retained locally.
 
 Spatial portfolio references included https://room.bokoko33.me/ and https://bruno-simon.com/; https://dennissnellenberg.com/ and https://pablocuello.com/ were browsing references for layout and motion. These are references, not source templates. The user prefers immediately readable research content over game-like navigation.
 
-The hero’s research description and both ongoing project drawers follow the supplied CV’s Research Interests and Research Projects sections. The personal-reminder button alternates the user’s two requested sentiments.
+The hero’s research description and both ongoing project chapters follow the supplied CV’s Research Interests and Research Projects sections. The personal-reminder button alternates the user’s two requested sentiments.
 
 ## Motion and accessibility
 
 The scene respects `prefers-reduced-motion`; visitors can also pause it beside the robot. A saved preference persists between visits. Rendering stops offscreen and while the tab is hidden, with device-pixel ratio capped and updates limited to 30 fps. On reduced motion, the greeting button changes pose without animation. Touch devices retain normal page scrolling. If WebGL is unavailable or loses its context, the static robot illustration remains visible.
 
 Semantic headings, descriptive links, keyboard focus, a skip link, a collapsible mobile menu, native details disclosures, and a focus-contained figure dialog are provided. Escape closes the figure dialog and returns focus to the originating figure. The reminder and garden motion also respect reduced-motion and pause preferences. All publication content and CV links work without JavaScript. The UI uses Google Fonts with a system-font fallback; the 3D code and all illustrations are local assets.
+
+## Scroll interaction revision · 28 October 2026
+
+The desktop wrapper uses 92% of the viewport instead of a fixed 1160px cap. The type and spacing scale together on larger screens; small-screen media queries retain fixed readable base sizing. Greetings have intrinsic width and stay on one line. The two decorative project diagrams have been removed.
+
+`src/research-scene.js` contains an original procedural character and pick/carry/place sequence. Native page scroll advances the sequence while the scene stays beside the research chapters. A labeled range slider provides direct replay, including keyboard input; dragging turns the miniature. The hero robot can also be turned. Mobile uses normal document flow and the direct controls. Automatic scene motion respects pause/reduced-motion settings and stops offscreen or when the tab is hidden. No research text is gated behind animation.
+
+Implementation references reviewed on GitHub:
+- [Drei ScrollControls](https://github.com/pmndrs/drei/blob/master/docs/controls/scroll-controls.mdx): mapping scroll offsets to stages and damping transitions. This site uses native scrolling and Three.js directly; it does not import Drei or create a separate scroll container.
+- [Three.js portfolio](https://github.com/adrianhajdin/threejs-portfolio): integrating character motion beside ordinary project and experience content. No models, textures, UI template, or source was copied.
+- [GSAP ScrollTrigger documentation](https://gsap.com/docs/v3/Plugins/ScrollTrigger/): pinned illustration and scroll scrubbing patterns. This implementation uses CSS sticky and browser scroll events, without adding GSAP.

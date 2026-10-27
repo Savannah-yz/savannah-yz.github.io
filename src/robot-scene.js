@@ -1,3 +1,4 @@
+import "./research-scene.js";
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -266,6 +267,8 @@ try {
     paused = document.body.classList.contains("motion-paused"),
     contextLost = false;
   const pointer = { x: 0, y: 0 };
+  let drag = null,
+    rotationTarget = 0;
   function resize() {
     const { width, height } = stage.getBoundingClientRect();
     if (!width || !height) return;
@@ -291,6 +294,12 @@ try {
     lastFrame = time;
     animationTime += delta;
     const t = animationTime;
+    world.rotation.y = THREE.MathUtils.damp(
+      world.rotation.y,
+      rotationTarget,
+      7,
+      delta,
+    );
     head.rotation.y = THREE.MathUtils.damp(
       head.rotation.y,
       pointer.x * 0.18 - 0.04,
@@ -336,10 +345,37 @@ try {
     frame = 0;
   }
   stage.addEventListener("pointermove", (e) => {
+    if (drag && e.pointerId === drag.id) {
+      const r = stage.getBoundingClientRect();
+      const distance = e.clientX - drag.x;
+      if (Math.abs(distance) > 5 && !stage.hasPointerCapture(e.pointerId))
+        stage.setPointerCapture(e.pointerId);
+      rotationTarget = THREE.MathUtils.clamp(
+        drag.rotation + (distance / r.width) * 3,
+        -0.9,
+        0.9,
+      );
+      if (paused) {
+        world.rotation.y = rotationTarget;
+        renderStill();
+      }
+    }
     if (e.pointerType !== "mouse" || paused) return;
     const r = stage.getBoundingClientRect();
     pointer.x = ((e.clientX - r.left) / r.width) * 2 - 1;
     pointer.y = ((e.clientY - r.top) / r.height) * 2 - 1;
+  });
+  stage.addEventListener("pointerdown", (e) => {
+    drag = { id: e.pointerId, x: e.clientX, rotation: rotationTarget };
+  });
+  stage.addEventListener("pointerup", () => {
+    drag = null;
+  });
+  stage.addEventListener("pointercancel", () => {
+    drag = null;
+  });
+  stage.addEventListener("lostpointercapture", () => {
+    drag = null;
   });
   stage.addEventListener("pointerleave", () => {
     pointer.x = 0;

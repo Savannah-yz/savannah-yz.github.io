@@ -39,8 +39,8 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=DM+Sans:wght@400;450;500;550;600;650;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="./styles.css?v=20261028-studio" rel="stylesheet" />
-    <script defer="" src="./script.js?v=20261028-studio"></script>
+    <link href="./styles.css?v=20261028-scroll" rel="stylesheet" />
+    <script defer="" src="./script.js?v=20261028-scroll"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -64,7 +64,7 @@
       }
     </script>
     <script
-      src="./assets/robot-scene.js?v=20261028-studio"
+      src="./assets/robot-scene.js?v=20261028-scroll"
       type="module"
     ></script>
   </head>
@@ -185,7 +185,7 @@
               ><span class="motion-label">Pause motion</span>
             </button>
           </div>
-          <p class="scene-caption">A little memory keeper.</p>
+          <p class="scene-caption">Drag to turn. Say hi to make a friend.</p>
         </div>
       </section>
       <div aria-label="Research interests" class="topic-strip wrap">
@@ -811,32 +811,82 @@
           </div>
           <span class="in-progress"><i></i> Since June 2026</span>
         </div>
-        <div class="research-drawers">
-          <details class="research-drawer memory-drawer" open="">
-            <summary>
-              <span class="drawer-index">01</span
-              ><span class="drawer-title"
-                ><span>Memory for world action models</span
-                ><small>Endogenous &amp; exogenous memory</small></span
-              ><span aria-hidden="true" class="drawer-action">＋</span>
-            </summary>
-            <div class="drawer-content">
-              <div aria-hidden="true" class="project-sketch memory-sketch">
-                <span class="sketch-label">A WORLD THAT KEEPS CHANGING</span>
-                <div class="memory-stack">
-                  <i>past experience</i><i>new observations</i
-                  ><i>next action <b>↗</b></i>
-                </div>
-                <span class="sketch-footer">remember · update · act</span>
+        <div class="research-story">
+          <div class="research-playground">
+            <div class="playground-topline">
+              <span>A tiny practice run</span
+              ><span class="playground-hint">Scroll to move ↓</span>
+            </div>
+            <div
+              id="research-stage"
+              class="research-stage"
+              role="img"
+              aria-label="An interactive toy robot picks up a peach ball and carries it to a second spot. Drag horizontally to turn the scene."
+            >
+              <img
+                src="./assets/robot-fallback.svg"
+                alt=""
+                class="research-fallback"
+                width="560"
+                height="480"
+                loading="lazy"
+              />
+            </div>
+            <div class="research-interaction" hidden>
+              <div class="playback-heading">
+                <output id="research-action" for="research-progress"
+                  >01 · Notice</output
+                ><button
+                  id="research-replay"
+                  type="button"
+                  aria-label="Play the little robot's practice run"
+                >
+                  Play ↗
+                </button>
               </div>
-              <div class="project-details">
-                <p class="project-mentor">With Dr. Zhonghua Wu</p>
-                <h3>Connecting memory to decisions.</h3>
-                <p>
-                  I assist in designing dual memory, co-develop RMBench++, and
-                  build the real-robot pipeline for data acquisition, model
-                  deployment, and robot control.
-                </p>
+              <label class="sr-only" for="research-progress"
+                >Scrub the robot’s practice run</label
+              >
+              <input
+                id="research-progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="1"
+                aria-valuetext="Notice, 0 percent"
+              />
+              <div class="playback-labels" aria-hidden="true">
+                <span>Notice</span><span>Pick up</span><span>Carry</span
+                ><span>Place</span>
+              </div>
+              <p class="playground-instruction">
+                Drag to turn · slide to replay
+              </p>
+            </div>
+            <p class="playground-footnote">
+              A playful illustration, not a research demo.
+            </p>
+          </div>
+          <div class="research-chapters">
+            <article class="research-chapter" id="research-memory">
+              <p class="chapter-eyebrow"><span>01</span> MEMORY</p>
+              <h3>
+                Memory for world<br class="desktop-break" />
+                action models.
+              </h3>
+              <p class="chapter-intro">
+                Connecting what a robot remembers to what it does next.
+              </p>
+              <p>
+                I assist in designing dual memory, co-develop RMBench++, and
+                build the real-robot pipeline for data acquisition, model
+                deployment, and robot control.
+              </p>
+              <details class="project-methods">
+                <summary>
+                  A closer look <span aria-hidden="true">＋</span>
+                </summary>
                 <ul>
                   <li>
                     <strong>Endogenous memory</strong> compresses older history
@@ -851,37 +901,26 @@
                     and real-robot experiments.
                   </li>
                 </ul>
-              </div>
-            </div>
-          </details>
-          <details class="research-drawer action-drawer">
-            <summary>
-              <span class="drawer-index">02</span
-              ><span class="drawer-title"
-                ><span>Learning actions from video</span
-                ><small>Native latent action models</small></span
-              ><span aria-hidden="true" class="drawer-action">＋</span>
-            </summary>
-            <div class="drawer-content">
-              <div aria-hidden="true" class="project-sketch action-sketch">
-                <span class="sketch-label">FROM WATCHING TO DOING</span>
-                <div class="video-strip">
-                  <span>01</span><span>02</span><span>03</span>
-                </div>
-                <div class="action-tokens">
-                  <i></i><i></i><i></i><i></i><i></i><i></i>
-                </div>
-                <span class="sketch-footer"
-                  >video → latent actions → policy</span
-                >
-              </div>
-              <div class="project-details">
-                <p class="project-mentor">With Dr. Qingyi Tao</p>
-                <h3>Taking learned actions to real robots.</h3>
-                <p>
-                  I integrated register-token latent actions into π0.5 and ran
-                  closed-loop manipulation evaluation in RoboTwin.
-                </p>
+              </details>
+              <p class="project-mentor">With Dr. Zhonghua Wu</p>
+            </article>
+            <article class="research-chapter" id="research-actions">
+              <p class="chapter-eyebrow"><span>02</span> ACTION</p>
+              <h3>
+                Learning actions<br class="desktop-break" />
+                from video.
+              </h3>
+              <p class="chapter-intro">
+                Taking learned actions to real robots.
+              </p>
+              <p>
+                I integrated register-token latent actions into π0.5 and ran
+                closed-loop manipulation evaluation in RoboTwin.
+              </p>
+              <details class="project-methods">
+                <summary>
+                  A closer look <span aria-hidden="true">＋</span>
+                </summary>
                 <ul>
                   <li>
                     <strong>Policy integration</strong> connects native latent
@@ -893,9 +932,10 @@
                     success-rate evaluation.
                   </li>
                 </ul>
-              </div>
-            </div>
-          </details>
+              </details>
+              <p class="project-mentor">With Dr. Qingyi Tao</p>
+            </article>
+          </div>
         </div>
       </section>
       <section
