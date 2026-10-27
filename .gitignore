@@ -6,3 +6,6 @@
 .vscode/
 .idea/
 *.swp
+
+# Local development dependencies
+node_modules/

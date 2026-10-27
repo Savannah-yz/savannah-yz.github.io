@@ -1,6 +1,6 @@
 # Zhe Yang · Personal homepage
 
-Live at https://savannah-yz.github.io/. A static, responsive research homepage on GitHub Pages. No install or build step is required to serve it.
+A static, responsive research homepage for https://savannah-yz.github.io/. This branch contains the playful robot redesign, prepared for review before replacing the published homepage. The committed assets can be served directly without an install or build step.
 
 ## Edit and preview
 
@@ -8,7 +8,9 @@ Live at https://savannah-yz.github.io/. A static, responsive research homepage o
 - `data/publications.json`: publication metadata, authors, contributions, and verified links.
 - `python3 scripts/build_publications.py`: regenerate publication markup in `index.html` after changing the data. Publication content is delivered as HTML and remains accessible without JavaScript.
 - `styles.css`: typography, responsive layout, and print styles.
-- `script.js`: filters, mobile navigation, optional motion, and a canvas illustration using projected 3D rings.
+- `script.js`: publication filters, mobile navigation, and the motion preference.
+- `src/robot-scene.js`: an original Three.js miniature robot, built from geometry, with pointer tracking, blinking, and a wave interaction. After editing, run `npm ci` and `npm run build:scene` to update the committed `assets/robot-scene.js`.
+- `assets/robot-fallback.svg`: static artwork used without JavaScript or WebGL. Three.js is bundled locally; its MIT license is in `assets/vendor/THREE-LICENSE.txt`.
 - `python3 -m http.server 8765 --bind 127.0.0.1`: local preview.
 
 Push `main` to publish through the repository's existing GitHub Pages configuration. The existing HippoCamp project and data-visualization pages are retained.
@@ -34,10 +36,14 @@ The supplied October 2026 CV is the source for education, positions, contributio
 
 The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. Four simple SVG drawings are decorative illustrations, **not** empirical figures or paper results.
 
-## Design references
+## Design direction
 
-Original implementation informed by the typographic hierarchy and readable navigation of https://brittanychiang.com/ and the spatial playfulness of https://bruno-simon.com/ (https://github.com/brunosimon/folio-2025). No template code or third-party portfolio artwork was copied. Additional browsing: https://github.com/emmabostian/developer-portfolios.
+The CV, publication links, Scholar, GitHub, and email are immediately visible. A small interactive robot adds personality beside the content; visitors never need to explore a 3D world to find information. The pale periwinkle palette, rounded sans-serif type, and miniature desk replace the previous serif-and-orbit design.
+
+Spatial portfolio references included https://room.bokoko33.me/ and https://bruno-simon.com/, while https://dennissnellenberg.com/ and https://pablocuello.com/ informed the exploration of navigation and motion. The robot, scene, and layout are original; no portfolio template or third-party artwork was copied. The user's preference explicitly favors direct access to research over game-like navigation.
 
 ## Motion and accessibility
 
-The animation respects `prefers-reduced-motion`; visitors can pause it using the header control. Canvas rendering stops offscreen and while the tab is hidden. Touch devices retain normal page scrolling. Semantic headings, descriptive links, keyboard focus, a skip link, and a collapsible mobile menu are provided. Research and CV links work without JavaScript.
+The scene respects `prefers-reduced-motion`; visitors can also pause it beside the robot. A saved preference persists between visits. Rendering stops offscreen and while the tab is hidden, with device-pixel ratio capped and updates limited to 30 fps. On reduced motion, the greeting button changes pose without animation. Touch devices retain normal page scrolling. If WebGL is unavailable or loses its context, the static robot illustration remains visible.
+
+Semantic headings, descriptive links, keyboard focus, a skip link, and a collapsible mobile menu are provided. All publication content and CV links work without JavaScript. The UI uses Google Fonts with a system-font fallback; the 3D code and all illustrations are local assets.

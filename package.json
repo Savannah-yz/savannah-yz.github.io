@@ -1,0 +1,15 @@
+{
+  "name": "zhe-yang-homepage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:scene": "esbuild src/robot-scene.js --bundle --format=esm --minify --outfile=assets/robot-scene.js",
+    "preview": "python3 -m http.server 8765 --bind 127.0.0.1"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}
