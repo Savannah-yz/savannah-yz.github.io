@@ -1,0 +1,139 @@
+[
+  {
+    "id": "hippocamp",
+    "category": "peer",
+    "venue": "ECCV 2026",
+    "year": "2026",
+    "featured": true,
+    "title": "HippoCamp: Benchmarking Contextual Agents on Personal Computers",
+    "authors": "Zhe Yang, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen, Yichi Zhang, Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy, Ziwei Liu",
+    "description": "Can an agent make sense of a life’s worth of files? A device-scale benchmark with 2,000+ real files, 581 questions, and step-wise failure diagnosis.",
+    "contribution": "FIRST AUTHOR · RESEARCH LEAD",
+    "image": "assets/images/hippocamp.webp",
+    "imageAlt": "HippoCamp overview: contextual reasoning over personal files",
+    "imageStyle": "contain",
+    "links": [
+      ["Project", "https://hippocamp-ai.github.io/"],
+      ["Paper", "https://arxiv.org/abs/2604.01221"],
+      ["Publication", "https://doi.org/10.1007/978-3-032-37016-7_6"],
+      ["Code", "https://github.com/synvo-ai/HippoCamp"],
+      ["Data", "https://huggingface.co/datasets/MMMem-org/HippoCamp"]
+    ]
+  },
+  {
+    "id": "embodied",
+    "category": "report",
+    "venue": "Technical report",
+    "year": "2026",
+    "featured": true,
+    "title": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+    "authors": "SenseNova & Joint Research Team (including Zhe Yang; alphabetical author order)",
+    "description": "Probing embodied competence and practical limitations, then asking what a next-generation benchmark should measure in a world that keeps moving.",
+    "contribution": "CO-FIRST AUTHOR · BENCHMARK PROTOTYPE & BEHAVIOR-1K",
+    "image": "assets/images/embodied.webp",
+    "imageAlt": "Cutaway view of the simulated apartment used in the embodied benchmark prototype",
+    "imageStyle": "photo",
+    "links": [
+      [
+        "Project",
+        "https://sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence"
+      ],
+      ["Paper", "https://arxiv.org/abs/2610.22471"],
+      ["Code", "https://github.com/OpenSenseNova/SenseNova-RoboRSI"]
+    ]
+  },
+  {
+    "id": "egotools",
+    "category": "peer",
+    "venue": "EMNLP 2026 · Accepted",
+    "year": "2026",
+    "title": "EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos",
+    "authors": "Shulin Tian*, Junsu Kim*, Shuai Liu*, Hao Li*, Yujiao Shen, Sihan Li, Zhe Yang, Yeongon Kim, Feiyu Li, Jialin Wu, Yichi Zhang, Wenhui Wang, Runmao Yao, Yuhao Dong, Zhaoxi Chen, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan Zhu, Ziwei Liu",
+    "shortAuthors": "Shulin Tian*, Junsu Kim*, Shuai Liu*, Hao Li*, …, Zhe Yang, …, Ziwei Liu",
+    "description": "Understanding why and how people use tools: 100 hours of egocentric video and a 1,000-question diagnostic benchmark.",
+    "contribution": "DATA COLLECTION · ANNOTATION PLATFORM & CURATION",
+    "image": "assets/images/egotools.webp",
+    "imageAlt": "First-person view of tool use in a kitchen from EgoTools",
+    "imageStyle": "photo",
+    "links": [
+      ["Project", "https://ropedia.github.io/egotools/"],
+      ["Paper", "https://arxiv.org/abs/2609.39378"],
+      ["Code", "https://github.com/Ropedia/EgoTools"],
+      ["Data", "https://huggingface.co/datasets/ropedia-ai/egotools-data"]
+    ]
+  },
+  {
+    "id": "innerfeel",
+    "category": "review",
+    "venue": "Under review",
+    "year": "2026",
+    "title": "InnerFeel: Benchmarking Multi-Perspective Emotion Report Prediction in Egocentric Social Interactions",
+    "authors": "X. Zhang*, S. Tian*, Zhe Yang, K. Zhu, Z. Huang, K. Hu, Y. Zheng, E. Cambria, Z. Liu",
+    "description": "Studying emotion understanding as per-user belief tracking, with memory isolation and evaluation across different perspectives.",
+    "contribution": "RESEARCH FRAMING · EVALUATION DESIGN · VISUALIZATION",
+    "art": "innerfeel",
+    "links": [],
+    "availability": "Manuscript under review · Public link to follow."
+  },
+  {
+    "id": "filegram",
+    "category": "review",
+    "venue": "Under review · Preprint",
+    "year": "2026",
+    "title": "FileGram: Grounding Agent Personalization in File-System Behavioral Traces",
+    "authors": "Shuai Liu, Shulin Tian, Kairui Hu, Yuhao Dong, Zhe Yang, Bo Li, Jingkang Yang, Chen Change Loy, Ziwei Liu",
+    "description": "Grounding personalized memory in what people do with their files, through a simulation engine, diagnostic benchmark, and memory architecture.",
+    "contribution": "DATA ADAPTATION · BEHAVIOR SIMULATION ENGINE",
+    "image": "assets/images/filegram.webp",
+    "imageAlt": "FileGram framework for personalization through file-system behavioral traces",
+    "imageStyle": "contain",
+    "links": [
+      ["Project", "https://filegram.choiszt.com/"],
+      ["Paper", "https://arxiv.org/abs/2604.04901"],
+      ["Code", "https://github.com/Synvo-ai/FileGram"]
+    ]
+  },
+  {
+    "id": "secrets",
+    "category": "peer",
+    "venue": "Findings of ACL 2026",
+    "year": "2026",
+    "title": "Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective",
+    "authors": "Meifang Chen, Zhe Yang, Nianchen Huang, Yizhan Huang, Yichen Li, Zihan Li, Michael R. Lyu",
+    "description": "Investigating how tokenization turns high-character-entropy secrets into predictable token sequences, and why this increases leakage risks.",
+    "art": "secrets",
+    "links": [
+      ["Publication", "https://aclanthology.org/2026.findings-acl.6/"],
+      ["PDF", "https://aclanthology.org/2026.findings-acl.6.pdf"]
+    ]
+  },
+  {
+    "id": "compressibility",
+    "category": "peer",
+    "venue": "TMLR 2026",
+    "year": "2026",
+    "title": "Data Compressibility Quantifies LLM Memorization",
+    "authors": "Yizhan Huang, Zhe Yang, Meifang Chen, Huang Nianchen, Jianping Zhang, Michael R. Lyu",
+    "description": "A shift from instance-level to set-level entropy uncovers a near-linear relationship between data compressibility and LLM memorization.",
+    "contribution": "UNDERGRADUATE THESIS · PIPELINE LEAD",
+    "art": "compressibility",
+    "links": [
+      ["OpenReview", "https://openreview.net/forum?id=6L4UXc7P3h"],
+      ["Paper", "https://arxiv.org/abs/2507.06056"],
+      ["PDF", "https://arxiv.org/pdf/2507.06056"]
+    ]
+  },
+  {
+    "id": "rauie",
+    "category": "peer",
+    "venue": "AINIT 2024",
+    "year": "2024",
+    "title": "RAUIE: A Relation-Augmented Document-Level Event Extraction Model Based on UIE",
+    "authors": "Yiyuan Liang, Hong Jia, Licai Wang, Yangchen Huang, Zhe Yang",
+    "description": "Using relation-aware prompts to improve document-level event extraction.",
+    "art": "extract",
+    "links": [
+      ["Publication", "https://doi.org/10.1109/AINIT61980.2024.10581499"]
+    ]
+  }
+]

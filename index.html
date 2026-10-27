@@ -1,357 +1,1045 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zhe Yang</title>
-  <meta name="description" content="Zhe Yang — MSAI student at NTU researching multimodal agents, agent personalization, and LLM memorization, privacy, and tokenization security.">
-  <link rel="icon" type="image/png" href="./yangzhe.png?v=2">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=20260411a">
-</head>
-<body>
-  <!-- Subtle grain overlay for warmth -->
-  <svg class="grain-overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0 0.15  0 0 0 0.18 0"/></filter>
-    <rect width="100%" height="100%" filter="url(#grain)"/>
-  </svg>
-
-  <div class="top-bar" aria-hidden="true"><div class="top-bar-fill" id="scroll-progress"></div></div>
-
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="./yangzhe.png" alt="" class="nav-icon">
-        <span>Zhe Yang</span>
-      </a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#honors">Honors</a>
-        <a href="#skills">Skills</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f4ee" />
+    <title>Zhe Yang — Embodied Intelligence & Multimodal Agents</title>
+    <meta
+      name="description"
+      content="Zhe Yang, M.Sc. in AI at NTU MMLab. Research on embodied intelligence, long-horizon memory, multimodal agents, and realistic benchmarks."
+    />
+    <link rel="canonical" href="https://savannah-yz.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Zhe Yang — Remember. Reason. Act." />
+    <meta
+      property="og:description"
+      content="Building robots and multimodal agents that can help with everyday life. Research, publications, and a little about me."
+    />
+    <meta property="og:url" content="https://savannah-yz.github.io/" />
+    <meta
+      property="og:image"
+      content="https://savannah-yz.github.io/assets/images/zhe-yang.webp"
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link
+      rel="preload"
+      href="./assets/images/zhe-yang.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20261028" />
+    <script src="./script.js?v=20261028" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zhe Yang",
+        "url": "https://savannah-yz.github.io/",
+        "image": "https://savannah-yz.github.io/assets/images/zhe-yang.webp",
+        "email": "mailto:zhe012@e.ntu.edu.sg",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Nanyang Technological University"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "The Chinese University of Hong Kong"
+        },
+        "sameAs": [
+          "https://github.com/Savannah-yz",
+          "https://scholar.google.com/citations?user=4oVLBl8AAAAJ&hl=en"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Zhe Yang, home"
+        >zy<span class="wordmark-dot">.</span></a
+      >
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#publications">Research</a
+        ><a href="#experience">Journey</a
+        ><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="motion-button"
+          type="button"
+          aria-pressed="false"
+          aria-label="Pause animations"
+        >
+          <span aria-hidden="true">Ⅱ</span
+          ><span class="motion-label">Motion on</span></button
+        ><a
+          class="cv-link"
+          href="./assets/Resume-YANG_Zhe.pdf"
+          target="_blank"
+          rel="noopener"
+          >CV <span aria-hidden="true">↗</span></a
+        ><button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          Menu <span aria-hidden="true">＋</span>
+        </button>
       </div>
-    </div>
-  </nav>
-
-  <main>
-    <section id="hero" class="section">
-      <div class="container hero-layout">
-        <div class="hero-avatar-wrap fade-in">
-          <img src="./assets/yangzhe.JPG" alt="Zhe Yang" class="hero-avatar">
+    </header>
+    <nav
+      class="mobile-nav"
+      id="mobile-nav"
+      aria-label="Mobile navigation"
+      hidden
+    >
+      <a href="#about">About</a><a href="#publications">Research</a
+      ><a href="#experience">Journey</a><a href="#contact">Contact</a>
+    </nav>
+    <main id="main">
+      <section class="hero wrap" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span> Singapore · NTU
+            MMLab
+          </p>
+          <h1 id="hero-title">Zhe Yang<span>.</span></h1>
+          <p class="hero-statement">
+            Teaching agents to<br /><em>remember, reason & act.</em>
+          </p>
+          <p class="hero-description">
+            I build and study robots and multimodal agents for everyday life,
+            with a focus on memory and long-horizon tasks.
+          </p>
+          <div class="hero-links">
+            <a class="button button-dark" href="#publications"
+              >Explore my research <span aria-hidden="true">↓</span></a
+            ><a class="text-link" href="mailto:zhe012@e.ntu.edu.sg"
+              >Say hello <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <p class="hero-affiliation">
+            M.Sc. in AI @ NTU <span>/</span> Embodied AI @ SenseTime
+          </p>
         </div>
-        <div class="hero-container">
-          <p class="hero-greeting fade-in">Hello, I'm</p>
-          <h1 class="hero-name fade-in">
-            <span class="hero-name-text">Zhe Yang</span>
-          </h1>
-          <p class="hero-role fade-in">
-            MSAI @ <a href="https://www.mmlab-ntu.com/" target="_blank" rel="noopener">MMLab, NTU</a>
-            · Advised by Prof. Chen Change Loy
-          </p>
-          <p class="hero-thinking fade-in">
-            <span class="hero-thinking-label">currently thinking about</span>
-            <span class="hero-thinking-word" id="rotating-word">multimodal agents</span><span class="hero-thinking-caret">_</span>
-          </p>
-          <p class="hero-now fade-in">
-            <span class="hero-now-dot" aria-hidden="true"></span>
-            <span class="hero-now-date">June 2026</span>
-            <span class="hero-now-sep">—</span>
-            <span class="hero-now-text"><strong>HippoCamp</strong> at ECCV 2026 · Algorithm Intern at SenseTime</span>
-          </p>
-          <div class="hero-contact fade-in">
-            <a href="mailto:zhe012@e.ntu.edu.sg" class="hero-email">zhe012@e.ntu.edu.sg</a>
-            <span class="hero-contact-sep">·</span>
-            <a href="tel:+6582644077" class="hero-email">+65 8264 4077</a>
+        <div
+          class="hero-art"
+          aria-label="Portrait of Zhe Yang with an animated orbital illustration"
+        >
+          <div class="orbit-grid" aria-hidden="true"></div>
+          <canvas id="orbit-canvas" aria-hidden="true"></canvas>
+          <div class="portrait-card">
+            <img
+              src="./assets/images/zhe-yang.webp"
+              alt="Zhe Yang holding a bouquet of roses"
+              width="960"
+              height="994"
+              fetchpriority="high"
+            /><span class="portrait-caption"
+              >A curious mind, in a changing world.</span
+            >
           </div>
-          <div class="hero-social fade-in">
-            <a href="https://github.com/Savannah-yz" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <a href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&hl=zh-CN" target="_blank" rel="noopener" aria-label="Google Scholar">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-            </a>
-            <a href="./assets/Resume-YANG_Zhe.pdf" target="_blank" rel="noopener" class="hero-cv-pill" aria-label="CV (PDF)">CV</a>
-            <a href="mailto:zhe012@e.ntu.edu.sg" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
+          <span class="orbit-label label-memory" aria-hidden="true"
+            ><i></i> memory</span
+          ><span class="orbit-label label-perception" aria-hidden="true"
+            ><i></i> perception</span
+          ><span class="orbit-label label-action" aria-hidden="true"
+            ><i></i> action</span
+          ><span class="art-coordinate" aria-hidden="true"
+            >01 — ALWAYS EXPLORING</span
+          ><span class="art-star" aria-hidden="true">✳</span>
+        </div>
+        <div class="hero-bottom">
+          <span class="mono">RESEARCH, WITH THE REAL WORLD IN MIND.</span
+          ><a href="#about"
+            >A little more about me <span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <section
+        class="about wrap section-pad"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="section-label">
+          <span>01 / ABOUT</span
+          ><span class="small-star" aria-hidden="true">✳</span>
+        </div>
+        <div class="about-body">
+          <h2 id="about-title">
+            Intelligence that lives<br /><em>beyond the screen.</em>
+          </h2>
+          <div class="about-text">
+            <p>
+              I’m a master’s student in Artificial Intelligence at
+              <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener"
+                >Nanyang Technological University</a
+              >, working with
+              <a
+                href="https://www.mmlab-ntu.com/person/ccloy/"
+                target="_blank"
+                rel="noopener"
+                >Prof. Chen Change Loy</a
+              >
+              and
+              <a
+                href="https://liuziwei7.github.io/"
+                target="_blank"
+                rel="noopener"
+                >Prof. Ziwei Liu</a
+              >
+              at MMLab. I’m also an algorithm intern in Embodied AI at
+              SenseTime, Singapore.
+            </p>
+            <p>
+              My research asks how agents can use past experience, current
+              observations, and feedback to act reliably over long horizons. I
+              work on both <strong>policy learning</strong> and
+              <strong>realistic evaluation</strong>, from personal computers to
+              simulated homes and real robots.
+            </p>
+            <p>
+              Previously, I graduated with First Class Honours in Computer
+              Science from
+              <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener"
+                >CUHK</a
+              >, where I worked with
+              <a
+                href="https://www.cse.cuhk.edu.hk/lyu/"
+                target="_blank"
+                rel="noopener"
+                >Prof. Michael R. Lyu</a
+              >
+              on LLM memorization and privacy.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="section" data-num="01">
-      <div class="container">
-        <h2 class="section-heading fade-in">About</h2>
-        <div class="about-layout">
-          <div class="about-content fade-in">
+        <div class="research-threads">
+          <article>
+            <span class="thread-number">↳ 01</span>
+            <h3>Remember</h3>
             <p>
-              I am a Master's student in <strong>Artificial Intelligence (MSAI)</strong> at
-              <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener">Nanyang Technological University</a>,
-              where I am fortunate to be advised by Prof. Chen Change Loy at
-              <a href="https://www.mmlab-ntu.com/" target="_blank" rel="noopener">MMLab</a>.
+              Memory that keeps agents grounded as tasks unfold and environments
+              change.
             </p>
+          </article>
+          <article>
+            <span class="thread-number">↳ 02</span>
+            <h3>Understand</h3>
             <p>
-              Before NTU, I received my <strong>B.Sc. in Computer Science</strong> with
-              <strong>First Class Honor</strong> from
-              <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a>,
-              where I was fortunate to work with
-              <a href="https://www.cse.cuhk.edu.hk/lyu/" target="_blank" rel="noopener">Prof. Michael R. Lyu</a>
-              at ARISE Lab.
+              Multimodal reasoning about tools, personal context, and human
+              perspectives.
             </p>
+          </article>
+          <article>
+            <span class="thread-number">↳ 03</span>
+            <h3>Act</h3>
             <p>
-              I am currently excited about <strong>multimodal agents</strong> and
-              <strong>world models</strong>.
+              Robot policies and benchmarks that bring real-world constraints
+              into the loop.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="news-band" aria-label="Recent updates">
+        <div class="wrap news-layout">
+          <span class="eyebrow">LATELY</span>
+          <div>
+            <time datetime="2026-10">OCT 2026</time>
+            <p>
+              Contributed to
+              <a
+                href="https://arxiv.org/abs/2610.22471"
+                target="_blank"
+                rel="noopener"
+                >Has GPT-6-Astra Achieved Embodied Intelligence? ↗</a
+              >
             </p>
           </div>
-          <aside class="about-aside fade-in">
-            <div class="aside-row">
-              <div class="aside-label">Currently</div>
-              <div class="aside-value">Algorithm Intern <em>· SenseTime</em></div>
-              <div class="aside-value">Master's in AI <em>· NTU</em></div>
+          <div>
+            <time datetime="2026-09-08">SEP 2026</time>
+            <p>
+              Presented
+              <a
+                href="https://beamv2-eccv-workshop.github.io/"
+                target="_blank"
+                rel="noopener"
+                >HippoCamp at BEAM 2, ECCV 2026 ↗</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="publications wrap section-pad"
+        id="publications"
+        aria-labelledby="publications-title"
+      >
+        <div class="section-label">
+          <span>02 / RESEARCH</span><span>2024 — 2026</span>
+        </div>
+        <div class="section-title-row">
+          <div>
+            <h2 id="publications-title">
+              Ideas, put to the test<span class="accent">.</span>
+            </h2>
+            <p class="section-description">
+              Publications, ongoing work, and the questions behind them.
+            </p>
+          </div>
+          <a
+            class="text-link"
+            href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&hl=en"
+            target="_blank"
+            rel="noopener"
+            >Google Scholar ↗</a
+          >
+        </div>
+        <div class="publication-controls" hidden>
+          <div class="filters" role="group" aria-label="Filter publications">
+            <button type="button" data-filter="all" aria-pressed="true">
+              All <span>8</span></button
+            ><button type="button" data-filter="peer" aria-pressed="false">
+              Peer-reviewed <span>5</span></button
+            ><button type="button" data-filter="review" aria-pressed="false">
+              Under review <span>2</span></button
+            ><button type="button" data-filter="report" aria-pressed="false">
+              Reports <span>1</span>
+            </button>
+          </div>
+          <span class="filter-count" aria-live="polite">8 works</span>
+        </div>
+        <div class="publication-grid">
+          <!-- PUBLICATIONS:START -->
+          <article
+            class="pub featured"
+            id="paper-hippocamp"
+            data-category="peer"
+          >
+            <div class="pub-media contain">
+              <img
+                src="./assets/images/hippocamp.webp"
+                alt="HippoCamp overview: contextual reasoning over personal files"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="700"
+              />
             </div>
-            <div class="aside-row">
-              <div class="aside-label">Advisors</div>
-              <div class="aside-value">Prof. Chen Change Loy <em>· NTU MMLab</em></div>
-              <div class="aside-value">Prof. Ziwei Liu <em>· NTU MMLab, 2025–2026</em></div>
-              <div class="aside-value">Prof. Michael R. Lyu <em>· CUHK ARISE Lab</em></div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type peer">ECCV 2026</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                <a
+                  href="https://hippocamp-ai.github.io/"
+                  target="_blank"
+                  rel="noopener"
+                  >HippoCamp: Benchmarking Contextual Agents on Personal
+                  Computers</a
+                >
+              </h3>
+              <p class="pub-authors">
+                <strong>Zhe Yang</strong>, Shulin Tian, Kairui Hu, Shuai Liu,
+                Hoang-Nhat Nguyen, Yichi Zhang, Zujin Guo, Mengying Yu, Zinan
+                Zhang, Jingkang Yang, Chen Change Loy, Ziwei Liu
+              </p>
+              <p class="pub-description">
+                Can an agent make sense of a life’s worth of files? A
+                device-scale benchmark with 2,000+ real files, 581 questions,
+                and step-wise failure diagnosis.
+              </p>
+              <p class="pub-contribution">FIRST AUTHOR · RESEARCH LEAD</p>
+              <div class="pub-links">
+                <a
+                  href="https://hippocamp-ai.github.io/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Project for HippoCamp: Benchmarking Contextual Agents on Personal Computers"
+                  >Project <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://arxiv.org/abs/2604.01221"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Paper for HippoCamp: Benchmarking Contextual Agents on Personal Computers"
+                  >Paper <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1007/978-3-032-37016-7_6"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Publication for HippoCamp: Benchmarking Contextual Agents on Personal Computers"
+                  >Publication <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://github.com/synvo-ai/HippoCamp"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Code for HippoCamp: Benchmarking Contextual Agents on Personal Computers"
+                  >Code <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://huggingface.co/datasets/MMMem-org/HippoCamp"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Data for HippoCamp: Benchmarking Contextual Agents on Personal Computers"
+                  >Data <span aria-hidden="true">↗</span></a
+                >
+              </div>
             </div>
-            <div class="aside-row">
-              <div class="aside-label">Based in</div>
-              <div class="aside-value">Singapore</div>
+          </article>
+          <article
+            class="pub featured"
+            id="paper-embodied"
+            data-category="report"
+          >
+            <div class="pub-media photo">
+              <img
+                src="./assets/images/embodied.webp"
+                alt="Cutaway view of the simulated apartment used in the embodied benchmark prototype"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="700"
+              />
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type report">Technical report</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                <a
+                  href="https://sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence"
+                  target="_blank"
+                  rel="noopener"
+                  >Has GPT-6-Astra Achieved Embodied Intelligence?</a
+                >
+              </h3>
+              <p class="pub-authors">
+                SenseNova &amp; Joint Research Team (including
+                <strong>Zhe Yang</strong>; alphabetical author order)
+              </p>
+              <p class="pub-description">
+                Probing embodied competence and practical limitations, then
+                asking what a next-generation benchmark should measure in a
+                world that keeps moving.
+              </p>
+              <p class="pub-contribution">
+                CO-FIRST AUTHOR · BENCHMARK PROTOTYPE &amp; BEHAVIOR-1K
+              </p>
+              <div class="pub-links">
+                <a
+                  href="https://sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Project for Has GPT-6-Astra Achieved Embodied Intelligence?"
+                  >Project <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://arxiv.org/abs/2610.22471"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Paper for Has GPT-6-Astra Achieved Embodied Intelligence?"
+                  >Paper <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://github.com/OpenSenseNova/SenseNova-RoboRSI"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Code for Has GPT-6-Astra Achieved Embodied Intelligence?"
+                  >Code <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="pub" id="paper-egotools" data-category="peer">
+            <div class="pub-media photo">
+              <img
+                src="./assets/images/egotools.webp"
+                alt="First-person view of tool use in a kitchen from EgoTools"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="700"
+              />
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type peer">EMNLP 2026 · Accepted</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                <a
+                  href="https://ropedia.github.io/egotools/"
+                  target="_blank"
+                  rel="noopener"
+                  >EgoTools: Towards Tool-Centric Reasoning in Real-World
+                  Egocentric Videos</a
+                >
+              </h3>
+              <details class="pub-authors author-list">
+                <summary>
+                  Shulin Tian*, Junsu Kim*, Shuai Liu*, Hao Li*, …,
+                  <strong>Zhe Yang</strong>, …, Ziwei Liu
+                  <span class="sr-only">— expand full author list</span>
+                </summary>
+                <p>
+                  Shulin Tian*, Junsu Kim*, Shuai Liu*, Hao Li*, Yujiao Shen,
+                  Sihan Li, <strong>Zhe Yang</strong>, Yeongon Kim, Feiyu Li,
+                  Jialin Wu, Yichi Zhang, Wenhui Wang, Runmao Yao, Yuhao Dong,
+                  Zhaoxi Chen, Fangzhou Hong, Antonino Furnari, Jingkang Yang,
+                  Hongyuan Zhu, Ziwei Liu
+                </p>
+              </details>
+              <p class="pub-description">
+                Understanding why and how people use tools: 100 hours of
+                egocentric video and a 1,000-question diagnostic benchmark.
+              </p>
+              <p class="pub-contribution">
+                DATA COLLECTION · ANNOTATION PLATFORM &amp; CURATION
+              </p>
+              <div class="pub-links">
+                <a
+                  href="https://ropedia.github.io/egotools/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Project for EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos"
+                  >Project <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://arxiv.org/abs/2609.39378"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Paper for EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos"
+                  >Paper <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://github.com/Ropedia/EgoTools"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Code for EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos"
+                  >Code <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://huggingface.co/datasets/ropedia-ai/egotools-data"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Data for EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos"
+                  >Data <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="pub" id="paper-innerfeel" data-category="review">
+            <div class="pub-media">
+              <div class="pub-art innerfeel" aria-hidden="true">
+                <svg
+                  viewBox="0 0 250 160"
+                  xmlns="http://www.w3.org/2000/svg"
+                  font-family="monospace"
+                >
+                  <g fill="none" stroke="#66766d" stroke-width="1.2">
+                    <circle cx="100" cy="72" r="42" />
+                    <circle cx="151" cy="72" r="42" />
+                    <path d="M68 82Q100 111 132 82M119 65Q150 40 181 65" />
+                  </g>
+                  <circle cx="87" cy="65" r="3" fill="#ad512f" />
+                  <circle cx="108" cy="65" r="3" fill="#ad512f" />
+                  <text
+                    x="125"
+                    y="140"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#55665a"
+                    letter-spacing="2"
+                  >
+                    TWO PERSPECTIVES
+                  </text>
+                </svg>
+              </div>
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type review">Under review</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                InnerFeel: Benchmarking Multi-Perspective Emotion Report
+                Prediction in Egocentric Social Interactions
+              </h3>
+              <p class="pub-authors">
+                X. Zhang*, S. Tian*, <strong>Zhe Yang</strong>, K. Zhu, Z.
+                Huang, K. Hu, Y. Zheng, E. Cambria, Z. Liu
+              </p>
+              <p class="pub-description">
+                Studying emotion understanding as per-user belief tracking, with
+                memory isolation and evaluation across different perspectives.
+              </p>
+              <p class="pub-contribution">
+                RESEARCH FRAMING · EVALUATION DESIGN · VISUALIZATION
+              </p>
+              <p class="pub-unavailable">
+                Manuscript under review · Public link to follow.
+              </p>
+            </div>
+          </article>
+          <article class="pub" id="paper-filegram" data-category="review">
+            <div class="pub-media contain">
+              <img
+                src="./assets/images/filegram.webp"
+                alt="FileGram framework for personalization through file-system behavioral traces"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="700"
+              />
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type review">Under review · Preprint</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                <a
+                  href="https://filegram.choiszt.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >FileGram: Grounding Agent Personalization in File-System
+                  Behavioral Traces</a
+                >
+              </h3>
+              <p class="pub-authors">
+                Shuai Liu, Shulin Tian, Kairui Hu, Yuhao Dong,
+                <strong>Zhe Yang</strong>, Bo Li, Jingkang Yang, Chen Change
+                Loy, Ziwei Liu
+              </p>
+              <p class="pub-description">
+                Grounding personalized memory in what people do with their
+                files, through a simulation engine, diagnostic benchmark, and
+                memory architecture.
+              </p>
+              <p class="pub-contribution">
+                DATA ADAPTATION · BEHAVIOR SIMULATION ENGINE
+              </p>
+              <div class="pub-links">
+                <a
+                  href="https://filegram.choiszt.com/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Project for FileGram: Grounding Agent Personalization in File-System Behavioral Traces"
+                  >Project <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://arxiv.org/abs/2604.04901"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Paper for FileGram: Grounding Agent Personalization in File-System Behavioral Traces"
+                  >Paper <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://github.com/Synvo-ai/FileGram"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Code for FileGram: Grounding Agent Personalization in File-System Behavioral Traces"
+                  >Code <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="pub" id="paper-secrets" data-category="peer">
+            <div class="pub-media">
+              <div class="pub-art secrets" aria-hidden="true">
+                <svg
+                  viewBox="0 0 250 160"
+                  xmlns="http://www.w3.org/2000/svg"
+                  font-family="monospace"
+                >
+                  <g fill="none" stroke="#7c897b">
+                    <rect x="26" y="32" width="198" height="84" rx="7" />
+                    <path d="M26 55H224" />
+                    <circle cx="40" cy="43" r="2" />
+                    <circle cx="50" cy="43" r="2" />
+                    <circle cx="60" cy="43" r="2" />
+                  </g>
+                  <text x="48" y="83" font-size="16" fill="#183d34">
+                    sk_••••••••
+                  </text>
+                  <path
+                    d="M48 98H87M94 98H132M139 98H191"
+                    stroke="#ad512f"
+                    stroke-width="4"
+                  />
+                  <text
+                    x="125"
+                    y="143"
+                    text-anchor="middle"
+                    font-size="8"
+                    fill="#55665a"
+                    letter-spacing="2"
+                  >
+                    SECRETS IN TOKEN SPACE
+                  </text>
+                </svg>
+              </div>
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type peer">Findings of ACL 2026</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                <a
+                  href="https://aclanthology.org/2026.findings-acl.6/"
+                  target="_blank"
+                  rel="noopener"
+                  >Understanding Secret Leakage Risks in Code LLMs: A
+                  Tokenization Perspective</a
+                >
+              </h3>
+              <p class="pub-authors">
+                Meifang Chen, <strong>Zhe Yang</strong>, Nianchen Huang, Yizhan
+                Huang, Yichen Li, Zihan Li, Michael R. Lyu
+              </p>
+              <p class="pub-description">
+                Investigating how tokenization turns high-character-entropy
+                secrets into predictable token sequences, and why this increases
+                leakage risks.
+              </p>
+              <div class="pub-links">
+                <a
+                  href="https://aclanthology.org/2026.findings-acl.6/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Publication for Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective"
+                  >Publication <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://aclanthology.org/2026.findings-acl.6.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="PDF for Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective"
+                  >PDF <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="pub" id="paper-compressibility" data-category="peer">
+            <div class="pub-media">
+              <div class="pub-art compressibility" aria-hidden="true">
+                <svg
+                  viewBox="0 0 250 160"
+                  xmlns="http://www.w3.org/2000/svg"
+                  font-family="monospace"
+                >
+                  <path d="M36 20V126H225" fill="none" stroke="#7b8b77" />
+                  <path
+                    d="M50 112L207 29"
+                    stroke="#ad512f"
+                    stroke-width="1.5"
+                  />
+                  <g fill="#183d34">
+                    <circle cx="58" cy="105" r="4" />
+                    <circle cx="76" cy="95" r="4" />
+                    <circle cx="94" cy="93" r="4" />
+                    <circle cx="111" cy="78" r="4" />
+                    <circle cx="132" cy="75" r="4" />
+                    <circle cx="149" cy="61" r="4" />
+                    <circle cx="168" cy="55" r="4" />
+                    <circle cx="188" cy="40" r="4" />
+                    <circle cx="205" cy="35" r="4" />
+                  </g>
+                  <text
+                    x="130"
+                    y="147"
+                    text-anchor="middle"
+                    font-size="8"
+                    fill="#55665a"
+                    letter-spacing="1.5"
+                  >
+                    ENTROPY ↔ MEMORIZATION
+                  </text>
+                </svg>
+              </div>
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type peer">TMLR 2026</span
+                ><span class="pub-year">2026</span>
+              </div>
+              <h3>
+                <a
+                  href="https://openreview.net/forum?id=6L4UXc7P3h"
+                  target="_blank"
+                  rel="noopener"
+                  >Data Compressibility Quantifies LLM Memorization</a
+                >
+              </h3>
+              <p class="pub-authors">
+                Yizhan Huang, <strong>Zhe Yang</strong>, Meifang Chen, Huang
+                Nianchen, Jianping Zhang, Michael R. Lyu
+              </p>
+              <p class="pub-description">
+                A shift from instance-level to set-level entropy uncovers a
+                near-linear relationship between data compressibility and LLM
+                memorization.
+              </p>
+              <p class="pub-contribution">
+                UNDERGRADUATE THESIS · PIPELINE LEAD
+              </p>
+              <div class="pub-links">
+                <a
+                  href="https://openreview.net/forum?id=6L4UXc7P3h"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="OpenReview for Data Compressibility Quantifies LLM Memorization"
+                  >OpenReview <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://arxiv.org/abs/2507.06056"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Paper for Data Compressibility Quantifies LLM Memorization"
+                  >Paper <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://arxiv.org/pdf/2507.06056"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="PDF for Data Compressibility Quantifies LLM Memorization"
+                  >PDF <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="pub" id="paper-rauie" data-category="peer">
+            <div class="pub-media">
+              <div class="pub-art extract" aria-hidden="true">
+                <svg
+                  viewBox="0 0 250 160"
+                  xmlns="http://www.w3.org/2000/svg"
+                  font-family="monospace"
+                >
+                  <g stroke="#718d7d" fill="none">
+                    <path
+                      d="M55 45L124 82L197 42M124 82L61 124M124 82L194 126"
+                    />
+                    <rect x="28" y="29" width="54" height="30" rx="5" />
+                    <rect x="98" y="67" width="54" height="30" rx="5" />
+                    <rect x="170" y="26" width="54" height="30" rx="5" />
+                    <rect x="34" y="109" width="54" height="30" rx="5" />
+                    <rect x="167" y="111" width="54" height="30" rx="5" />
+                  </g>
+                  <circle cx="125" cy="82" r="5" fill="#ad512f" />
+                  <g stroke="#718d7d">
+                    <path d="M41 43H69M183 41H211M48 124H74M181 126H207" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="pub-body">
+              <div class="pub-meta">
+                <span class="pub-type peer">AINIT 2024</span
+                ><span class="pub-year">2024</span>
+              </div>
+              <h3>
+                <a
+                  href="https://doi.org/10.1109/AINIT61980.2024.10581499"
+                  target="_blank"
+                  rel="noopener"
+                  >RAUIE: A Relation-Augmented Document-Level Event Extraction
+                  Model Based on UIE</a
+                >
+              </h3>
+              <p class="pub-authors">
+                Yiyuan Liang, Hong Jia, Licai Wang, Yangchen Huang,
+                <strong>Zhe Yang</strong>
+              </p>
+              <p class="pub-description">
+                Using relation-aware prompts to improve document-level event
+                extraction.
+              </p>
+              <div class="pub-links">
+                <a
+                  href="https://doi.org/10.1109/AINIT61980.2024.10581499"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Publication for RAUIE: A Relation-Augmented Document-Level Event Extraction Model Based on UIE"
+                  >Publication <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <!-- PUBLICATIONS:END -->
+        </div>
+        <p class="publication-note">* Equal contribution.</p>
+      </section>
+      <section class="work-section" aria-labelledby="work-title">
+        <div class="wrap section-pad">
+          <div class="section-label">
+            <span>03 / ON MY WORKBENCH</span
+            ><span class="live-label"
+              ><span class="status-dot" aria-hidden="true"></span> IN
+              PROGRESS</span
+            >
+          </div>
+          <h2 id="work-title">
+            From a good idea<br />to a <em>working robot.</em>
+          </h2>
+          <div class="work-grid">
+            <article>
+              <span class="mono">01 / WORLD ACTION MODELS</span>
+              <h3>Memory for a world<br />that keeps changing.</h3>
+              <p>
+                Exploring endogenous and exogenous memory, co-developing
+                RMBench++, and building the real-robot pipeline from data
+                collection to deployment.
+              </p>
+              <p class="work-meta">With Dr. Zhonghua Wu · Jun 2026–present</p>
+            </article>
+            <article>
+              <span class="mono">02 / LATENT ACTION LEARNING</span>
+              <h3>Learning how to act<br />by watching the world.</h3>
+              <p>
+                Integrating native latent actions into π0.5, evaluating policies
+                in RoboTwin, and connecting teleoperation, inference, and
+                real-robot evaluation.
+              </p>
+              <p class="work-meta">With Dr. Qingyi Tao · Jun 2026–present</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="journey wrap section-pad"
+        id="experience"
+        aria-labelledby="journey-title"
+      >
+        <div class="section-label">
+          <span>04 / THE JOURNEY</span
+          ><a href="./assets/Resume-YANG_Zhe.pdf" target="_blank" rel="noopener"
+            >Full CV ↗</a
+          >
+        </div>
+        <h2 id="journey-title">
+          Learning, building,<br /><em>moving forward.</em>
+        </h2>
+        <div class="journey-layout">
+          <div>
+            <h3 class="eyebrow journey-label">EDUCATION & EXPERIENCE</h3>
+            <ol class="timeline">
+              <li>
+                <time>2026 — PRESENT</time>
+                <div>
+                  <h3>SenseTime</h3>
+                  <p>Algorithm Intern · Embodied AI</p>
+                  <span
+                    >Singapore · Memory, robot policy learning &
+                    evaluation</span
+                  >
+                </div>
+              </li>
+              <li>
+                <time>2025 — PRESENT</time>
+                <div>
+                  <h3>Nanyang Technological University</h3>
+                  <p>M.Sc. in Artificial Intelligence · GPA 5.0 / 5.0</p>
+                  <span>MMLab · Chen Change Loy & Ziwei Liu</span>
+                </div>
+              </li>
+              <li>
+                <time>2024 — 2025</time>
+                <div>
+                  <h3>CUHK · ARISE Lab</h3>
+                  <p>Research Intern · LLM Memorization & Privacy</p>
+                  <span>Advised by Michael R. Lyu</span>
+                </div>
+              </li>
+              <li>
+                <time>JUL — AUG 2024</time>
+                <div>
+                  <h3>GEOVIS Technology</h3>
+                  <p>Algorithm Intern</p>
+                  <span
+                    >Knowledge graphs, data pipelines & question answering</span
+                  >
+                </div>
+              </li>
+              <li>
+                <time>2021 — 2025</time>
+                <div>
+                  <h3>The Chinese University of Hong Kong</h3>
+                  <p>B.Sc. in Computer Science · First Class Honours</p>
+                  <span>Major GPA 3.80 / 4.0</span>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <aside class="honors" id="honors">
+            <h3 class="eyebrow journey-label">A FEW MILESTONES</h3>
+            <div class="honor">
+              <span class="honor-icon" aria-hidden="true">✳</span
+              ><time>2024–2025</time>
+              <h4>HKSAR Government Scholarship</h4>
+              <p>HK$80,000</p>
+            </div>
+            <div class="honor">
+              <span class="honor-icon" aria-hidden="true">✳</span
+              ><time>2021–2025</time>
+              <h4>Dean’s List, four times</h4>
+              <p>Faculty of Engineering, CUHK</p>
+            </div>
+            <div class="honor">
+              <span class="honor-icon" aria-hidden="true">✳</span
+              ><time>MAY 2024</time>
+              <h4>Silver Award for Outstanding Academic Performance</h4>
+              <p>Department of CSE, CUHK</p>
             </div>
           </aside>
         </div>
-      </div>
-    </section>
-
-    <section id="publications" class="section" data-num="02">
-      <div class="container">
-        <h2 class="section-heading fade-in">Publications</h2>
-
-        <div class="pub-container">
-          <article class="pub-card fade-in">
-            <div class="pub-thumb">
-              <span class="pub-venue-stamp pub-venue-stamp--published">ECCV 2026</span>
-              <img src="./project_page/HippoCamp/assets/figures/hippo_teaser.png" alt="HippoCamp teaser">
-            </div>
-            <div class="pub-info">
-              <h3 class="pub-title">HippoCamp: Benchmarking Contextual Agents on Personal Computers</h3>
-              <p class="pub-authors">
-                <strong>Zhe Yang</strong>, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen, Yichi Zhang,
-                Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy, Ziwei Liu.
-              </p>
-              <p class="pub-venue">ECCV 2026 · multimodal agents · contextual reasoning</p>
-              <div class="pub-links">
-                <a href="https://hippocamp-ai.github.io/" target="_blank" rel="noopener">Project</a>
-                <a href="https://huggingface.co/papers/2604.01221" target="_blank" rel="noopener">Paper</a>
-                <a href="https://github.com/Savannah-yz/HippoCamp" target="_blank" rel="noopener">Code</a>
-                <a href="https://huggingface.co/datasets/MMMem-org/HippoCamp" target="_blank" rel="noopener">Dataset</a>
-                <a href="https://youtu.be/ed-v_nhoaR4" target="_blank" rel="noopener">Video</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-card fade-in">
-            <div class="pub-thumb pub-thumb--filegram">
-              <span class="pub-venue-stamp pub-venue-stamp--review">Preprint</span>
-              <img src="./assets/paper_thumbs/filegram_teaser.png" alt="FileGram teaser">
-            </div>
-            <div class="pub-info">
-              <h3 class="pub-title">FileGram: Grounding Agent Personalization in File-System Behavioral Traces</h3>
-              <p class="pub-authors">
-                Shuai Liu, Shulin Tian, Kairui Hu, Yuhao Dong, <strong>Zhe Yang</strong>,
-                Bo Li, Jingkang Yang, Chen Change Loy, Ziwei Liu.
-              </p>
-              <p class="pub-venue">arXiv 2026 · personalization · file-system memory</p>
-              <div class="pub-links">
-                <a href="https://arxiv.org/abs/2604.04901" target="_blank" rel="noopener">arXiv</a>
-                <a href="https://huggingface.co/papers/2604.04901" target="_blank" rel="noopener">HF</a>
-                <a href="https://github.com/Synvo-ai/FileGram" target="_blank" rel="noopener">Code</a>
-                <a href="https://github.com/choiszt/Habitus" target="_blank" rel="noopener">App</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-card fade-in">
-            <div class="pub-thumb pub-thumb--memory">
-              <span class="pub-venue-stamp pub-venue-stamp--published">TMLR 2026</span>
-              <div class="pub-thumb-placeholder">
-                <span>LLM Memorization</span>
-                <strong>Compressibility</strong>
-              </div>
-            </div>
-            <div class="pub-info">
-              <h3 class="pub-title">Data Compressibility Quantifies LLM Memorization</h3>
-              <p class="pub-authors">
-                Yizhan Huang, <strong>Zhe Yang</strong>, Meifang Chen, Nianchen Huang,
-                Jianping Zhang, Michael R. Lyu.
-              </p>
-              <p class="pub-venue">TMLR 2026 · memorization · data privacy</p>
-              <div class="pub-links">
-                <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=v-suAwMAAAAJ&amp;citation_for_view=v-suAwMAAAAJ:IjCSPb-OGe4C" target="_blank" rel="noopener">Scholar</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-card fade-in">
-            <div class="pub-thumb pub-thumb--paper">
-              <span class="pub-venue-stamp pub-venue-stamp--published">ACL 2026</span>
-              <img src="./assets/paper_thumbs/secret_leakage.png" alt="Secret Leakage paper">
-            </div>
-            <div class="pub-info">
-              <h3 class="pub-title">Understanding Secret Leakage Risks in Code LLMs: A Tokenization Perspective</h3>
-              <p class="pub-authors">
-                Meifang Chen, <strong>Zhe Yang</strong>, Nianchen Huang, Yizhan Huang, Yichen Li, Zihan Li,
-                Michael R. Lyu.
-              </p>
-              <p class="pub-venue">Findings of ACL 2026 · 108–119</p>
-              <div class="pub-links">
-                <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=v-suAwMAAAAJ&amp;citation_for_view=v-suAwMAAAAJ:zYLM7Y9cAGgC" target="_blank" rel="noopener">Scholar</a>
-                <a href="https://openreview.net/pdf?id=c3OYeGH1Zj" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-card fade-in">
-            <div class="pub-thumb pub-thumb--document">
-              <span class="pub-venue-stamp pub-venue-stamp--published">AINIT 2024</span>
-              <div class="pub-thumb-placeholder">
-                <span>Information Extraction</span>
-                <strong>RAUIE</strong>
-              </div>
-            </div>
-            <div class="pub-info">
-              <h3 class="pub-title">RAUIE: A Relation-Augmented Document-level Event Extraction Model Based on UIE</h3>
-              <p class="pub-authors">
-                Yiyuan Liang, Hong Jia, Licai Wang, Yangchen Huang, <strong>Zhe Yang</strong>.
-              </p>
-              <p class="pub-venue">event extraction · prompt learning</p>
-              <div class="pub-links">
-                <a href="https://ieeexplore.ieee.org/document/10581499" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section" data-num="03">
-      <div class="container">
-        <h2 class="section-heading fade-in">Experience</h2>
-
-        <div class="timeline fade-in">
-          <article class="timeline-item timeline-item--current">
-            <div class="timeline-item__date">2026.06 – Now</div>
-            <div class="timeline-item__body">
-              <h3>Algorithm Intern, SENSETIME INTERNATIONAL PTE. LTD.</h3>
-              <p>Supervised by Chen Change Loy. Working on algorithm research and development.</p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__date">2025.09 – 2026.06</div>
-            <div class="timeline-item__body">
-              <h3>Research Intern, MMLab, Nanyang Technological University</h3>
-              <p>Advised by Prof. Ziwei Liu. Multimodal agents, contextual benchmarking, and personalized file-system memory.</p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__date">2024.06 – 2025.05</div>
-            <div class="timeline-item__body">
-              <h3>Research Intern, ARISE Lab, The Chinese University of Hong Kong</h3>
-              <p>Advised by Prof. Michael R. Lyu. LLM memorization, data privacy, and tokenization-related security.</p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__date">2024.07 – 2024.08</div>
-            <div class="timeline-item__body">
-              <h3>Algorithm Intern, Geovis Technology Co., Ltd</h3>
-              <p>Product R&amp;D. Knowledge graphs, model fine-tuning, Neo4j pipelines, automated data acquisition.</p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__date">2024.02 – 2024.03</div>
-            <div class="timeline-item__body">
-              <h3>Research Participant, Online Research Seminar</h3>
-              <p>Advised by Prof. Dejan Marković. EEG signal processing and disease onset prediction.</p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__date">2023.06 – 2023.09</div>
-            <div class="timeline-item__body">
-              <h3>Research Intern, IDEA Lab, The Chinese University of Hong Kong</h3>
-              <p>Advised by Prof. Tsung-Yi Ho. Adversarial attacks on facial recognition systems.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="honors" class="section" data-num="04">
-      <div class="container">
-        <h2 class="section-heading fade-in">Honors</h2>
-
-        <div class="honors-list fade-in">
-          <div class="honor-item">
-            <div class="honor-item__year">2025</div>
-            <div class="honor-item__body"><strong>HKSAR Government Scholarship</strong> <span>— Top 1% in Hong Kong</span></div>
+      </section>
+      <section class="personal-note wrap" aria-label="A personal reminder">
+        <span class="eyebrow">A NOTE TO SELF</span>
+        <blockquote>
+          What I want<br /><em>wants me more.</em
+          ><span class="quote-star" aria-hidden="true">✳</span>
+        </blockquote>
+        <p>Everything is working in my favor.</p>
+      </section>
+      <footer id="contact" class="wrap">
+        <div class="footer-main">
+          <div>
+            <span class="eyebrow">LET’S CONNECT</span>
+            <h2>Good things start<br />with a <em>conversation.</em></h2>
           </div>
-          <div class="honor-item">
-            <div class="honor-item__year">2024</div>
-            <div class="honor-item__body"><strong>Silver Award for Outstanding Academic Performance</strong> <span>— Top 3% at CUHK</span></div>
-          </div>
-          <div class="honor-item">
-            <div class="honor-item__year">2022 – 2025</div>
-            <div class="honor-item__body"><strong>Dean's List</strong> <span>— Top 10% in the department, CUHK</span></div>
-          </div>
-          <div class="honor-item">
-            <div class="honor-item__year">2021</div>
-            <div class="honor-item__body"><strong>CUHK Student Envoy</strong></div>
+          <div class="contact-links">
+            <a class="email-link" href="mailto:zhe012@e.ntu.edu.sg"
+              >zhe012@e.ntu.edu.sg ↗</a
+            >
+            <div>
+              <a
+                href="https://github.com/Savannah-yz"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              ><a
+                href="https://scholar.google.com/citations?user=4oVLBl8AAAAJ&hl=en"
+                target="_blank"
+                rel="noopener"
+                >Scholar ↗</a
+              ><a
+                href="./assets/Resume-YANG_Zhe.pdf"
+                target="_blank"
+                rel="noopener"
+                >CV ↗</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section" data-num="05">
-      <div class="container">
-        <h2 class="section-heading fade-in">Skills &amp; Education</h2>
-
-        <div class="skills-grid fade-in">
-          <div class="skill-block">
-            <span class="skill-block__label">Education</span>
-            <ul>
-              <li><strong>2025.09 – Now</strong> M.S. in AI, NTU</li>
-              <li><strong>2021.09 – 2025.05</strong> B.Sc. in CS, CUHK</li>
-              <li><strong>2023.07</strong> Summer School, PKU</li>
-            </ul>
-          </div>
-          <div class="skill-block">
-            <span class="skill-block__label">Technical</span>
-            <ul>
-              <li><strong>Languages</strong> Python, C/C++, Java, R, MATLAB</li>
-              <li><strong>Tools</strong> PyTorch, Neo4j, MySQL, Linux, Git, LaTeX</li>
-              <li><strong>Human</strong> Mandarin, English (GRE 322)</li>
-            </ul>
-          </div>
+        <div class="footer-bottom">
+          <span>© 2026 Zhe Yang</span
+          ><span>Made with curiosity. · Updated October 2026</span
+          ><a href="#home">Back to top ↑</a>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="footer">
-    <div class="container">
-      <p class="footer-quote">"The important thing is not to stop questioning."</p>
-      <p class="footer-meta">© 2026 Zhe Yang</p>
-    </div>
-  </footer>
-
-  <script src="./script.js"></script>
-</body>
+      </footer>
+    </main>
+  </body>
 </html>
