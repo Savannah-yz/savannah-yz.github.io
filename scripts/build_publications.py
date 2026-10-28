@@ -3,24 +3,19 @@
 import json
 from html import escape
 from pathlib import Path
+from buddy_art import buddy_svg
 ROOT = Path(__file__).resolve().parents[1]
 
 def authors(text):
     return escape(text).replace('Zhe Yang', '<strong>Zhe Yang</strong>')
 
-COVERS = {
- 'secrets': ('privacy', 'LLM PRIVACY', 'Behind<br>the tokens.', '<div class="token-pieces"><i>sk_</i><i>••••</i><i>••••</i></div>'),
- 'compressibility': ('memory', 'LLM MEMORIZATION', 'Memory<br>has a pattern.', '<div class="bit-grid">'+''.join('<i></i>' for _ in range(24))+'</div>'),
- 'rauie': ('relations', 'INFORMATION EXTRACTION', 'Connecting<br>the events.', '<div class="relation-pieces"><i>event</i><b>↗</b><i>relation</i></div>')
-}
 
 def render(p):
     if p.get('image'):
         caption=p.get('figureCaption',p['imageAlt'])
         media=f'<a class="pub-media {escape(p.get("imageStyle","contain"))}" href="./{escape(p["image"])}" target="_blank" rel="noopener" data-figure data-caption="{escape(caption)}" aria-label="Enlarge {escape(p["title"])} figure"><img src="./{escape(p["image"])}" alt="{escape(p["imageAlt"])}" loading="lazy" decoding="async"><span class="zoom-hint" aria-hidden="true">View figure ↗</span></a>'
     else:
-        theme,topic,words,pattern=COVERS[p['id']]
-        media=f'<a class="pub-media paper-cover cover-{theme}" href="{escape(p["links"][0][1])}" target="_blank" rel="noopener" aria-label="Read {escape(p["title"])}"><span class="cover-topic">{topic}</span><span class="cover-title">{words}</span>{pattern}<span class="cover-bottom">{escape(p["venue"])} <b>↗</b></span></a>'
+        media=f'<a class="pub-media pub-mascot mascot-{p["id"]}" href="{escape(p["links"][0][1])}" target="_blank" rel="noopener" aria-label="Read {escape(p["title"])}">{buddy_svg(p["id"])}<span class="mascot-link" aria-hidden="true">↗</span></a>'
     title=escape(p['title'])
     if p['links']:title=f'<a href="{escape(p["links"][0][1])}" target="_blank" rel="noopener">{title}</a>'
     if p.get('shortAuthors'):
@@ -35,5 +30,10 @@ pubs=json.loads((ROOT/'data/publications.json').read_text())
 assert len({p['id'] for p in pubs})==len(pubs)
 page=ROOT/'index.html'; text=page.read_text(); start,end='<!-- PUBLICATIONS:START -->','<!-- PUBLICATIONS:END -->'
 before,remainder=text.split(start,1); _,after=remainder.split(end,1)
-page.write_text(before+start+'\n'+'\n'.join(map(render,pubs))+'\n'+end+after)
+text=before+start+'\n'+'\n'.join(map(render,pubs))+'\n'+end+after
+journey_start,journey_end='<!-- JOURNEY-BUDDY:START -->','<!-- JOURNEY-BUDDY:END -->'
+if journey_start in text:
+    before,rest=text.split(journey_start,1); _,after=rest.split(journey_end,1)
+    text=before+journey_start+buddy_svg('journey')+journey_end+after
+page.write_text(text)
 print(f'Rendered {len(pubs)} consistent publication rows')

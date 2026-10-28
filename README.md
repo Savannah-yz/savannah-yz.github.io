@@ -34,11 +34,11 @@ The supplied October 2026 CV is the source for education, positions, contributio
 - RAUIE: https://doi.org/10.1109/AINIT61980.2024.10581499 (publisher may present an anti-bot check).
 - InnerFeel: supplied CV only; no verified public URL was found. It remains labeled “Under review”, without an unrelated link.
 
-The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. InnerFeel’s teaser was extracted from Figure 1 of the manuscript supplied by the user on 28 October 2026. The complete private manuscript is not included in this repository. Three typographic paper covers are original decorative compositions, not figures from the papers. The ongoing-work character is a procedural toy animation, not a demonstration of a trained policy.
+The portrait and existing paper figures were supplied in this repository. The EgoTools kitchen image and report apartment image are thumbnails from the user's coauthored project pages. InnerFeel’s teaser was extracted from Figure 1 of the manuscript supplied by the user on 28 October 2026. The complete private manuscript is not included in this repository. Three original SVG robot companions replace unavailable paper figures; they are decorative animations, not figures or results from the papers. The ongoing-work character is a procedural toy animation, not a demonstration of a trained policy.
 
 ## Design direction and provenance
 
-The CV, publications, Scholar, GitHub, and email remain directly accessible. DM Sans provides larger, lighter body and display type; Caveat is used for the personal reminders. Every publication uses the same image-and-text row. Five paper images can be enlarged in an accessible dialog. The remaining three use typographic covers. Current projects are always-visible chapters beside one sticky character scene; optional technical detail and the experience timeline use native HTML disclosures.
+The CV, publications, Scholar, GitHub, and email remain directly accessible. DM Sans provides larger, lighter body and display type; Caveat is used for the personal reminders. Every publication uses the same image-and-text row. Five paper images can be enlarged in an accessible dialog. The remaining three use small animated SVG robot companions. Current projects are always-visible chapters beside one sticky character scene; optional technical detail and the experience timeline use native HTML disclosures. The timeline has a scroll-driven robot, a continuous path, and an active milestone highlight.
 
 The robot is constructed in `src/robot-scene.js` with Three.js sphere, cylinder, rounded-box, and tube geometry. No downloaded robot model, stock character, portfolio source code, or external texture is used. The ZY badge, paired memory tabs, and side memory module were added for this homepage. Basic screen-faced robots are a common visual motif; this documents implementation provenance rather than claiming that no similar character exists anywhere. Three.js is the rendering library and its MIT license is retained locally.
 
@@ -62,3 +62,11 @@ Implementation references reviewed on GitHub:
 - [Drei ScrollControls](https://github.com/pmndrs/drei/blob/master/docs/controls/scroll-controls.mdx): mapping scroll offsets to stages and damping transitions. This site uses native scrolling and Three.js directly; it does not import Drei or create a separate scroll container.
 - [Three.js portfolio](https://github.com/adrianhajdin/threejs-portfolio): integrating character motion beside ordinary project and experience content. No models, textures, UI template, or source was copied.
 - [GSAP ScrollTrigger documentation](https://gsap.com/docs/v3/Plugins/ScrollTrigger/): pinned illustration and scroll scrubbing patterns. This implementation uses CSS sticky and browser scroll events, without adding GSAP.
+
+## Timeline and paper companions · 28 October 2026
+
+Download CV and See publications are adjacent in the hero. The header CV link and the redundant experience CV link were removed.
+
+`scripts/buddy_art.py` defines four original SVG companions: a lock, a book, connected nodes, and the timeline traveller. `scripts/build_publications.py` regenerates the three publication illustrations and the marked timeline SVG. The old slogan covers have been removed. Publication titles, descriptions, authors, and destination links are unchanged. SVG animations stop offscreen, on a hidden tab, or with the motion preference; they remain visible as static art without JavaScript.
+
+The timeline path is fitted to the rendered milestone positions, including after resizing or opening a disclosure. Scrolling moves the traveller along the path; hovering or focusing an entry selects it. The text stays visible and keyboard-operable. Reduced motion keeps the character stationary during scrolling and uses a direct pose change when selecting an entry. The global motion control is available even if WebGL is unavailable.

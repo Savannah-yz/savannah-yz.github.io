@@ -431,7 +431,7 @@ try {
     stop();
     stage.classList.remove("ready");
     waveButton.hidden = true;
-    motionButton.hidden = true;
+    motionButton.hidden = false;
   });
   renderer.domElement.addEventListener("webglcontextrestored", () => {
     contextLost = false;
@@ -451,6 +451,6 @@ try {
   stage.querySelector("canvas")?.remove();
   stage.classList.remove("ready");
   waveButton.hidden = true;
-  motionButton.hidden = true;
+  motionButton.hidden = false;
   console.info("Using the static lab buddy illustration.", error.message);
 }

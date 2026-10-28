@@ -22,6 +22,7 @@
     );
   }
   setMotion();
+  motionButton.hidden = false;
   motionButton.addEventListener("click", () => {
     paused = !paused;
     setMotion();
@@ -158,4 +159,174 @@
       noteTimer = setTimeout(update, 160);
     }
   });
+
+  // Lightweight SVG companions animate only while their paper is in view.
+  const paperObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(({ target, isIntersecting }) =>
+        target.classList.toggle("is-visible", isIntersecting),
+      );
+    },
+    { rootMargin: "60px" },
+  );
+  document
+    .querySelectorAll(".pub-mascot")
+    .forEach((el) => paperObserver.observe(el));
+  const pageVisibility = () =>
+    document.body.classList.toggle("page-hidden", document.hidden);
+  pageVisibility();
+  document.addEventListener("visibilitychange", pageVisibility);
+
+  // Fit a continuous path to the actual milestone positions. This also handles
+  // expanded details, font loading, and narrow layouts without fixed offsets.
+  const timeline = document.querySelector(".timeline");
+  const milestones = [...timeline.querySelectorAll(".timeline-entry")];
+  const track = timeline.querySelector(".journey-track");
+  const trackBase = timeline.querySelector(".journey-track-base");
+  const trackFill = timeline.querySelector(".journey-track-fill");
+  const traveller = timeline.querySelector(".journey-buddy");
+  let stops = [],
+    pathLength = 0,
+    currentDistance = 0,
+    targetDistance = 0;
+  let journeyFrame = 0,
+    lastJourneyFrame = 0,
+    journeyVisible = false,
+    hoveredStop = null,
+    focusedStop = null;
+
+  function distanceAtY(y) {
+    let low = 0,
+      high = pathLength;
+    for (let i = 0; i < 13; i++) {
+      const mid = (low + high) / 2;
+      if (trackBase.getPointAtLength(mid).y < y) low = mid;
+      else high = mid;
+    }
+    return (low + high) / 2;
+  }
+  function drawJourney() {
+    if (!pathLength) return;
+    const point = trackBase.getPointAtLength(currentDistance);
+    traveller.style.setProperty("--buddy-x", `${point.x}px`);
+    traveller.style.setProperty("--buddy-y", `${point.y}px`);
+    trackFill.style.strokeDashoffset = String(pathLength - currentDistance);
+    let closest = 0;
+    stops.forEach((stop, i) => {
+      if (Math.abs(stop.y - point.y) < Math.abs(stops[closest].y - point.y))
+        closest = i;
+    });
+    milestones.forEach((el, i) =>
+      el.classList.toggle("is-current", closest === i),
+    );
+  }
+  function stopJourney() {
+    cancelAnimationFrame(journeyFrame);
+    journeyFrame = 0;
+    lastJourneyFrame = 0;
+    traveller.classList.remove("is-travelling");
+  }
+  function animateJourney(now) {
+    journeyFrame = 0;
+    if (paused || document.hidden || !journeyVisible) return;
+    const delta = lastJourneyFrame
+      ? Math.min((now - lastJourneyFrame) / 1000, 0.06)
+      : 0.016;
+    lastJourneyFrame = now;
+    currentDistance +=
+      (targetDistance - currentDistance) * (1 - Math.exp(-12 * delta));
+    const moving = Math.abs(targetDistance - currentDistance) > 0.3;
+    traveller.classList.toggle("is-travelling", moving);
+    if (!moving) currentDistance = targetDistance;
+    drawJourney();
+    if (moving) journeyFrame = requestAnimationFrame(animateJourney);
+    else lastJourneyFrame = 0;
+  }
+  function followJourney() {
+    if (!pathLength || !journeyVisible) return;
+    const chosen = focusedStop ?? hoveredStop;
+    // Reduced motion keeps the companion still during scrolling; selecting an
+    // entry can still move it directly, without animation.
+    if (paused && chosen === null) return;
+    const rect = timeline.getBoundingClientRect();
+    const y = chosen !== null ? stops[chosen].y : innerHeight * 0.46 - rect.top;
+    targetDistance = distanceAtY(
+      Math.max(stops[0].y, Math.min(stops.at(-1).y, y)),
+    );
+    if (paused) {
+      currentDistance = targetDistance;
+      drawJourney();
+      return;
+    }
+    if (!journeyFrame && !document.hidden)
+      journeyFrame = requestAnimationFrame(animateJourney);
+  }
+  function measureJourney() {
+    const rect = timeline.getBoundingClientRect();
+    const width = track.getBoundingClientRect().width;
+    if (!rect.height || !width) return;
+    stops = milestones.map((el) => {
+      const pin = el.querySelector(".timeline-mark").getBoundingClientRect();
+      return {
+        x: pin.left + pin.width / 2 - rect.left,
+        y: pin.top + pin.height / 2 - rect.top,
+      };
+    });
+    track.setAttribute("viewBox", `0 0 ${width} ${rect.height}`);
+    let d = `M ${stops[0].x} ${stops[0].y}`;
+    stops.slice(1).forEach((stop, i) => {
+      const previous = stops[i];
+      const bend = Math.min(18, width * 0.22) * (i % 2 ? -1 : 1);
+      const height = stop.y - previous.y;
+      d += ` C ${previous.x + bend} ${previous.y + height * 0.32}, ${stop.x - bend} ${previous.y + height * 0.68}, ${stop.x} ${stop.y}`;
+    });
+    const ratio = pathLength ? currentDistance / pathLength : 0;
+    trackBase.setAttribute("d", d);
+    trackFill.setAttribute("d", d);
+    pathLength = trackBase.getTotalLength();
+    currentDistance = ratio * pathLength;
+    trackFill.style.strokeDasharray = String(pathLength);
+    timeline.classList.add("journey-ready");
+    drawJourney();
+    followJourney();
+  }
+  milestones.forEach((entry, i) => {
+    entry.addEventListener("pointerenter", (e) => {
+      if (e.pointerType === "mouse") {
+        hoveredStop = i;
+        followJourney();
+      }
+    });
+    entry.addEventListener("pointerleave", () => {
+      hoveredStop = null;
+      followJourney();
+    });
+    entry.addEventListener("focusin", () => {
+      focusedStop = i;
+      followJourney();
+    });
+    entry.addEventListener("focusout", (e) => {
+      if (!entry.contains(e.relatedTarget)) {
+        focusedStop = null;
+        followJourney();
+      }
+    });
+  });
+  new ResizeObserver(measureJourney).observe(timeline);
+  new IntersectionObserver(([entry]) => {
+    journeyVisible = entry.isIntersecting;
+    timeline.classList.toggle("journey-visible", journeyVisible);
+    if (journeyVisible) followJourney();
+    else stopJourney();
+  }).observe(timeline);
+  addEventListener("scroll", followJourney, { passive: true });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopJourney();
+    else followJourney();
+  });
+  document.addEventListener("zhe-motion-change", () => {
+    if (paused) stopJourney();
+    else followJourney();
+  });
+  measureJourney();
 })();

@@ -200,20 +200,6 @@ h2 {
   gap: 1rem;
   align-items: center;
 }
-.nav-cv {
-  background: #efeffc;
-  color: #5155bc;
-  border: 1px solid #e4e5f8;
-  border-radius: 0.625rem;
-  padding: 0.625rem 1.0625rem;
-  font-size: 0.8125rem;
-  display: flex;
-  gap: 1.25rem;
-  align-items: center;
-}
-.nav-cv:hover {
-  background: #e5e6fa;
-}
 .menu-button {
   display: none;
   border: 0;
@@ -739,116 +725,6 @@ h2 {
   font-size: 0.75rem;
   color: #7e8599;
   margin-top: 1.5625rem;
-}
-.paper-cover {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: space-between;
-  padding: 1.4375rem 1.5625rem;
-  text-align: left;
-  transition: transform 0.25s;
-}
-.paper-cover:hover {
-  transform: translateY(-0.1875rem);
-}
-.cover-topic {
-  font-size: 0.5625rem;
-  letter-spacing: 1.1px;
-  position: relative;
-  z-index: 1;
-}
-.cover-title {
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -1.4px;
-  position: relative;
-  z-index: 1;
-}
-.cover-bottom {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.6875rem;
-  position: relative;
-  z-index: 1;
-}
-.cover-bottom b {
-  font-size: 1.125rem;
-  font-weight: 400;
-}
-.cover-privacy {
-  background: #eee8e3;
-  border-color: #e7dfd9;
-  color: #74594d;
-}
-.cover-memory {
-  background: #e8e9f6;
-  border-color: #dedff1;
-  color: #5d5b95;
-}
-.cover-relations {
-  background: #e4efec;
-  border-color: #dce8e3;
-  color: #4e7569;
-}
-.token-pieces {
-  position: absolute;
-  right: -0.25rem;
-  bottom: 3.25rem;
-  display: flex;
-  transform: rotate(-24deg);
-  gap: 0.25rem;
-  opacity: 0.28;
-}
-.token-pieces i {
-  font-style: normal;
-  font-family: monospace;
-  font-size: 1.25rem;
-  border: 1px solid #b29989;
-  padding: 2px 0.5rem;
-  border-radius: 0.25rem;
-}
-.bit-grid {
-  position: absolute;
-  right: -1.0625rem;
-  top: 2.25rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1.375rem);
-  gap: 0.3125rem;
-  transform: rotate(-20deg);
-  opacity: 0.4;
-}
-.bit-grid i {
-  width: 1.375rem;
-  height: 1.375rem;
-  border-radius: 0.25rem;
-  background: #b8b8df;
-}
-.bit-grid i:nth-child(3n) {
-  background: transparent;
-  border: 1px solid #a7a7d7;
-}
-.relation-pieces {
-  position: absolute;
-  right: 0;
-  bottom: 3.5625rem;
-  display: flex;
-  gap: 0.375rem;
-  align-items: center;
-  transform: rotate(-25deg);
-  opacity: 0.3;
-}
-.relation-pieces i {
-  padding: 2px 0.375rem;
-  border: 1px solid #7d9b8d;
-  border-radius: 0.3125rem;
-  font-size: 0.8125rem;
-  font-style: normal;
-}
-.relation-pieces b {
-  font-size: 1.4375rem;
-  font-weight: 400;
 }
 .figure-dialog {
   border: 0;
@@ -1402,12 +1278,6 @@ body.motion-paused *:after {
   .pub h3 {
     font-size: 1.375rem;
   }
-  .paper-cover {
-    padding: 1.25rem;
-  }
-  .cover-title {
-    font-size: 1.8125rem;
-  }
   .about {
     gap: 2.8125rem;
   }
@@ -1438,11 +1308,6 @@ body.motion-paused *:after {
   .desktop-nav {
     gap: 1rem;
     font-size: 0.75rem;
-  }
-  .nav-cv {
-    font-size: 0.75rem;
-    padding: 0.5625rem 0.75rem;
-    gap: 0.75rem;
   }
   .hero {
     padding-block: 2.375rem 3rem;
@@ -1559,37 +1424,11 @@ body.motion-paused *:after {
   .pub-year {
     font-size: 0.6875rem;
   }
-  .paper-cover {
-    padding: 1.125rem;
-  }
-  .cover-title {
-    font-size: 1.625rem;
-  }
-  .cover-topic {
-    font-size: 0.5rem;
-    letter-spacing: 0.7px;
-  }
-  .cover-bottom {
-    font-size: 0.625rem;
-  }
   .pub-links {
     gap: 0.875rem;
   }
   .pub-links a {
     font-size: 0.8125rem;
-  }
-  .cover-bottom b {
-    font-size: 0.9375rem;
-  }
-  .token-pieces {
-    font-size: 1rem;
-  }
-  .bit-grid {
-    grid-template-columns: repeat(4, 1.0625rem);
-  }
-  .bit-grid i {
-    width: 1.0625rem;
-    height: 1.0625rem;
   }
   .experience-grid {
     grid-template-columns: 1.5fr 1fr;
@@ -1661,11 +1500,6 @@ body.motion-paused *:after {
   }
   .header-actions {
     gap: 1rem;
-  }
-  .nav-cv {
-    font-size: 0.6875rem;
-    padding: 0.5625rem 0.6875rem;
-    gap: 0.625rem;
   }
   .menu-button {
     display: flex;
@@ -1878,45 +1712,6 @@ body.motion-paused *:after {
     opacity: 1;
     transform: none;
   }
-  .paper-cover {
-    padding: 1.4375rem 1.625rem;
-  }
-  .cover-title {
-    font-size: 2.3125rem;
-    letter-spacing: -1px;
-  }
-  .cover-topic {
-    font-size: 0.625rem;
-    letter-spacing: 1px;
-  }
-  .cover-bottom {
-    font-size: 0.75rem;
-  }
-  .cover-bottom b {
-    font-size: 1.25rem;
-  }
-  .token-pieces {
-    right: 0;
-    bottom: 4.0625rem;
-  }
-  .bit-grid {
-    right: 0;
-    top: 2.125rem;
-    grid-template-columns: repeat(4, 1.5rem);
-    gap: 0.4375rem;
-  }
-  .bit-grid i {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  .relation-pieces {
-    right: 1.25rem;
-    bottom: 4.0625rem;
-  }
-  .relation-pieces i {
-    font-size: 1.0625rem;
-    padding: 0.1875rem 0.5625rem;
-  }
   .small-note {
     font-size: 1.75rem;
     margin-left: 1.1875rem;
@@ -2082,11 +1877,6 @@ body.motion-paused *:after {
   .header-actions {
     gap: 0.625rem;
   }
-  .nav-cv {
-    font-size: 0.625rem;
-    padding: 0.5rem 0.5625rem;
-    gap: 0.4375rem;
-  }
   .menu-button {
     font-size: 0.6875rem;
   }
@@ -2134,18 +1924,6 @@ body.motion-paused *:after {
   }
   .pub h3 {
     font-size: 1.375rem;
-  }
-  .cover-title {
-    font-size: 1.9375rem;
-  }
-  .paper-cover {
-    padding: 1.3125rem 1.4375rem;
-  }
-  .cover-topic {
-    font-size: 0.5625rem;
-  }
-  .cover-bottom {
-    font-size: 0.6875rem;
   }
   .small-note {
     font-size: 1.5625rem;
@@ -2587,4 +2365,465 @@ body.dialog-open {
 
 html:has(body.motion-paused) {
   scroll-behavior: auto;
+}
+
+/* Quiet, original character illustrations in place of typographic paper covers. */
+.pub-mascot {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  isolation: isolate;
+}
+.buddy-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.pub-mascot .buddy-art {
+  transition: transform 0.35s ease;
+}
+.pub-mascot:hover .buddy-art,
+.pub-mascot:focus-visible .buddy-art {
+  transform: translateY(-0.25rem);
+}
+.mascot-link {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 1.2rem;
+  font-size: 1.25rem;
+  color: #9694b5;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.pub-mascot:hover .mascot-link,
+.pub-mascot:focus-visible .mascot-link {
+  opacity: 1;
+}
+.buddy-figure {
+  transform-origin: 180px 205px;
+}
+.buddy-head {
+  transform-origin: 180px 118px;
+}
+.buddy-eyes {
+  transform-origin: 180px 86px;
+}
+.buddy-arm-left {
+  transform-origin: 143px 143px;
+}
+.buddy-arm-right {
+  transform-origin: 217px 143px;
+}
+.buddy-art-secrets .buddy-arm-left {
+  transform: rotate(-27deg);
+}
+.buddy-art-secrets .buddy-arm-right {
+  transform: rotate(27deg);
+}
+.buddy-art-compressibility .buddy-arm-left {
+  transform: rotate(-24deg);
+}
+.buddy-art-compressibility .buddy-arm-right {
+  transform: rotate(24deg);
+}
+.buddy-art-compressibility .buddy-head {
+  transform: rotate(-7deg);
+}
+.buddy-art-rauie .buddy-arm-right {
+  transform: rotate(-95deg);
+}
+.book-page {
+  transform-origin: 180px 174px;
+}
+.node-one {
+  transform-origin: 238px 69px;
+}
+.node-two {
+  transform-origin: 266px 108px;
+}
+.node-three {
+  transform-origin: 300px 73px;
+}
+.pub-mascot.is-visible .buddy-figure {
+  animation: buddy-breathe 4.8s ease-in-out infinite;
+}
+.pub-mascot.is-visible .buddy-eyes,
+.journey-visible .buddy-eyes {
+  animation: buddy-blink 5.6s infinite;
+}
+.pub-mascot.is-visible .book-page {
+  animation: buddy-page 4.8s ease-in-out infinite;
+}
+.pub-mascot.is-visible .node-trail {
+  animation: buddy-signal 3s linear infinite;
+}
+.pub-mascot.is-visible .node-one,
+.pub-mascot.is-visible .node-three {
+  animation: buddy-node 3s ease-in-out infinite alternate;
+}
+.pub-mascot.is-visible .node-three {
+  animation-delay: -1.5s;
+}
+.pub-mascot.is-visible:hover .buddy-head,
+.pub-mascot.is-visible:focus-visible .buddy-head {
+  animation: buddy-nod 0.8s ease-in-out;
+}
+.buddy-art-journey .buddy-arm-right {
+  transform: rotate(-22deg);
+}
+.journey-buddy.is-travelling .buddy-leg {
+  animation: buddy-step 0.36s ease-in-out infinite alternate;
+}
+.journey-buddy.is-travelling .leg-b {
+  animation-delay: -0.36s;
+}
+.journey-buddy.is-travelling .buddy-arm-right {
+  animation: buddy-wave 0.7s ease-in-out infinite alternate;
+}
+@keyframes buddy-breathe {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1deg);
+  }
+}
+@keyframes buddy-blink {
+  0%,
+  42%,
+  46%,
+  100% {
+    transform: scaleY(1);
+  }
+  44% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes buddy-page {
+  0%,
+  30%,
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  45%,
+  68% {
+    transform: scaleX(-0.8);
+    opacity: 0.85;
+  }
+}
+@keyframes buddy-signal {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+@keyframes buddy-node {
+  to {
+    transform: scale(0.8);
+  }
+}
+@keyframes buddy-nod {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+@keyframes buddy-step {
+  from {
+    transform: translateY(-3px);
+  }
+  to {
+    transform: translateY(2px);
+  }
+}
+@keyframes buddy-wave {
+  from {
+    transform: rotate(-30deg);
+  }
+  to {
+    transform: rotate(-65deg);
+  }
+}
+
+/* A continuous career path, with a scroll-driven travelling companion. */
+.journey-hint {
+  font-size: 0.85rem;
+  color: #84849e;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.experience-grid {
+  grid-template-columns: 1.7fr 1fr;
+  gap: 5%;
+  margin-top: 3rem;
+  align-items: start;
+}
+.timeline {
+  --track-x: 2.2rem;
+  --entry-indent: 7.2rem;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 2.4rem;
+  bottom: 5rem;
+  left: var(--track-x);
+  width: 2px;
+  background: #e2dfed;
+}
+.timeline.journey-ready::before {
+  display: none;
+}
+.journey-rail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5.5rem;
+  height: 100%;
+  pointer-events: none;
+}
+.journey-track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.journey-track path {
+  fill: none;
+  stroke-linecap: round;
+}
+.journey-track-base {
+  stroke: #d1cae4;
+  stroke-width: 2;
+  stroke-dasharray: 2 7;
+}
+.journey-track-fill {
+  stroke: #978bce;
+  stroke-width: 2.5;
+}
+.journey-buddy {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 6.1rem;
+  z-index: 3;
+  opacity: 0;
+  transform: translate(
+    calc(var(--buddy-x, 0px) - 2rem),
+    calc(var(--buddy-y, 0px) - 3.05rem)
+  );
+  will-change: transform;
+}
+.journey-ready .journey-buddy {
+  opacity: 1;
+}
+.timeline-entry,
+.timeline-entry:last-child {
+  margin-left: 0;
+  border: 0;
+  padding: 1.5rem 0 2rem var(--entry-indent);
+}
+.timeline-entry > summary {
+  gap: 1rem;
+}
+.timeline-entry > summary > div {
+  min-width: 0;
+}
+.timeline-entry + .timeline-entry > summary::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+}
+.timeline-mark {
+  top: 0.45rem;
+  left: calc(var(--track-x) - var(--entry-indent) - 0.4375rem);
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #c5bfdf;
+  box-shadow: 0 0 0 0.3rem var(--bg);
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+.timeline-entry.is-current .timeline-mark {
+  background: #9f96d6;
+  border-color: #9f96d6;
+}
+.timeline time {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.65rem;
+  color: #8b819e;
+}
+.timeline h3 {
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  transition: color 0.25s;
+}
+.timeline-entry.is-current h3 {
+  color: #6d65b8;
+}
+.timeline summary p {
+  font-size: 1rem;
+  margin-top: 0.45rem;
+}
+.timeline summary div > span {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-top: 0.4rem;
+}
+.timeline-toggle {
+  font-size: 1.35rem;
+  color: #aaa2c6;
+}
+.timeline-more {
+  background: none;
+  border: 0;
+  padding: 0.1rem 1.5rem 0 0;
+  margin-top: 1rem;
+  font-size: 0.92rem;
+}
+.milestones {
+  position: sticky;
+  top: 4rem;
+  background: none;
+  border: 0;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1.5rem 0 1.5rem 2.8rem;
+}
+.milestones > h3 {
+  font-size: 1.3rem;
+}
+.milestones h4 {
+  font-size: 1.05rem;
+}
+.milestones time,
+.milestones p {
+  font-size: 0.8rem;
+}
+.milestones > div {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 2.3rem;
+}
+.header-actions {
+  display: none;
+}
+@media (max-width: 850px) {
+  .timeline {
+    --entry-indent: 5.3rem;
+  }
+  .timeline h3 {
+    font-size: 1.35rem;
+  }
+  .timeline summary p {
+    font-size: 0.9rem;
+  }
+  .milestones {
+    padding-left: 1.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .header-actions {
+    display: flex;
+  }
+  .journey-hint {
+    display: none;
+  }
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .timeline {
+    --track-x: 1.25rem;
+    --entry-indent: 4rem;
+  }
+  .journey-rail {
+    width: 3rem;
+  }
+  .journey-buddy {
+    width: 2.6rem;
+    height: 4rem;
+    transform: translate(
+      calc(var(--buddy-x, 0px) - 1.3rem),
+      calc(var(--buddy-y, 0px) - 2rem)
+    );
+  }
+  .timeline-entry,
+  .timeline-entry:last-child {
+    padding-top: 1.3rem;
+    padding-bottom: 1.8rem;
+  }
+  .timeline h3 {
+    font-size: 1.3rem;
+  }
+  .timeline summary p {
+    font-size: 0.95rem;
+  }
+  .timeline summary div > span {
+    font-size: 0.8rem;
+  }
+  .timeline time {
+    font-size: 0.7rem;
+  }
+  .timeline-entry > summary {
+    gap: 0.5rem;
+  }
+  .timeline-toggle {
+    padding-left: 0;
+  }
+  .milestones {
+    position: static;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 2rem 0 0;
+  }
+  .pub-mascot .buddy-art {
+    max-height: 16rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .buddy-art *,
+  .journey-buddy * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+body.page-hidden .buddy-art * {
+  animation-play-state: paused !important;
+}
+@media print {
+  .journey-rail,
+  .journey-hint,
+  .timeline::before,
+  .timeline-mark {
+    display: none;
+  }
+  .timeline-entry,
+  .timeline-entry:last-child {
+    padding-left: 0;
+  }
+  .milestones {
+    position: static;
+  }
+  .timeline h3 {
+    font-size: 1rem;
+  }
 }

@@ -9,3 +9,7 @@
 
 # Local development dependencies
 node_modules/
+
+# Python generators
+__pycache__/
+*.py[cod]
