@@ -143,6 +143,7 @@
     clearTimeout(celebrateTimer);
     noteIndex = (noteIndex + 1) % reminders.length;
     const update = () => {
+      noteTitle.dataset.length = noteIndex === 1 ? "long" : "short";
       noteTitle.innerHTML = reminders[noteIndex];
       document.querySelector(".note-count").textContent =
         `0${noteIndex + 1} / 02`;

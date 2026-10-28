@@ -947,6 +947,8 @@ h2 {
 .note-paper {
   position: relative;
   z-index: 2;
+  min-width: 0;
+  container-type: inline-size;
 }
 .note-topline {
   display: flex;
@@ -962,7 +964,8 @@ h2 {
 }
 .note-section h2 {
   font-family: var(--hand);
-  font-size: 5.4375rem;
+  font-size: min(var(--note-font-size, 5.4375rem), 16cqi);
+  white-space: nowrap;
   font-weight: 500;
   line-height: 0.98;
   letter-spacing: -2px;
@@ -975,6 +978,9 @@ h2 {
   transition:
     opacity 0.16s,
     translate 0.16s;
+}
+.note-section h2[data-length="long"] {
+  font-size: min(var(--note-font-size, 5.4375rem), 13cqi);
 }
 .note-section h2 span {
   white-space: nowrap;
@@ -1285,7 +1291,7 @@ body.motion-paused *:after {
     padding: 2.1875rem;
   }
   .note-section h2 {
-    font-size: 4.75rem;
+    --note-font-size: 4.75rem;
   }
   .note-garden {
     transform: scale(0.88);
@@ -1455,7 +1461,7 @@ body.motion-paused *:after {
     grid-template-columns: 1.8fr 1fr;
   }
   .note-section h2 {
-    font-size: 4.25rem;
+    --note-font-size: 4.25rem;
     min-height: 9.375rem;
   }
   .note-garden {
@@ -1770,7 +1776,7 @@ body.motion-paused *:after {
     min-height: 33.75rem;
   }
   .note-section h2 {
-    font-size: clamp(2.625rem, 14vw, 4rem);
+    --note-font-size: clamp(2.625rem, 14vw, 4rem);
     min-height: 8.5625rem;
     max-width: 100%;
     margin: 1.375rem 0 1.25rem;
@@ -1933,7 +1939,7 @@ body.motion-paused *:after {
     padding: 1.5625rem 1.4375rem 1.25rem;
   }
   .note-section h2 {
-    font-size: clamp(2.625rem, 14vw, 3.625rem);
+    --note-font-size: clamp(2.625rem, 14vw, 3.625rem);
     min-height: 6.875rem;
   }
   .next-note {
