@@ -844,10 +844,6 @@ h2 {
   background: #f0e7fa;
   color: #a28bb5;
 }
-.timeline-mark.geovis {
-  background: #e8f1ee;
-  color: #86a89c;
-}
 .timeline time {
   font-size: 0.6875rem;
   color: #858b9e;

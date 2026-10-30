@@ -17,7 +17,7 @@ Push `main` to publish through the repository's existing GitHub Pages configurat
 
 ## CV
 
-The current download is `assets/Resume-YANG_Zhe.pdf`. The two existing PDF paths under `Resume/` also contain the same updated file so older links keep working. These PDFs come from the CV supplied on 28 October 2026; the incorrect hyperlink from InnerFeel to FileGram was removed. The supplied text and typesetting were preserved.
+The current download is `assets/Resume-YANG_Zhe.pdf`. The two existing PDF paths under `Resume/` also contain the same updated file so older links keep working. All three are byte-for-byte copies of `Zhe_Yang_CV.pdf`, supplied on 30 October 2026. This CV omits the GEOVIS internship; that entry has also been removed from the homepage timeline. The download link includes a version parameter to refresh cached copies.
 
 The older TeX and Word files under `Resume/` are historical sources and do **not** reproduce the current PDF. See `Resume/README.md` before compiling.
 
